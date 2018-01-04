@@ -1,0 +1,115 @@
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_1 (Embedding)      (None, 100, 1, 5)         250       
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 100, 5)            0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 100, 256)          201216    
+_________________________________________________________________
+gru_2 (GRU)                  (None, 128)               147840    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 355,756
+Trainable params: 355,756
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/10
+Epoch 00000: loss improved from inf to 2.43368, saving model to weights004_GRU-256_GRU-128/000_2.4337_0.2447_2.1691_0.3174.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.43367553788 		— val_loss: 2.16905199909 
+acc: 0.244701782007 		— val_acc: 0.317390717755 
+precision: 0.119342655579 	— val_precision: 0.12355168944 
+recall: 0.105984195273 	— val_recall: 0.105743020984 
+f-measure: 0.0974987583832 	— val_f-measure: 0.0983569627158
+Epoch 2/10
+Epoch 00001: loss improved from 2.43368 to 2.04288, saving model to weights004_GRU-256_GRU-128/001_2.0429_0.3488_1.9691_0.3689.hdf5
+EPOCH: 1 
+loss: 2.04288199609 		— val_loss: 1.96908371087 
+acc: 0.348788577207 		— val_acc: 0.36886130599 
+precision: 0.199686622211 	— val_precision: 0.18621727241 
+recall: 0.15756039651 	— val_recall: 0.158780837044 
+f-measure: 0.157219005845 	— val_f-measure: 0.156066170456
+Epoch 3/10
+Epoch 00002: loss improved from 2.04288 to 1.89304, saving model to weights004_GRU-256_GRU-128/002_1.8930_0.3916_1.8827_0.3954.hdf5
+EPOCH: 2 
+loss: 1.89304267412 		— val_loss: 1.8826748105 
+acc: 0.391579065711 		— val_acc: 0.395372369131 
+precision: 0.287089161703 	— val_precision: 0.218155243943 
+recall: 0.183322262269 	— val_recall: 0.177791957829 
+f-measure: 0.191422378305 	— val_f-measure: 0.180328676224
+Epoch 4/10
+Epoch 00003: loss improved from 1.89304 to 1.81056, saving model to weights004_GRU-256_GRU-128/003_1.8106_0.4165_1.8286_0.4143.hdf5
+EPOCH: 3 
+loss: 1.81055669926 		— val_loss: 1.82859032037 
+acc: 0.416504581491 		— val_acc: 0.41429438748 
+precision: 0.303115660631 	— val_precision: 0.252603294362 
+recall: 0.207582184795 	— val_recall: 0.200313147033 
+f-measure: 0.214497121099 	— val_f-measure: 0.200843339541
+Epoch 5/10
+Epoch 00004: loss improved from 1.81056 to 1.74391, saving model to weights004_GRU-256_GRU-128/004_1.7439_0.4361_1.8020_0.4245.hdf5
+EPOCH: 4 
+loss: 1.7439120584 		— val_loss: 1.80203181618 
+acc: 0.436145932883 		— val_acc: 0.424480572045 
+precision: 0.338253058421 	— val_precision: 0.273035280106 
+recall: 0.220910316498 	— val_recall: 0.207453894177 
+f-measure: 0.231479563831 	— val_f-measure: 0.2113196275
+Epoch 6/10
+Epoch 00005: loss improved from 1.74391 to 1.68386, saving model to weights004_GRU-256_GRU-128/005_1.6839_0.4551_1.7833_0.4303.hdf5
+EPOCH: 5 
+loss: 1.68386440312 		— val_loss: 1.78330125194 
+acc: 0.455101467185 		— val_acc: 0.430315704263 
+precision: 0.350435446683 	— val_precision: 0.317331998063 
+recall: 0.228936292027 	— val_recall: 0.210066240414 
+f-measure: 0.244911792565 	— val_f-measure: 0.220618045002
+Epoch 7/10
+Epoch 00006: loss improved from 1.68386 to 1.63080, saving model to weights004_GRU-256_GRU-128/006_1.6308_0.4721_1.7524_0.4367.hdf5
+EPOCH: 6 
+loss: 1.63080150661 		— val_loss: 1.75237017854 
+acc: 0.472078250606 		— val_acc: 0.436656772801 
+precision: 0.384295351504 	— val_precision: 0.290519559175 
+recall: 0.259905711645 	— val_recall: 0.224599301136 
+f-measure: 0.283537198443 	— val_f-measure: 0.235570651847
+Epoch 8/10
+Epoch 00007: loss improved from 1.63080 to 1.57437, saving model to weights004_GRU-256_GRU-128/007_1.5744_0.4911_1.7354_0.4431.hdf5
+EPOCH: 7 
+loss: 1.57437048631 		— val_loss: 1.73539440116 
+acc: 0.491134971052 		— val_acc: 0.443065299514 
+precision: 0.43187959936 	— val_precision: 0.29859005912 
+recall: 0.266487475813 	— val_recall: 0.225199351896 
+f-measure: 0.29030995954 	— val_f-measure: 0.236102318037
+Epoch 9/10
+Epoch 00008: loss improved from 1.57437 to 1.51904, saving model to weights004_GRU-256_GRU-128/008_1.5190_0.5103_1.7357_0.4460.hdf5
+EPOCH: 8 
+loss: 1.51903534621 		— val_loss: 1.73573555383 
+acc: 0.510292877629 		— val_acc: 0.445999730167 
+precision: 0.404498629837 	— val_precision: 0.288578530093 
+recall: 0.297317483358 	— val_recall: 0.234600681918 
+f-measure: 0.320712999368 	— val_f-measure: 0.247735174536
+Epoch 10/10
+Epoch 00009: loss improved from 1.51904 to 1.46128, saving model to weights004_GRU-256_GRU-128/009_1.4613_0.5290_1.7532_0.4496.hdf5
+EPOCH: 9 
+loss: 1.46128413114 		— val_loss: 1.75315211441 
+acc: 0.528956096456 		— val_acc: 0.44960874258 
+precision: 0.502301902615 	— val_precision: 0.293813913157 
+recall: 0.292613858584 	— val_recall: 0.226987890263 
+f-measure: 0.319914109447 	— val_f-measure: 0.238852563747
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.387351520797697, 0.55221766259780292]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[1.7531521144070241, 0.44960874257960065]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[1.7409378537770175, 0.4545515869141365]
+10 epochs in 5558.473965883255 seconds
+
