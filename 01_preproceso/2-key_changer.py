@@ -3,7 +3,6 @@
     Translate ABC code to C key
     Delete "anotation"s
     Delete +anotation+s
-    Delete bars |
     Delete repetitions
     Add flat (_), sharp (^) or natural (=) to all notes 
 '''
