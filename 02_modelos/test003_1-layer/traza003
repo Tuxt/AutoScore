@@ -1,0 +1,1295 @@
+(tfg) tuxt@lab:~/tfg/code/abc_code/02_modelos$ ./run_test003.sh
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 50, 1)             0         
+_________________________________________________________________
+simple_rnn_1 (SimpleRNN)     (None, 64)                4224      
+_________________________________________________________________
+dense_1 (Dense)              (None, 33)                2145      
+=================================================================
+Total params: 6,369
+Trainable params: 6,369
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 63826 samples, validate on 21275 samples
+Epoch 1/20
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.44319311591 		— val_loss: 2.32144538169 
+acc: 0.201751637267 		— val_acc: 0.227356051704 
+precision: 0.0898540739478 	— val_precision: 0.0936364556108 
+recall: 0.0749947977207 	— val_recall: 0.075548897259 
+f-measure: 0.0691802640851 	— val_f-measure: 0.0701248091817
+Epoch 2/20
+EPOCH: 1 
+loss: 2.27909788987 		— val_loss: 2.25253252493 
+acc: 0.242393382009 		— val_acc: 0.260963572261 
+precision: 0.0967477516626 	— val_precision: 0.0934330794168 
+recall: 0.0948485176067 	— val_recall: 0.0930663391808 
+f-measure: 0.0919943893578 	— val_f-measure: 0.0896909231595
+Epoch 3/20
+EPOCH: 2 
+loss: 2.22787039583 		— val_loss: 2.20347893694 
+acc: 0.261774198606 		— val_acc: 0.267826086949 
+precision: 0.105903464619 	— val_precision: 0.0989102054066 
+recall: 0.0941897249643 	— val_recall: 0.0920416004062 
+f-measure: 0.089994378259 	— val_f-measure: 0.0874184157547
+Epoch 4/20
+EPOCH: 3 
+loss: 2.19254426551 		— val_loss: 2.18220419758 
+acc: 0.271080750792 		— val_acc: 0.274547591062 
+precision: 0.110270169869 	— val_precision: 0.106225671806 
+recall: 0.099724080083 	— val_recall: 0.0973254137847 
+f-measure: 0.096763904439 	— val_f-measure: 0.0942735670953
+Epoch 5/20
+EPOCH: 4 
+loss: 2.16908399592 		— val_loss: 2.17988264439 
+acc: 0.278820543356 		— val_acc: 0.268860164514 
+precision: 0.109081650913 	— val_precision: 0.10577680437 
+recall: 0.102521453082 	— val_recall: 0.1011349127 
+f-measure: 0.0946497409852 	— val_f-measure: 0.0933836551046
+Epoch 6/20
+EPOCH: 5 
+loss: 2.14415700655 		— val_loss: 2.14540161284 
+acc: 0.284460878014 		— val_acc: 0.287332549934 
+precision: 0.129786169283 	— val_precision: 0.121183983463 
+recall: 0.107858222305 	— val_recall: 0.105214893488 
+f-measure: 0.107326197742 	— val_f-measure: 0.103893956099
+Epoch 7/20
+EPOCH: 6 
+loss: 2.12511789798 		— val_loss: 2.12862969627 
+acc: 0.291119606432 		— val_acc: 0.288883666268 
+precision: 0.145523375487 	— val_precision: 0.146093266102 
+recall: 0.109393610975 	— val_recall: 0.107652306104 
+f-measure: 0.1075362592 	— val_f-measure: 0.10600044344
+Epoch 8/20
+EPOCH: 7 
+loss: 2.10448720572 		— val_loss: 2.11017341252 
+acc: 0.297480650521 		— val_acc: 0.299036427745 
+precision: 0.123584566531 	— val_precision: 0.119040444621 
+recall: 0.118634214473 	— val_recall: 0.115672239602 
+f-measure: 0.117929751737 	— val_f-measure: 0.114507934721
+Epoch 9/20
+EPOCH: 8 
+loss: 2.08918490624 		— val_loss: 2.09416988084 
+acc: 0.300958856894 		— val_acc: 0.299647473563 
+precision: 0.154069190097 	— val_precision: 0.15426681775 
+recall: 0.11030435585 	— val_recall: 0.107839578633 
+f-measure: 0.111261860099 	— val_f-measure: 0.107972423091
+Epoch 10/20
+EPOCH: 9 
+loss: 2.07572527083 		— val_loss: 2.08240310235 
+acc: 0.307210227809 		— val_acc: 0.304347826072 
+precision: 0.142799070509 	— val_precision: 0.130518593226 
+recall: 0.120268708968 	— val_recall: 0.116107164068 
+f-measure: 0.115541873955 	— val_f-measure: 0.110987425453
+Epoch 11/20
+EPOCH: 10 
+loss: 2.06041577231 		— val_loss: 2.08867752489 
+acc: 0.309811048791 		— val_acc: 0.301856639261 
+precision: 0.152575857505 	— val_precision: 0.139822661293 
+recall: 0.119123046937 	— val_recall: 0.114754732943 
+f-measure: 0.113663206316 	— val_f-measure: 0.108207143992
+Epoch 12/20
+EPOCH: 11 
+loss: 2.04918930792 		— val_loss: 2.05412353406 
+acc: 0.312020179868 		— val_acc: 0.309424206809 
+precision: 0.151576165352 	— val_precision: 0.173165234684 
+recall: 0.116650950711 	— val_recall: 0.114304193728 
+f-measure: 0.117243689655 	— val_f-measure: 0.114688185874
+Epoch 13/20
+EPOCH: 12 
+loss: 2.04270892494 		— val_loss: 2.05857805027 
+acc: 0.316704791152 		— val_acc: 0.309236192699 
+precision: 0.153291867733 	— val_precision: 0.161380940552 
+recall: 0.129130685833 	— val_recall: 0.123572163187 
+f-measure: 0.127908968408 	— val_f-measure: 0.122291348937
+Epoch 14/20
+EPOCH: 13 
+loss: 2.03475541597 		— val_loss: 2.09160696841 
+acc: 0.318396891549 		— val_acc: 0.311257344294 
+precision: 0.151000018209 	— val_precision: 0.140851351982 
+recall: 0.117787946264 	— val_recall: 0.115547422253 
+f-measure: 0.11450683008 	— val_f-measure: 0.111606893325
+Epoch 15/20
+EPOCH: 14 
+loss: 2.02401161177 		— val_loss: 2.03421166856 
+acc: 0.321107385709 		— val_acc: 0.320987074033 
+precision: 0.200172779599 	— val_precision: 0.182657674486 
+recall: 0.13027758877 	— val_recall: 0.126415609267 
+f-measure: 0.12943421754 	— val_f-measure: 0.124436674677
+Epoch 16/20
+EPOCH: 15 
+loss: 2.01992614403 		— val_loss: 2.02238282245 
+acc: 0.322031773885 		— val_acc: 0.321081081094 
+precision: 0.168300347558 	— val_precision: 0.155662066951 
+recall: 0.135313605163 	— val_recall: 0.12865350819 
+f-measure: 0.136743708104 	— val_f-measure: 0.128560636712
+Epoch 17/20
+EPOCH: 16 
+loss: 2.01796753203 		— val_loss: 2.04412863323 
+acc: 0.323379187166 		— val_acc: 0.321598119844 
+precision: 0.188504889565 	— val_precision: 0.193711030966 
+recall: 0.127577904099 	— val_recall: 0.124122628943 
+f-measure: 0.128659869156 	— val_f-measure: 0.124234774204
+Epoch 18/20
+EPOCH: 17 
+loss: 2.00812631429 		— val_loss: 2.02086822116 
+acc: 0.325290633912 		— val_acc: 0.320470035255 
+precision: 0.19055881543 	— val_precision: 0.163402538153 
+recall: 0.14471430877 	— val_recall: 0.134752016371 
+f-measure: 0.143348276622 	— val_f-measure: 0.132033750867
+Epoch 19/20
+EPOCH: 18 
+loss: 2.00434791127 		— val_loss: 2.01830162582 
+acc: 0.326951399119 		— val_acc: 0.320658049357 
+precision: 0.185769786349 	— val_precision: 0.176018275782 
+recall: 0.150099024152 	— val_recall: 0.141665388755 
+f-measure: 0.151601493574 	— val_f-measure: 0.142520453651
+Epoch 20/20
+EPOCH: 19 
+loss: 1.99964530187 		— val_loss: 2.01462100666 
+acc: 0.327719111334 		— val_acc: 0.322303172723 
+precision: 0.202515486586 	— val_precision: 0.197011667084 
+recall: 0.139439706933 	— val_recall: 0.131485915472 
+f-measure: 0.146920301661 	— val_f-measure: 0.136621060402
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.9804333602571893, 0.33339078118681731]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.0146210066552168, 0.32230317272254638]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.0106436567975292, 0.32313404775894011]
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 50, 1)             0         
+_________________________________________________________________
+simple_rnn_1 (SimpleRNN)     (None, 64)                4224      
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 7,474
+Trainable params: 7,474
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.65445, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.6545_0.2339_2.5497_0.2528.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.65445305453 		— val_loss: 2.54974681728 
+acc: 0.233931081003 		— val_acc: 0.252765785213 
+precision: 0.0372340287693 	— val_precision: 0.0395072237894 
+recall: 0.048912373911 	— val_recall: 0.0523997953951 
+f-measure: 0.036653448942 	— val_f-measure: 0.0396080200113
+Epoch 2/20
+Epoch 00001: loss improved from 2.65445 to 2.52873, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.5287_0.2559_2.4821_0.2640.hdf5
+EPOCH: 1 
+loss: 2.52872685321 		— val_loss: 2.48214525811 
+acc: 0.25594468492 		— val_acc: 0.264031300594 
+precision: 0.0583308581896 	— val_precision: 0.0367086807536 
+recall: 0.0507887030085 	— val_recall: 0.0541139910511 
+f-measure: 0.0394527415248 	— val_f-measure: 0.0421966627382
+Epoch 3/20
+Epoch 00002: loss improved from 2.52873 to 2.47095, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.4709_0.2651_2.4405_0.2704.hdf5
+EPOCH: 2 
+loss: 2.47094933913 		— val_loss: 2.44053492093 
+acc: 0.265096407888 		— val_acc: 0.270439827307 
+precision: 0.0442162132147 	— val_precision: 0.042826391431 
+recall: 0.0568572350512 	— val_recall: 0.060156790868 
+f-measure: 0.0439944180235 	— val_f-measure: 0.0466729473549
+Epoch 4/20
+Epoch 00003: loss improved from 2.47095 to 2.43212, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.4321_0.2710_2.4038_0.2771.hdf5
+EPOCH: 3 
+loss: 2.43211522541 		— val_loss: 2.40384882589 
+acc: 0.270976446126 		— val_acc: 0.277084457636 
+precision: 0.0648045336225 	— val_precision: 0.0704814972604 
+recall: 0.0604048385042 	— val_recall: 0.0645162726473 
+f-measure: 0.0465380463968 	— val_f-measure: 0.0504476501274
+Epoch 5/20
+Epoch 00004: loss improved from 2.43212 to 2.39610, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.3961_0.2780_2.3689_0.2788.hdf5
+EPOCH: 4 
+loss: 2.39610050061 		— val_loss: 2.36891057964 
+acc: 0.278003260438 		— val_acc: 0.278770912035 
+precision: 0.0821668091609 	— val_precision: 0.0740795311956 
+recall: 0.0605199053313 	— val_recall: 0.0636819505492 
+f-measure: 0.0491377718384 	— val_f-measure: 0.0515803861513
+Epoch 6/20
+Epoch 00005: loss improved from 2.39610 to 2.36512, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.3651_0.2826_2.3436_0.2870.hdf5
+EPOCH: 5 
+loss: 2.36512031604 		— val_loss: 2.34357008417 
+acc: 0.282556636125 		— val_acc: 0.287034538586 
+precision: 0.0826233058785 	— val_precision: 0.0913109788043 
+recall: 0.0651911263665 	— val_recall: 0.0692934413936 
+f-measure: 0.0591234144032 	— val_f-measure: 0.0634472465333
+Epoch 7/20
+Epoch 00006: loss improved from 2.36512 to 2.34163, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.3416_0.2876_2.3709_0.2850.hdf5
+EPOCH: 6 
+loss: 2.34163415113 		— val_loss: 2.37088105618 
+acc: 0.28760469954 		— val_acc: 0.285044522396 
+precision: 0.127598354084 	— val_precision: 0.0957866033036 
+recall: 0.0719284794215 	— val_recall: 0.0783704101578 
+f-measure: 0.0708158957161 	— val_f-measure: 0.0762584156456
+Epoch 8/20
+Epoch 00007: loss improved from 2.34163 to 2.32424, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.3242_0.2913_2.3009_0.2986.hdf5
+EPOCH: 7 
+loss: 2.32423801842 		— val_loss: 2.3008875973 
+acc: 0.291314857492 		— val_acc: 0.29856988667 
+precision: 0.0985913377621 	— val_precision: 0.0965436548741 
+recall: 0.0723933737028 	— val_recall: 0.0748246859607 
+f-measure: 0.0682774178937 	— val_f-measure: 0.0699811764349
+Epoch 9/20
+Epoch 00008: loss improved from 2.32424 to 2.30603, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.3060_0.2965_2.3256_0.2939.hdf5
+EPOCH: 8 
+loss: 2.30602813116 		— val_loss: 2.32562574579 
+acc: 0.296542807355 		— val_acc: 0.293881543443 
+precision: 0.120130241302 	— val_precision: 0.128097346967 
+recall: 0.0790721932191 	— val_recall: 0.0828656123667 
+f-measure: 0.0780062751088 	— val_f-measure: 0.0809972842628
+Epoch 10/20
+Epoch 00009: loss improved from 2.30603 to 2.29229, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.2923_0.3001_2.2805_0.3006.hdf5
+EPOCH: 9 
+loss: 2.29228666372 		— val_loss: 2.28049267477 
+acc: 0.300118050488 		— val_acc: 0.300593631948 
+precision: 0.138174173757 	— val_precision: 0.113800930454 
+recall: 0.0894625554827 	— val_recall: 0.0941071089811 
+f-measure: 0.0863166041077 	— val_f-measure: 0.0899004611285
+Epoch 11/20
+Epoch 00010: loss improved from 2.29229 to 2.27859, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.2786_0.3041_2.2845_0.3024.hdf5
+EPOCH: 10 
+loss: 2.27858709635 		— val_loss: 2.28451017863 
+acc: 0.304131766824 		— val_acc: 0.302415002698 
+precision: 0.136921064579 	— val_precision: 0.145698810652 
+recall: 0.0956330243961 	— val_recall: 0.101717772981 
+f-measure: 0.0942765325075 	— val_f-measure: 0.0988411785895
+Epoch 12/20
+Epoch 00011: loss improved from 2.27859 to 2.26831, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.2683_0.3069_2.2590_0.3121.hdf5
+EPOCH: 11 
+loss: 2.26831263147 		— val_loss: 2.25895478799 
+acc: 0.306942492548 		— val_acc: 0.312061521856 
+precision: 0.174121861099 	— val_precision: 0.148627298385 
+recall: 0.0966519989435 	— val_recall: 0.100757962319 
+f-measure: 0.0985978858824 	— val_f-measure: 0.100867040758
+Epoch 13/20
+Epoch 00012: loss improved from 2.26831 to 2.25609, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.2561_0.3110_2.2359_0.3138.hdf5
+EPOCH: 12 
+loss: 2.25608984546 		— val_loss: 2.23590599583 
+acc: 0.311023666312 		— val_acc: 0.313849163519 
+precision: 0.151298610184 	— val_precision: 0.145001068662 
+recall: 0.104540894635 	— val_recall: 0.108830449377 
+f-measure: 0.107099094365 	— val_f-measure: 0.110169594167
+Epoch 14/20
+Epoch 00013: loss improved from 2.25609 to 2.24631, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.2463_0.3106_2.2415_0.3138.hdf5
+EPOCH: 13 
+loss: 2.24630894476 		— val_loss: 2.24145690377 
+acc: 0.310618921813 		— val_acc: 0.313815434431 
+precision: 0.133719095387 	— val_precision: 0.140272489363 
+recall: 0.10032431808 	— val_recall: 0.105239456062 
+f-measure: 0.103400637571 	— val_f-measure: 0.108520540699
+Epoch 15/20
+Epoch 00014: loss improved from 2.24631 to 2.23600, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.2360_0.3132_2.2291_0.3152.hdf5
+EPOCH: 14 
+loss: 2.23600220215 		— val_loss: 2.22911570346 
+acc: 0.313216032376 		— val_acc: 0.315198327037 
+precision: 0.168861128411 	— val_precision: 0.143404137271 
+recall: 0.109779165371 	— val_recall: 0.114098382203 
+f-measure: 0.110669267208 	— val_f-measure: 0.113811526302
+Epoch 16/20
+Epoch 00015: loss improved from 2.23600 to 2.22496, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_2.2250_0.3167_2.2182_0.3178.hdf5
+EPOCH: 15 
+loss: 2.22495950805 		— val_loss: 2.21822455054 
+acc: 0.316746303892 		— val_acc: 0.317795466811 
+precision: 0.155403635759 	— val_precision: 0.151953318513 
+recall: 0.108670393214 	— val_recall: 0.111272458341 
+f-measure: 0.109889252586 	— val_f-measure: 0.111352552285
+Epoch 17/20
+Epoch 00016: loss improved from 2.22496 to 2.21636, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_2.2164_0.3192_2.2042_0.3205.hdf5
+EPOCH: 16 
+loss: 2.21636123283 		— val_loss: 2.2041539886 
+acc: 0.319186013825 		— val_acc: 0.32046006476 
+precision: 0.161399104863 	— val_precision: 0.185516739237 
+recall: 0.103463298831 	— val_recall: 0.106947210129 
+f-measure: 0.10885852078 	— val_f-measure: 0.11060582014
+Epoch 18/20
+Epoch 00017: loss improved from 2.21636 to 2.20817, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_2.2082_0.3194_2.2083_0.3223.hdf5
+EPOCH: 17 
+loss: 2.20817321068 		— val_loss: 2.20832065718 
+acc: 0.319444600598 		— val_acc: 0.322348893686 
+precision: 0.149271372868 	— val_precision: 0.165055690658 
+recall: 0.108660884731 	— val_recall: 0.112502980642 
+f-measure: 0.112737285932 	— val_f-measure: 0.115850266091
+Epoch 19/20
+Epoch 00018: loss improved from 2.20817 to 2.20210, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_2.2021_0.3206_2.1975_0.3239.hdf5
+EPOCH: 18 
+loss: 2.20210436504 		— val_loss: 2.1975485899 
+acc: 0.320613862506 		— val_acc: 0.32393416082 
+precision: 0.163641411255 	— val_precision: 0.16287472715 
+recall: 0.109754675536 	— val_recall: 0.112972632046 
+f-measure: 0.112944550072 	— val_f-measure: 0.116408996433
+Epoch 20/20
+Epoch 00019: loss improved from 2.20210 to 2.19457, saving model to weights003/SimpleRNN_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_2.1946_0.3223_2.1935_0.3197.hdf5
+EPOCH: 19 
+loss: 2.19457259431 		— val_loss: 2.19347112371 
+acc: 0.322266569225 		— val_acc: 0.319684295737 
+precision: 0.167870626249 	— val_precision: 0.161240213089 
+recall: 0.111032579922 	— val_recall: 0.110876367826 
+f-measure: 0.116005065561 	— val_f-measure: 0.115193650869
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[2.1749014146412811, 0.32655011524779648]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.1934711237051521, 0.31968429573664325]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.1986675157832947, 0.32203446996576279]
+Exception ignored in: <bound method BaseSession.__del__ of <tensorflow.python.client.session.Session object at 0x7fa5f9a89588>>
+Traceback (most recent call last):
+  File "/home/tuxt/tfg/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 696, in __del__
+TypeError: 'NoneType' object is not callable
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+simple_rnn_1 (SimpleRNN)     (None, 64)                4224      
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 7,474
+Trainable params: 7,474
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.63195, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.6320_0.2393_2.5462_0.2530.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.63195375232 		— val_loss: 2.54624774787 
+acc: 0.239316431503 		— val_acc: 0.253035617917 
+precision: 0.0397944578346 	— val_precision: 0.0420368731734 
+recall: 0.0530508247243 	— val_recall: 0.0572346381662 
+f-measure: 0.0414071568812 	— val_f-measure: 0.0446189527487
+Epoch 2/20
+Epoch 00001: loss improved from 2.63195 to 2.50392, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.5039_0.2623_2.4915_0.2580.hdf5
+EPOCH: 1 
+loss: 2.50392114916 		— val_loss: 2.49153330206 
+acc: 0.262263196361 		— val_acc: 0.257993793848 
+precision: 0.0429132453145 	— val_precision: 0.0433052284494 
+recall: 0.0518407753579 	— val_recall: 0.0551542226765 
+f-measure: 0.0424235211436 	— val_f-measure: 0.0448865004576
+Epoch 3/20
+Epoch 00002: loss improved from 2.50392 to 2.45242, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.4524_0.2686_2.4476_0.2646.hdf5
+EPOCH: 2 
+loss: 2.45241998321 		— val_loss: 2.44756121386 
+acc: 0.268604193599 		— val_acc: 0.264638424177 
+precision: 0.0611433363181 	— val_precision: 0.0531165421716 
+recall: 0.0572121068079 	— val_recall: 0.0605240248309 
+f-measure: 0.0475464551282 	— val_f-measure: 0.0497510514095
+Epoch 4/20
+Epoch 00003: loss improved from 2.45242 to 2.41179, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.4118_0.2749_2.4139_0.2747.hdf5
+EPOCH: 3 
+loss: 2.41179437025 		— val_loss: 2.41390592577 
+acc: 0.274855247621 		— val_acc: 0.274689692391 
+precision: 0.0718035013852 	— val_precision: 0.0662726090032 
+recall: 0.0623581087836 	— val_recall: 0.0662473446972 
+f-measure: 0.0541155849714 	— val_f-measure: 0.0568040761911
+Epoch 5/20
+Epoch 00004: loss improved from 2.41179 to 2.37498, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.3750_0.2814_2.3721_0.2806.hdf5
+EPOCH: 4 
+loss: 2.37498132885 		— val_loss: 2.37214264121 
+acc: 0.281443588736 		— val_acc: 0.280592282785 
+precision: 0.099635097314 	— val_precision: 0.0946820348535 
+recall: 0.0693607792984 	— val_recall: 0.0722267293818 
+f-measure: 0.0637962535855 	— val_f-measure: 0.0662594120055
+Epoch 6/20
+Epoch 00005: loss improved from 2.37498 to 2.34344, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.3434_0.2877_2.3456_0.2876.hdf5
+EPOCH: 5 
+loss: 2.34344399486 		— val_loss: 2.34557744766 
+acc: 0.287739614367 		— val_acc: 0.287574203994 
+precision: 0.113045949138 	— val_precision: 0.0958385395657 
+recall: 0.0728802135564 	— val_recall: 0.0748670192377 
+f-measure: 0.0693431296756 	— val_f-measure: 0.0696396542052
+Epoch 7/20
+Epoch 00006: loss improved from 2.34344 to 2.32335, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.3233_0.2934_2.3344_0.2900.hdf5
+EPOCH: 6 
+loss: 2.32334677361 		— val_loss: 2.33435461988 
+acc: 0.293428523247 		— val_acc: 0.290036427415 
+precision: 0.105540114031 	— val_precision: 0.123717296229 
+recall: 0.0766162782568 	— val_recall: 0.0791617398093 
+f-measure: 0.0743112691193 	— val_f-measure: 0.0763963240731
+Epoch 8/20
+Epoch 00007: loss improved from 2.32335 to 2.31419, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.3142_0.2953_2.3199_0.2961.hdf5
+EPOCH: 7 
+loss: 2.31419379056 		— val_loss: 2.31992756478 
+acc: 0.295306088039 		— val_acc: 0.296073934161 
+precision: 0.108346489212 	— val_precision: 0.113360868522 
+recall: 0.0848535832037 	— val_recall: 0.0883021647897 
+f-measure: 0.0840198276648 	— val_f-measure: 0.087795218982
+Epoch 9/20
+Epoch 00008: loss improved from 2.31419 to 2.29576, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.2958_0.2989_2.3117_0.3000.hdf5
+EPOCH: 8 
+loss: 2.29575676677 		— val_loss: 2.3116924158 
+acc: 0.298870088253 		— val_acc: 0.299952779277 
+precision: 0.1134667234 	— val_precision: 0.108520521515 
+recall: 0.0809887521524 	— val_recall: 0.0849546611404 
+f-measure: 0.077399478429 	— val_f-measure: 0.0808221169803
+Epoch 10/20
+Epoch 00009: loss improved from 2.29576 to 2.28443, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.2844_0.3032_2.3078_0.2951.hdf5
+EPOCH: 9 
+loss: 2.28442545768 		— val_loss: 2.30777316304 
+acc: 0.303164877173 		— val_acc: 0.295129519698 
+precision: 0.123566744033 	— val_precision: 0.133167352303 
+recall: 0.0876519300166 	— val_recall: 0.0920945500075 
+f-measure: 0.0824470870348 	— val_f-measure: 0.0870991536
+Epoch 11/20
+Epoch 00010: loss improved from 2.28443 to 2.27529, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.2753_0.3054_2.2843_0.3042.hdf5
+EPOCH: 10 
+loss: 2.27529243974 		— val_loss: 2.28426082444 
+acc: 0.305402214848 		— val_acc: 0.304236373448 
+precision: 0.116633983367 	— val_precision: 0.127948560533 
+recall: 0.0867533463757 	— val_recall: 0.0904729129389 
+f-measure: 0.0841390475052 	— val_f-measure: 0.0882725605226
+Epoch 12/20
+Epoch 00011: loss improved from 2.27529 to 2.26702, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.2670_0.3083_2.2760_0.3095.hdf5
+EPOCH: 11 
+loss: 2.26702434172 		— val_loss: 2.27597381537 
+acc: 0.308336612512 		— val_acc: 0.309498111171 
+precision: 0.130857088314 	— val_precision: 0.140171012361 
+recall: 0.094327229807 	— val_recall: 0.0961819287649 
+f-measure: 0.0927592388568 	— val_f-measure: 0.0939884498009
+Epoch 13/20
+Epoch 00012: loss improved from 2.26702 to 2.25862, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.2586_0.3116_2.4209_0.2760.hdf5
+EPOCH: 12 
+loss: 2.25861705605 		— val_loss: 2.42085269767 
+acc: 0.31155208275 		— val_acc: 0.276038855909 
+precision: 0.118183449701 	— val_precision: 0.108783750448 
+recall: 0.0691840379234 	— val_recall: 0.071527198072 
+f-measure: 0.0662232275025 	— val_f-measure: 0.0675223344494
+Epoch 14/20
+Epoch 00013: loss improved from 2.25862 to 2.24758, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.2476_0.3129_2.2539_0.3109.hdf5
+EPOCH: 13 
+loss: 2.24757982092 		— val_loss: 2.25394606976 
+acc: 0.312946202706 		— val_acc: 0.310948461954 
+precision: 0.159757004246 	— val_precision: 0.161595285037 
+recall: 0.100191841178 	— val_recall: 0.0991806961443 
+f-measure: 0.10184853786 	— val_f-measure: 0.0987234606201
+Epoch 15/20
+Epoch 00014: loss improved from 2.24758 to 2.23769, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.2377_0.3156_2.2581_0.3124.hdf5
+EPOCH: 14 
+loss: 2.23768612026 		— val_loss: 2.25806039922 
+acc: 0.315610770703 		— val_acc: 0.312398812736 
+precision: 0.162738154205 	— val_precision: 0.164503077463 
+recall: 0.0998264721586 	— val_recall: 0.101435688885 
+f-measure: 0.105555145029 	— val_f-measure: 0.106042608864
+Epoch 16/20
+Epoch 00015: loss improved from 2.23769 to 2.23286, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_2.2329_0.3158_2.2476_0.3135.hdf5
+EPOCH: 15 
+loss: 2.23286227372 		— val_loss: 2.24758081235 
+acc: 0.315835628761 		— val_acc: 0.313545601727 
+precision: 0.158373928975 	— val_precision: 0.162495322068 
+recall: 0.10152185477 	— val_recall: 0.102963594142 
+f-measure: 0.103254774409 	— val_f-measure: 0.104748979248
+Epoch 17/20
+Epoch 00016: loss improved from 2.23286 to 2.22595, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_2.2259_0.3183_2.3261_0.2939.hdf5
+EPOCH: 16 
+loss: 2.22594883577 		— val_loss: 2.32611447132 
+acc: 0.318342796114 		— val_acc: 0.293915272531 
+precision: 0.153892870526 	— val_precision: 0.154659616789 
+recall: 0.0979808078659 	— val_recall: 0.100697240235 
+f-measure: 0.0981728324084 	— val_f-measure: 0.0989084701352
+Epoch 18/20
+Epoch 00017: loss improved from 2.22595 to 2.21864, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_2.2186_0.3193_2.2817_0.3115.hdf5
+EPOCH: 17 
+loss: 2.21863893657 		— val_loss: 2.2817043957 
+acc: 0.319309685763 		— val_acc: 0.311488127361 
+precision: 0.162600690516 	— val_precision: 0.164679470713 
+recall: 0.104271905582 	— val_recall: 0.109322700337 
+f-measure: 0.108839823848 	— val_f-measure: 0.111848502126
+Epoch 19/20
+Epoch 00018: loss improved from 2.21864 to 2.21265, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_2.2127_0.3221_2.3201_0.2990.hdf5
+EPOCH: 18 
+loss: 2.21265143232 		— val_loss: 2.32008002361 
+acc: 0.322131654396 		— val_acc: 0.298974635726 
+precision: 0.160263817868 	— val_precision: 0.162517201142 
+recall: 0.0945587558387 	— val_recall: 0.0952467218357 
+f-measure: 0.0960099544044 	— val_f-measure: 0.0951937974131
+Epoch 20/20
+Epoch 00019: loss improved from 2.21265 to 2.21000, saving model to weights003/SimpleRNN_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_2.2100_0.3231_2.2346_0.3165.hdf5
+EPOCH: 19 
+loss: 2.20999793409 		— val_loss: 2.23464174433 
+acc: 0.323132272755 		— val_acc: 0.316547490556 
+precision: 0.16812141765 	— val_precision: 0.179303681828 
+recall: 0.113211058202 	— val_recall: 0.117259297784 
+f-measure: 0.116825217484 	— val_f-measure: 0.119446436828
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[2.1951396202932516, 0.32656135815004383]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.2346417443274937, 0.31654749055585535]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.2251869852239157, 0.31366993829393358]
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 50, 1)             0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 64)                16896     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 20,146
+Trainable params: 20,146
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.59861, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.5986_0.2378_2.4800_0.2489.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.59861312134 		— val_loss: 2.48003819358 
+acc: 0.237753667999 		— val_acc: 0.248886940097 
+precision: 0.0464899552906 	— val_precision: 0.057464531919 
+recall: 0.0495440788447 	— val_recall: 0.0511776964864 
+f-measure: 0.0398385052765 	— val_f-measure: 0.0408470675105
+Epoch 2/20
+Epoch 00001: loss improved from 2.59861 to 2.43470, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.4347_0.2606_2.4147_0.2603.hdf5
+EPOCH: 1 
+loss: 2.43469827532 		— val_loss: 2.41472636798 
+acc: 0.260644218344 		— val_acc: 0.260321100917 
+precision: 0.0584571403443 	— val_precision: 0.0589490786237 
+recall: 0.0536818092399 	— val_recall: 0.0557269259762 
+f-measure: 0.0450688313039 	— val_f-measure: 0.0464868141044
+Epoch 3/20
+Epoch 00002: loss improved from 2.43470 to 2.37614, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.3761_0.2707_2.3626_0.2719.hdf5
+EPOCH: 2 
+loss: 2.37614398198 		— val_loss: 2.36256911416 
+acc: 0.270706616452 		— val_acc: 0.271856449002 
+precision: 0.0675422787681 	— val_precision: 0.0881599991785 
+recall: 0.0634377398863 	— val_recall: 0.0673749767634 
+f-measure: 0.0584819229177 	— val_f-measure: 0.0627486403289
+Epoch 4/20
+Epoch 00003: loss improved from 2.37614 to 2.33207, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.3321_0.2798_2.3268_0.2800.hdf5
+EPOCH: 3 
+loss: 2.33206677813 		— val_loss: 2.32678517122 
+acc: 0.279802124905 		— val_acc: 0.280018888289 
+precision: 0.12926925769 	— val_precision: 0.104367580631 
+recall: 0.070902938713 	— val_recall: 0.0712805972967 
+f-measure: 0.0641922156426 	— val_f-measure: 0.0623771755524
+Epoch 5/20
+Epoch 00004: loss improved from 2.33207 to 2.29700, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.2970_0.2860_2.2926_0.2845.hdf5
+EPOCH: 4 
+loss: 2.29699795083 		— val_loss: 2.29262308578 
+acc: 0.286030693132 		— val_acc: 0.284538586077 
+precision: 0.153034612023 	— val_precision: 0.116738850343 
+recall: 0.0873634699133 	— val_recall: 0.0898411932263 
+f-measure: 0.0869849644044 	— val_f-measure: 0.0881657898314
+Epoch 6/20
+Epoch 00005: loss improved from 2.29700 to 2.26654, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.2665_0.2945_2.2657_0.2922.hdf5
+EPOCH: 5 
+loss: 2.26653713361 		— val_loss: 2.26571373005 
+acc: 0.294485356115 		— val_acc: 0.292228818133 
+precision: 0.134366056608 	— val_precision: 0.137378261791 
+recall: 0.102654751955 	— val_recall: 0.104330995403 
+f-measure: 0.102536550439 	— val_f-measure: 0.104273795545
+Epoch 7/20
+Epoch 00006: loss improved from 2.26654 to 2.23924, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.2392_0.2998_2.2407_0.3009.hdf5
+EPOCH: 6 
+loss: 2.23923986535 		— val_loss: 2.2406844847 
+acc: 0.299780763397 		— val_acc: 0.30089719374 
+precision: 0.142318198624 	— val_precision: 0.147896139506 
+recall: 0.111580588822 	— val_recall: 0.115450719524 
+f-measure: 0.111734368606 	— val_f-measure: 0.115723446552
+Epoch 8/20
+Epoch 00007: loss improved from 2.23924 to 2.21530, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.2153_0.3058_2.2189_0.3084.hdf5
+EPOCH: 7 
+loss: 2.21530371926 		— val_loss: 2.21890015983 
+acc: 0.305795716458 		— val_acc: 0.308418780356 
+precision: 0.153624381561 	— val_precision: 0.151230837915 
+recall: 0.116963341656 	— val_recall: 0.120740085309 
+f-measure: 0.115631333168 	— val_f-measure: 0.118591246346
+Epoch 9/20
+Epoch 00008: loss improved from 2.21530 to 2.19380, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.1938_0.3119_2.2062_0.3101.hdf5
+EPOCH: 8 
+loss: 2.19380259771 		— val_loss: 2.20622696699 
+acc: 0.311866884025 		— val_acc: 0.310105234754 
+precision: 0.165420605725 	— val_precision: 0.142963995098 
+recall: 0.125819088093 	— val_recall: 0.12726586988 
+f-measure: 0.125226650833 	— val_f-measure: 0.125009313053
+Epoch 10/20
+Epoch 00009: loss improved from 2.19380 to 2.17270, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.1727_0.3197_2.2018_0.3102.hdf5
+EPOCH: 9 
+loss: 2.17270388818 		— val_loss: 2.20175030755 
+acc: 0.319691944456 		— val_acc: 0.310240151106 
+precision: 0.181637937744 	— val_precision: 0.165727419867 
+recall: 0.114548099215 	— val_recall: 0.11613160297 
+f-measure: 0.11306556127 	— val_f-measure: 0.114016103796
+Epoch 11/20
+Epoch 00010: loss improved from 2.17270 to 2.15660, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.1566_0.3249_2.1706_0.3194.hdf5
+EPOCH: 10 
+loss: 2.15659954923 		— val_loss: 2.17061009899 
+acc: 0.324852436896 		— val_acc: 0.319448192121 
+precision: 0.192689091851 	— val_precision: 0.184059385154 
+recall: 0.131095146903 	— val_recall: 0.133034147201 
+f-measure: 0.134274809827 	— val_f-measure: 0.135175527722
+Epoch 12/20
+Epoch 00011: loss improved from 2.15660 to 2.14000, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.1400_0.3304_2.1595_0.3253.hdf5
+EPOCH: 11 
+loss: 2.14000416519 		— val_loss: 2.15947822269 
+acc: 0.330395188039 		— val_acc: 0.325283324339 
+precision: 0.200548215369 	— val_precision: 0.184989608577 
+recall: 0.132953569734 	— val_recall: 0.133870373381 
+f-measure: 0.138756247429 	— val_f-measure: 0.138752618747
+Epoch 13/20
+Epoch 00012: loss improved from 2.14000 to 2.12331, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.1233_0.3337_2.1510_0.3269.hdf5
+EPOCH: 12 
+loss: 2.12330907706 		— val_loss: 2.15095799122 
+acc: 0.333689358594 		— val_acc: 0.326902320561 
+precision: 0.182223471665 	— val_precision: 0.184112391422 
+recall: 0.134591288885 	— val_recall: 0.138574786509 
+f-measure: 0.136830717306 	— val_f-measure: 0.139646959499
+Epoch 14/20
+Epoch 00013: loss improved from 2.12331 to 2.11082, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.1108_0.3376_2.1354_0.3294.hdf5
+EPOCH: 13 
+loss: 2.11081761341 		— val_loss: 2.13544073609 
+acc: 0.337613131707 		— val_acc: 0.329432002159 
+precision: 0.178635251235 	— val_precision: 0.194721097545 
+recall: 0.146750220692 	— val_recall: 0.148755371156 
+f-measure: 0.145304127894 	— val_f-measure: 0.145909415217
+Epoch 15/20
+Epoch 00014: loss improved from 2.11082 to 2.09780, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.0978_0.3413_2.1400_0.3296.hdf5
+EPOCH: 14 
+loss: 2.09779772779 		— val_loss: 2.14004624784 
+acc: 0.341345775476 		— val_acc: 0.329634376686 
+precision: 0.192623408343 	— val_precision: 0.16985587158 
+recall: 0.139185485289 	— val_recall: 0.139499219915 
+f-measure: 0.14403005621 	— val_f-measure: 0.142856431627
+Epoch 16/20
+Epoch 00015: loss improved from 2.09780 to 2.08634, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_2.0863_0.3446_2.1266_0.3325.hdf5
+EPOCH: 15 
+loss: 2.08633826773 		— val_loss: 2.12655712293 
+acc: 0.344639946036 		— val_acc: 0.332501349164 
+precision: 0.217679606768 	— val_precision: 0.178350424823 
+recall: 0.142171768883 	— val_recall: 0.139417624787 
+f-measure: 0.147045455163 	— val_f-measure: 0.142018029602
+Epoch 17/20
+Epoch 00016: loss improved from 2.08634 to 2.07573, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_2.0757_0.3473_2.1087_0.3388.hdf5
+EPOCH: 16 
+loss: 2.07573024299 		— val_loss: 2.10872926663 
+acc: 0.347282028216 		— val_acc: 0.338808688613 
+precision: 0.20127560077 	— val_precision: 0.214110573922 
+recall: 0.146648085397 	— val_recall: 0.148673246796 
+f-measure: 0.153550550593 	— val_f-measure: 0.152053615305
+Epoch 18/20
+Epoch 00017: loss improved from 2.07573 to 2.06530, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_2.0653_0.3505_2.0997_0.3390.hdf5
+EPOCH: 17 
+loss: 2.06530343667 		— val_loss: 2.0996919027 
+acc: 0.350463769748 		— val_acc: 0.338977334053 
+precision: 0.195742662979 	— val_precision: 0.18928187561 
+recall: 0.14902846998 	— val_recall: 0.149529090687 
+f-measure: 0.153095337287 	— val_f-measure: 0.151381117663
+Epoch 19/20
+Epoch 00018: loss improved from 2.06530 to 2.05648, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_2.0565_0.3520_2.0959_0.3437.hdf5
+EPOCH: 18 
+loss: 2.05648291342 		— val_loss: 2.09585499159 
+acc: 0.35203777615 		— val_acc: 0.343733135456 
+precision: 0.22573086484 	— val_precision: 0.213747341654 
+recall: 0.149138754171 	— val_recall: 0.151696004159 
+f-measure: 0.155729920665 	— val_f-measure: 0.155358244822
+Epoch 20/20
+Epoch 00019: loss improved from 2.05648 to 2.04729, saving model to weights003/LSTM_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_2.0473_0.3537_2.0923_0.3440.hdf5
+EPOCH: 19 
+loss: 2.04728946248 		— val_loss: 2.09227793563 
+acc: 0.353690482884 		— val_acc: 0.343969239072 
+precision: 0.212976520022 	— val_precision: 0.204227185512 
+recall: 0.149148103482 	— val_recall: 0.147996812188 
+f-measure: 0.156721300208 	— val_f-measure: 0.154434586733
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[2.0361884666712853, 0.35806397212497221]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.0922779356281755, 0.34396923907177551]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.0914996890194431, 0.3473978886308105]
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 64)                16896     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 20,146
+Trainable params: 20,146
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.61069, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.6107_0.2333_2.4911_0.2534.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.61069408133 		— val_loss: 2.49110544789 
+acc: 0.233301478438 		— val_acc: 0.253372908797 
+precision: 0.0443923908019 	— val_precision: 0.048067017158 
+recall: 0.0502861749777 	— val_recall: 0.0555761608122 
+f-measure: 0.0424295618346 	— val_f-measure: 0.0465520541966
+Epoch 2/20
+Epoch 00001: loss improved from 2.61069 to 2.43980, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.4398_0.2613_2.4290_0.2647.hdf5
+EPOCH: 1 
+loss: 2.43979777519 		— val_loss: 2.42896220366 
+acc: 0.261262577999 		— val_acc: 0.264739611441 
+precision: 0.0605554316247 	— val_precision: 0.0624589224059 
+recall: 0.0567089354191 	— val_recall: 0.0619565261754 
+f-measure: 0.0470531936317 	— val_f-measure: 0.0509498808805
+Epoch 3/20
+Epoch 00002: loss improved from 2.43980 to 2.38081, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.3808_0.2705_2.3826_0.2761.hdf5
+EPOCH: 2 
+loss: 2.38081333426 		— val_loss: 2.3825965203 
+acc: 0.270481758394 		— val_acc: 0.276106314085 
+precision: 0.0652247541141 	— val_precision: 0.0771236917042 
+recall: 0.0656156649566 	— val_recall: 0.0726801076143 
+f-measure: 0.0583162856593 	— val_f-measure: 0.0644237766416
+Epoch 4/20
+Epoch 00003: loss improved from 2.38081 to 2.34206, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.3421_0.2765_2.3427_0.2806.hdf5
+EPOCH: 3 
+loss: 2.34206222262 		— val_loss: 2.34274554471 
+acc: 0.276541683066 		— val_acc: 0.280558553697 
+precision: 0.0705008593622 	— val_precision: 0.0843944459388 
+recall: 0.0650314005543 	— val_recall: 0.0697054695974 
+f-measure: 0.0586707105546 	— val_f-measure: 0.0623964951095
+Epoch 5/20
+Epoch 00004: loss improved from 2.34206 to 2.30773, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.3077_0.2850_2.3121_0.2803.hdf5
+EPOCH: 4 
+loss: 2.30772963855 		— val_loss: 2.31210037714 
+acc: 0.284985103155 		— val_acc: 0.280254991905 
+precision: 0.110307586863 	— val_precision: 0.111386901329 
+recall: 0.07794741708 	— val_recall: 0.0831314675444 
+f-measure: 0.0730351520168 	— val_f-measure: 0.0771525847077
+Epoch 6/20
+Epoch 00005: loss improved from 2.30773 to 2.27792, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.2779_0.2933_2.2896_0.2852.hdf5
+EPOCH: 5 
+loss: 2.27792010271 		— val_loss: 2.2896239836 
+acc: 0.293293608406 		— val_acc: 0.285179438748 
+precision: 0.125107988449 	— val_precision: 0.138352658087 
+recall: 0.0850870614811 	— val_recall: 0.0886587994911 
+f-measure: 0.0858519073884 	— val_f-measure: 0.0885757051729
+Epoch 7/20
+Epoch 00006: loss improved from 2.27792 to 2.24957, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.2496_0.3012_2.2660_0.2969.hdf5
+EPOCH: 6 
+loss: 2.24957249075 		— val_loss: 2.26595011725 
+acc: 0.301163640449 		— val_acc: 0.296883432272 
+precision: 0.159433639856 	— val_precision: 0.152293048317 
+recall: 0.0948197275907 	— val_recall: 0.102282538706 
+f-measure: 0.0940455324518 	— val_f-measure: 0.101038830518
+Epoch 8/20
+Epoch 00007: loss improved from 2.24957 to 2.22549, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.2255_0.3065_2.2390_0.3041.hdf5
+EPOCH: 7 
+loss: 2.22548529868 		— val_loss: 2.23901785803 
+acc: 0.306526505146 		— val_acc: 0.304101457097 
+precision: 0.170676671717 	— val_precision: 0.156306048062 
+recall: 0.100176662479 	— val_recall: 0.107000974883 
+f-measure: 0.101886504477 	— val_f-measure: 0.108509424969
+Epoch 9/20
+Epoch 00008: loss improved from 2.22549 to 2.20413, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.2041_0.3126_2.2178_0.3105.hdf5
+EPOCH: 8 
+loss: 2.2041334244 		— val_loss: 2.21781930419 
+acc: 0.312552701106 		— val_acc: 0.310543712898 
+precision: 0.169136045101 	— val_precision: 0.183034284928 
+recall: 0.112654600014 	— val_recall: 0.117896521025 
+f-measure: 0.115253396358 	— val_f-measure: 0.120762723654
+Epoch 10/20
+Epoch 00009: loss improved from 2.20413 to 2.18610, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.1861_0.3189_2.2197_0.3111.hdf5
+EPOCH: 9 
+loss: 2.18610309167 		— val_loss: 2.21967609753 
+acc: 0.318859969646 		— val_acc: 0.311083378305 
+precision: 0.183505568277 	— val_precision: 0.18861385742 
+recall: 0.107120036422 	— val_recall: 0.115291119651 
+f-measure: 0.11153098764 	— val_f-measure: 0.119222363289
+Epoch 11/20
+Epoch 00010: loss improved from 2.18610 to 2.17126, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.1713_0.3226_2.2002_0.3109.hdf5
+EPOCH: 10 
+loss: 2.17126080402 		— val_loss: 2.20020760154 
+acc: 0.322637585021 		— val_acc: 0.310914732866 
+precision: 0.155009525498 	— val_precision: 0.167122039637 
+recall: 0.132071369274 	— val_recall: 0.138865713248 
+f-measure: 0.123342947209 	— val_f-measure: 0.131742637277
+Epoch 12/20
+Epoch 00011: loss improved from 2.17126 to 2.15687, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.1569_0.3267_2.1817_0.3188.hdf5
+EPOCH: 11 
+loss: 2.15687348321 		— val_loss: 2.18173588847 
+acc: 0.326662544265 		— val_acc: 0.318773610362 
+precision: 0.184000521072 	— val_precision: 0.185285519215 
+recall: 0.126911090307 	— val_recall: 0.130700582 
+f-measure: 0.125579815813 	— val_f-measure: 0.130526044205
+Epoch 13/20
+Epoch 00012: loss improved from 2.15687 to 2.14416, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.1442_0.3295_2.1820_0.3202.hdf5
+EPOCH: 12 
+loss: 2.14415856679 		— val_loss: 2.18204168108 
+acc: 0.329518241617 		— val_acc: 0.320190232056 
+precision: 0.177991158313 	— val_precision: 0.173388711574 
+recall: 0.135563575677 	— val_recall: 0.140934004882 
+f-measure: 0.130012741945 	— val_f-measure: 0.13562087409
+Epoch 14/20
+Epoch 00013: loss improved from 2.14416 to 2.13217, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.1322_0.3311_2.1602_0.3213.hdf5
+EPOCH: 13 
+loss: 2.1321677127 		— val_loss: 2.16015476107 
+acc: 0.331114733821 		— val_acc: 0.321303291959 
+precision: 0.192404620976 	— val_precision: 0.188095456029 
+recall: 0.133550819936 	— val_recall: 0.137981047908 
+f-measure: 0.136852229313 	— val_f-measure: 0.141517363905
+Epoch 15/20
+Epoch 00014: loss improved from 2.13217 to 2.12080, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.1208_0.3344_2.1561_0.3258.hdf5
+EPOCH: 14 
+loss: 2.12079583334 		— val_loss: 2.15613793529 
+acc: 0.334363932763 		— val_acc: 0.325822989746 
+precision: 0.176231868343 	— val_precision: 0.225847800369 
+recall: 0.13945055067 	— val_recall: 0.144637870489 
+f-measure: 0.142736284944 	— val_f-measure: 0.149644411194
+Epoch 16/20
+Epoch 00015: loss improved from 2.12080 to 2.10999, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_2.1100_0.3384_2.1488_0.3290.hdf5
+EPOCH: 15 
+loss: 2.10999267656 		— val_loss: 2.14878240316 
+acc: 0.338433863631 		— val_acc: 0.328959794927 
+precision: 0.213041791077 	— val_precision: 0.226451346371 
+recall: 0.136235499013 	— val_recall: 0.140792799318 
+f-measure: 0.145485024187 	— val_f-measure: 0.150159038262
+Epoch 17/20
+Epoch 00016: loss improved from 2.10999 to 2.10019, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_2.1002_0.3405_2.1534_0.3258.hdf5
+EPOCH: 16 
+loss: 2.10019266079 		— val_loss: 2.15339032123 
+acc: 0.340480071956 		— val_acc: 0.325789260658 
+precision: 0.212119352817 	— val_precision: 0.212437706146 
+recall: 0.13728692747 	— val_recall: 0.143906376888 
+f-measure: 0.141338511578 	— val_f-measure: 0.14817060962
+Epoch 18/20
+Epoch 00017: loss improved from 2.10019 to 2.09136, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_2.0914_0.3436_2.1400_0.3289.hdf5
+EPOCH: 17 
+loss: 2.0913627914 		— val_loss: 2.14000423181 
+acc: 0.343605598963 		— val_acc: 0.328892336751 
+precision: 0.187416153133 	— val_precision: 0.193936061407 
+recall: 0.129137842777 	— val_recall: 0.130978764935 
+f-measure: 0.135160808885 	— val_f-measure: 0.137336290712
+Epoch 19/20
+Epoch 00018: loss improved from 2.09136 to 2.08197, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_2.0820_0.3469_2.1221_0.3333.hdf5
+EPOCH: 18 
+loss: 2.08196633541 		— val_loss: 2.12206153026 
+acc: 0.346877283717 		— val_acc: 0.333310847275 
+precision: 0.212974994013 	— val_precision: 0.223763580442 
+recall: 0.149192546508 	— val_recall: 0.156105038331 
+f-measure: 0.157883899508 	— val_f-measure: 0.165293081033
+Epoch 20/20
+Epoch 00019: loss improved from 2.08197 to 2.07386, saving model to weights003/LSTM_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_2.0739_0.3484_2.1274_0.3331.hdf5
+EPOCH: 19 
+loss: 2.07386295949 		— val_loss: 2.12739839917 
+acc: 0.348440047219 		— val_acc: 0.333074743659 
+precision: 0.21960996684 	— val_precision: 0.220205274253 
+recall: 0.145213366116 	— val_recall: 0.148367322017 
+f-measure: 0.153124228272 	— val_f-measure: 0.156709114625
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[2.0668466953129836, 0.3495868233137599]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.1273983991667187, 0.33307474365893147]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.1326566533602658, 0.33329960539001707]
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 50, 1)             0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 64)                12672     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 15,922
+Trainable params: 15,922
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.59726, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.5973_0.2387_2.4518_0.2586.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.59725941958 		— val_loss: 2.45181556759 
+acc: 0.238743043452 		— val_acc: 0.258600917431 
+precision: 0.0568493937934 	— val_precision: 0.0647731583447 
+recall: 0.0524933821267 	— val_recall: 0.0581015453269 
+f-measure: 0.0423459955583 	— val_f-measure: 0.0474036399968
+Epoch 2/20
+Epoch 00001: loss improved from 2.59726 to 2.42497, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.4250_0.2605_2.3735_0.2762.hdf5
+EPOCH: 1 
+loss: 2.4249698504 		— val_loss: 2.37351280551 
+acc: 0.260520546413 		— val_acc: 0.276241230437 
+precision: 0.0631669271202 	— val_precision: 0.0727188343713 
+recall: 0.0603357067922 	— val_recall: 0.0661592639044 
+f-measure: 0.0480215878379 	— val_f-measure: 0.0532317102821
+Epoch 3/20
+Epoch 00002: loss improved from 2.42497 to 2.35684, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.3568_0.2733_2.3157_0.2813.hdf5
+EPOCH: 2 
+loss: 2.35684120561 		— val_loss: 2.31565885999 
+acc: 0.273269998321 		— val_acc: 0.28133432272 
+precision: 0.0764617391666 	— val_precision: 0.0818283632438 
+recall: 0.0656876382934 	— val_recall: 0.0705553999517 
+f-measure: 0.0565950115698 	— val_f-measure: 0.0606704059976
+Epoch 4/20
+Epoch 00003: loss improved from 2.35684 to 2.30318, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.3032_0.2834_2.2685_0.2874.hdf5
+EPOCH: 3 
+loss: 2.30318215188 		— val_loss: 2.26847369659 
+acc: 0.283411096752 		— val_acc: 0.287405558554 
+precision: 0.110835075343 	— val_precision: 0.104934610921 
+recall: 0.0691736549685 	— val_recall: 0.0744151860279 
+f-measure: 0.0639977659031 	— val_f-measure: 0.0688436441983
+Epoch 5/20
+Epoch 00004: loss improved from 2.30318 to 2.26113, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.2611_0.2913_2.2395_0.2982.hdf5
+EPOCH: 4 
+loss: 2.26113356429 		— val_loss: 2.23949547092 
+acc: 0.2913148575 		— val_acc: 0.298198866703 
+precision: 0.163132060974 	— val_precision: 0.183894508567 
+recall: 0.0939326972317 	— val_recall: 0.104822726497 
+f-measure: 0.089002260635 	— val_f-measure: 0.101064542652
+Epoch 6/20
+Epoch 00005: loss improved from 2.26113 to 2.22661, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.2266_0.3003_2.2055_0.3073.hdf5
+EPOCH: 5 
+loss: 2.22661323808 		— val_loss: 2.2055132815 
+acc: 0.300309179827 		— val_acc: 0.307305720453 
+precision: 0.152344590231 	— val_precision: 0.180879112215 
+recall: 0.092591168021 	— val_recall: 0.100932632451 
+f-measure: 0.0933487855776 	— val_f-measure: 0.102547692098
+Epoch 7/20
+Epoch 00006: loss improved from 2.22661 to 2.19546, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.1955_0.3100_2.1973_0.3123.hdf5
+EPOCH: 6 
+loss: 2.1954603732 		— val_loss: 2.19728021563 
+acc: 0.310034290856 		— val_acc: 0.312263896384 
+precision: 0.153584274493 	— val_precision: 0.194798767506 
+recall: 0.0919775221406 	— val_recall: 0.0994514858586 
+f-measure: 0.0925210062621 	— val_f-measure: 0.100530095148
+Epoch 8/20
+Epoch 00007: loss improved from 2.19546 to 2.16718, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.1672_0.3188_2.1546_0.3238.hdf5
+EPOCH: 7 
+loss: 2.16718119883 		— val_loss: 2.1545789485 
+acc: 0.318848726743 		— val_acc: 0.323832973556 
+precision: 0.168580448923 	— val_precision: 0.195787270594 
+recall: 0.122891207205 	— val_recall: 0.130350867264 
+f-measure: 0.120592239522 	— val_f-measure: 0.127630733897
+Epoch 9/20
+Epoch 00008: loss improved from 2.16718 to 2.14431, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.1443_0.3249_2.1316_0.3294.hdf5
+EPOCH: 8 
+loss: 2.14431186137 		— val_loss: 2.13156019515 
+acc: 0.324919894318 		— val_acc: 0.329364543983 
+precision: 0.172958068532 	— val_precision: 0.187739716182 
+recall: 0.128827790573 	— val_recall: 0.138779554411 
+f-measure: 0.127465179724 	— val_f-measure: 0.136880656636
+Epoch 10/20
+Epoch 00009: loss improved from 2.14431 to 2.12344, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.1234_0.3313_2.1199_0.3317.hdf5
+EPOCH: 9 
+loss: 2.12344431659 		— val_loss: 2.11989190266 
+acc: 0.331294620267 		— val_acc: 0.331691851052 
+precision: 0.184634816404 	— val_precision: 0.211274759292 
+recall: 0.131656407322 	— val_recall: 0.141728980155 
+f-measure: 0.132363589565 	— val_f-measure: 0.139780868846
+Epoch 11/20
+Epoch 00010: loss improved from 2.12344 to 2.10704, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.1070_0.3361_2.1110_0.3356.hdf5
+EPOCH: 10 
+loss: 2.10703890735 		— val_loss: 2.11098488382 
+acc: 0.336050368202 		— val_acc: 0.335638154344 
+precision: 0.192475766185 	— val_precision: 0.208692520189 
+recall: 0.117831569998 	— val_recall: 0.124337026865 
+f-measure: 0.124522591882 	— val_f-measure: 0.130824005999
+Epoch 12/20
+Epoch 00011: loss improved from 2.10704 to 2.09148, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.0915_0.3401_2.0955_0.3407.hdf5
+EPOCH: 11 
+loss: 2.09148024782 		— val_loss: 2.09545419104 
+acc: 0.340142784875 		— val_acc: 0.340697517539 
+precision: 0.200921716376 	— val_precision: 0.196606713073 
+recall: 0.132562736892 	— val_recall: 0.142541310962 
+f-measure: 0.140310186028 	— val_f-measure: 0.147811237254
+Epoch 13/20
+Epoch 00012: loss improved from 2.09148 to 2.07826, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.0783_0.3453_2.0893_0.3429.hdf5
+EPOCH: 12 
+loss: 2.07826290672 		— val_loss: 2.08928793234 
+acc: 0.345337006011 		— val_acc: 0.342889908257 
+precision: 0.199508825349 	— val_precision: 0.203125715434 
+recall: 0.133466379071 	— val_recall: 0.141724407567 
+f-measure: 0.139623102599 	— val_f-measure: 0.145850044467
+Epoch 14/20
+Epoch 00013: loss improved from 2.07826 to 2.06602, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.0660_0.3486_2.0789_0.3463.hdf5
+EPOCH: 13 
+loss: 2.06602337952 		— val_loss: 2.07892196627 
+acc: 0.348619933669 		— val_acc: 0.346296546141 
+precision: 0.206810368125 	— val_precision: 0.204852561937 
+recall: 0.133461878241 	— val_recall: 0.142148504467 
+f-measure: 0.142313644319 	— val_f-measure: 0.148790374939
+Epoch 15/20
+Epoch 00014: loss improved from 2.06602 to 2.05374, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.0537_0.3520_2.0814_0.3430.hdf5
+EPOCH: 14 
+loss: 2.05374136097 		— val_loss: 2.08138120078 
+acc: 0.351959075832 		— val_acc: 0.342957366433 
+precision: 0.20013727405 	— val_precision: 0.196411915949 
+recall: 0.148496231411 	— val_recall: 0.158138842818 
+f-measure: 0.145889567256 	— val_f-measure: 0.151122345808
+Epoch 16/20
+Epoch 00015: loss improved from 2.05374 to 2.04434, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_2.0443_0.3538_2.0605_0.3516.hdf5
+EPOCH: 15 
+loss: 2.04433712653 		— val_loss: 2.06050454895 
+acc: 0.353757940307 		— val_acc: 0.35162574204 
+precision: 0.223268575408 	— val_precision: 0.212827229875 
+recall: 0.142248211494 	— val_recall: 0.150805474031 
+f-measure: 0.150088249532 	— val_f-measure: 0.157020079415
+Epoch 17/20
+Epoch 00016: loss improved from 2.04434 to 2.03503, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_2.0350_0.3572_2.0547_0.3551.hdf5
+EPOCH: 16 
+loss: 2.03503170136 		— val_loss: 2.05465913784 
+acc: 0.357175782784 		— val_acc: 0.355066109012 
+precision: 0.229378058998 	— val_precision: 0.21300990374 
+recall: 0.156892991014 	— val_recall: 0.165172503187 
+f-measure: 0.161484454727 	— val_f-measure: 0.168763745585
+Epoch 18/20
+Epoch 00017: loss improved from 2.03503 to 2.02692, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_2.0269_0.3600_2.0474_0.3539.hdf5
+EPOCH: 17 
+loss: 2.02692417281 		— val_loss: 2.04744694751 
+acc: 0.36003148013 		— val_acc: 0.353885590934 
+precision: 0.236177388663 	— val_precision: 0.227056010842 
+recall: 0.159537521853 	— val_recall: 0.166532905148 
+f-measure: 0.163172526306 	— val_f-measure: 0.166032987321
+Epoch 19/20
+Epoch 00018: loss improved from 2.02692 to 2.01815, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_2.0181_0.3631_2.0538_0.3513.hdf5
+EPOCH: 18 
+loss: 2.01814777936 		— val_loss: 2.05383412386 
+acc: 0.363112035536 		— val_acc: 0.35128845116 
+precision: 0.218866008418 	— val_precision: 0.221574110617 
+recall: 0.147131484497 	— val_recall: 0.154232093682 
+f-measure: 0.158892124531 	— val_f-measure: 0.163383157924
+Epoch 20/20
+Epoch 00019: loss improved from 2.01815 to 2.01117, saving model to weights003/GRU_1-layer_50-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_2.0112_0.3666_2.0394_0.3553.hdf5
+EPOCH: 19 
+loss: 2.01116509767 		— val_loss: 2.03944594269 
+acc: 0.366586092537 		— val_acc: 0.355335941716 
+precision: 0.240129035833 	— val_precision: 0.21298430377 
+recall: 0.153318099085 	— val_recall: 0.157660452439 
+f-measure: 0.164913839622 	— val_f-measure: 0.16644657142
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.9929454989762725, 0.36931811794609315]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.0394459426949876, 0.35533594171613597]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.0597891190461417, 0.35208607373633566]
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 64)                12672     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                3250      
+=================================================================
+Total params: 15,922
+Trainable params: 15,922
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.59211, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_000_2.5921_0.2392_2.4408_0.2592.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.59210899782 		— val_loss: 2.44080821347 
+acc: 0.23923773119 		— val_acc: 0.259174311927 
+precision: 0.049292877692 	— val_precision: 0.0542887339739 
+recall: 0.0521001272341 	— val_recall: 0.0565837365232 
+f-measure: 0.0416884300181 	— val_f-measure: 0.0453715819634
+Epoch 2/20
+Epoch 00001: loss improved from 2.59211 to 2.39757, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_001_2.3976_0.2639_2.3636_0.2706.hdf5
+EPOCH: 1 
+loss: 2.39757431171 		— val_loss: 2.36361216855 
+acc: 0.263882174378 		— val_acc: 0.270574743659 
+precision: 0.0696932228104 	— val_precision: 0.115517628433 
+recall: 0.0676835563861 	— val_recall: 0.0736653106556 
+f-measure: 0.0589420068376 	— val_f-measure: 0.064377449176
+Epoch 3/20
+Epoch 00002: loss improved from 2.39757 to 2.32461, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_002_2.3246_0.2789_2.2989_0.2874.hdf5
+EPOCH: 2 
+loss: 2.32461261227 		— val_loss: 2.29888189592 
+acc: 0.278902692672 		— val_acc: 0.287405558554 
+precision: 0.121167124802 	— val_precision: 0.114458316337 
+recall: 0.06830268336 	— val_recall: 0.0746042355968 
+f-measure: 0.0606423678436 	— val_f-measure: 0.066074459166
+Epoch 4/20
+Epoch 00003: loss improved from 2.32461 to 2.27694, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_003_2.2769_0.2894_2.2692_0.2899.hdf5
+EPOCH: 3 
+loss: 2.27694308836 		— val_loss: 2.26923705678 
+acc: 0.289392321105 		— val_acc: 0.289935240151 
+precision: 0.113320292065 	— val_precision: 0.104723009293 
+recall: 0.0728740847999 	— val_recall: 0.0774141406261 
+f-measure: 0.0691295796173 	— val_f-measure: 0.07218452117
+Epoch 5/20
+Epoch 00004: loss improved from 2.27694 to 2.23662, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_004_2.2366_0.2998_2.2183_0.3097.hdf5
+EPOCH: 4 
+loss: 2.2366239354 		— val_loss: 2.21825784853 
+acc: 0.299825735003 		— val_acc: 0.309734214787 
+precision: 0.150505420519 	— val_precision: 0.152933021912 
+recall: 0.103086590977 	— val_recall: 0.109041928881 
+f-measure: 0.102511278939 	— val_f-measure: 0.106325484565
+Epoch 6/20
+Epoch 00005: loss improved from 2.23662 to 2.20396, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_005_2.2040_0.3096_2.1965_0.3102.hdf5
+EPOCH: 5 
+loss: 2.20396487123 		— val_loss: 2.19654453077 
+acc: 0.309607060547 		— val_acc: 0.31017269293 
+precision: 0.16195907909 	— val_precision: 0.150696428682 
+recall: 0.108261161623 	— val_recall: 0.112956705106 
+f-measure: 0.109996897881 	— val_f-measure: 0.113089985445
+Epoch 7/20
+Epoch 00006: loss improved from 2.20396 to 2.17424, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_006_2.1742_0.3171_2.1790_0.3183.hdf5
+EPOCH: 6 
+loss: 2.17424281621 		— val_loss: 2.17896079959 
+acc: 0.317106076785 		— val_acc: 0.318267674042 
+precision: 0.188746251947 	— val_precision: 0.17460784247 
+recall: 0.123145055568 	— val_recall: 0.128569312151 
+f-measure: 0.126006858712 	— val_f-measure: 0.128560838072
+Epoch 8/20
+Epoch 00007: loss improved from 2.17424 to 2.14735, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_007_2.1473_0.3236_2.1526_0.3270.hdf5
+EPOCH: 7 
+loss: 2.14734515488 		— val_loss: 2.1526369723 
+acc: 0.323626960489 		— val_acc: 0.327037236913 
+precision: 0.18331512583 	— val_precision: 0.191357187526 
+recall: 0.126134272641 	— val_recall: 0.135383968667 
+f-measure: 0.133097143324 	— val_f-measure: 0.140962466253
+Epoch 9/20
+Epoch 00008: loss improved from 2.14735 to 2.12169, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_008_2.1217_0.3326_2.1235_0.3298.hdf5
+EPOCH: 8 
+loss: 2.12169042549 		— val_loss: 2.12349304494 
+acc: 0.33258755411 		— val_acc: 0.329803022126 
+precision: 0.183633173964 	— val_precision: 0.179123996094 
+recall: 0.130540538123 	— val_recall: 0.137629764647 
+f-measure: 0.132427946573 	— val_f-measure: 0.135628653743
+Epoch 10/20
+Epoch 00009: loss improved from 2.12169 to 2.09890, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_009_2.0989_0.3381_2.0983_0.3427.hdf5
+EPOCH: 9 
+loss: 2.09889582358 		— val_loss: 2.09830658537 
+acc: 0.338107819447 		— val_acc: 0.342721262817 
+precision: 0.229864078408 	— val_precision: 0.183689058711 
+recall: 0.150037583196 	— val_recall: 0.157093351099 
+f-measure: 0.154999193837 	— val_f-measure: 0.160382726837
+Epoch 11/20
+Epoch 00010: loss improved from 2.09890 to 2.07827, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_010_2.0783_0.3454_2.0791_0.3430.hdf5
+EPOCH: 10 
+loss: 2.07826528476 		— val_loss: 2.07911549603 
+acc: 0.345393220526 		— val_acc: 0.342957366433 
+precision: 0.205161813755 	— val_precision: 0.21918086624 
+recall: 0.146588856956 	— val_recall: 0.153442604971 
+f-measure: 0.154419896905 	— val_f-measure: 0.161267006863
+Epoch 12/20
+Epoch 00011: loss improved from 2.07827 to 2.05796, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_011_2.0580_0.3503_2.0861_0.3439.hdf5
+EPOCH: 11 
+loss: 2.05796474887 		— val_loss: 2.08607697101 
+acc: 0.350250154597 		— val_acc: 0.343868051808 
+precision: 0.190491124746 	— val_precision: 0.21465088674 
+recall: 0.145163914225 	— val_recall: 0.152625402224 
+f-measure: 0.150368461759 	— val_f-measure: 0.157561344489
+Epoch 13/20
+Epoch 00012: loss improved from 2.05796 to 2.03894, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_012_2.0389_0.3577_2.0555_0.3543.hdf5
+EPOCH: 12 
+loss: 2.03893987793 		— val_loss: 2.05553847342 
+acc: 0.357715442129 		— val_acc: 0.354290339989 
+precision: 0.212442251334 	— val_precision: 0.22254626836 
+recall: 0.158066053921 	— val_recall: 0.166565448049 
+f-measure: 0.166381491214 	— val_f-measure: 0.173819311004
+Epoch 14/20
+Epoch 00013: loss improved from 2.03894 to 2.02309, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_013_2.0231_0.3614_2.0450_0.3540.hdf5
+EPOCH: 13 
+loss: 2.0230919544 		— val_loss: 2.04499378393 
+acc: 0.361391871384 		— val_acc: 0.35395304911 
+precision: 0.227443632755 	— val_precision: 0.213935490334 
+recall: 0.156421525495 	— val_recall: 0.164305284829 
+f-measure: 0.163966615326 	— val_f-measure: 0.170860237637
+Epoch 15/20
+Epoch 00014: loss improved from 2.02309 to 2.00724, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_014_2.0072_0.3646_2.0293_0.3558.hdf5
+EPOCH: 14 
+loss: 2.00724397928 		— val_loss: 2.02928876748 
+acc: 0.364641070321 		— val_acc: 0.355841878036 
+precision: 0.224146346859 	— val_precision: 0.220856477173 
+recall: 0.158046889396 	— val_recall: 0.163168694007 
+f-measure: 0.166130096538 	— val_f-measure: 0.170100738905
+Epoch 16/20
+Epoch 00015: loss improved from 2.00724 to 1.99292, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_015_1.9929_0.3671_2.0315_0.3576.hdf5
+EPOCH: 15 
+loss: 1.99291955893 		— val_loss: 2.03153262548 
+acc: 0.367080780254 		— val_acc: 0.35759579061 
+precision: 0.217071507238 	— val_precision: 0.19840144186 
+recall: 0.174150828383 	— val_recall: 0.179656420824 
+f-measure: 0.173970501975 	— val_f-measure: 0.174984648585
+Epoch 17/20
+Epoch 00016: loss improved from 1.99292 to 1.98054, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_016_1.9805_0.3719_2.0191_0.3611.hdf5
+EPOCH: 16 
+loss: 1.98053745496 		— val_loss: 2.01910256079 
+acc: 0.371926471412 		— val_acc: 0.361137344846 
+precision: 0.245058088088 	— val_precision: 0.216236657519 
+recall: 0.167392580181 	— val_recall: 0.172764343618 
+f-measure: 0.174903196004 	— val_f-measure: 0.178023807745
+Epoch 18/20
+Epoch 00017: loss improved from 1.98054 to 1.97088, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_017_1.9709_0.3742_2.0080_0.3657.hdf5
+EPOCH: 17 
+loss: 1.97087856194 		— val_loss: 2.00795163114 
+acc: 0.374208780704 		— val_acc: 0.365724500809 
+precision: 0.237052290104 	— val_precision: 0.233501875576 
+recall: 0.166280807713 	— val_recall: 0.171234967619 
+f-measure: 0.173953736266 	— val_f-measure: 0.175933301919
+Epoch 19/20
+Epoch 00018: loss improved from 1.97088 to 1.95914, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_018_1.9591_0.3771_1.9940_0.3687.hdf5
+EPOCH: 18 
+loss: 1.95913864086 		— val_loss: 1.99401995651 
+acc: 0.377053235153 		— val_acc: 0.368726389638 
+precision: 0.23086516307 	— val_precision: 0.224047767298 
+recall: 0.170347078052 	— val_recall: 0.175161981508 
+f-measure: 0.179384397515 	— val_f-measure: 0.181963976597
+Epoch 20/20
+Epoch 00019: loss improved from 1.95914 to 1.95058, saving model to weights003/GRU_1-layer_100-timesteps_64-tanh-units_rmsprop_categorical_crossentropy_64-batch-size_019_1.9506_0.3800_1.9848_0.3697.hdf5
+EPOCH: 19 
+loss: 1.95058319885 		— val_loss: 1.98475108569 
+acc: 0.380043847324 		— val_acc: 0.369704533189 
+precision: 0.231896567213 	— val_precision: 0.213992307004 
+recall: 0.174461016932 	— val_recall: 0.176129873542 
+f-measure: 0.182727607691 	— val_f-measure: 0.182574927015
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.9247122096481959, 0.38607004328149053]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[1.9847510856869282, 0.36970453318942254]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[1.9823546982876201, 0.36942224021297532]
+
