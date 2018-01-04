@@ -5,7 +5,7 @@ $('.run_score').click(function(){;
     var embed = new Flat.Embed(container, {
         score: $(this).val(),
         embedParams: {
-            appId: '5a1b1fbbcad0883e6b5ebc28',
+            appId: '<<app_id>>',
             controlsFloating: false
         }
     });

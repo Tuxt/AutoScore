@@ -15,7 +15,7 @@ app.config['VOCABULARY'] = ['(3', '(4', '-', '/2', '/4', '2', '3', '3/2', '4', '
 app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
 app.config['SYMBOLS'] = ['~', 'T', 'H']
 
-flat_api.configuration.access_token = 'f382a7e620fc19553e8f3109af25adad788060b769c5cabdfc772712145c783cbc9a07e66c55190027d4a35799467c239b0f1a29501bd523b88d86d0c7e1a313'
+flat_api.configuration.access_token = '<<token>>'
 if not os.path.exists(app.config['FILES_FOLDER']):
     os.makedirs(app.config['FILES_FOLDER'])
 app.debug = True
@@ -183,6 +183,6 @@ def explorar():
     return render_template('explorar.html', scores=scores)
 
 if __name__ == '__main__':
-    app.secret_key='\xdf\xa1\xf7\x81\x9c\x8f\xb3\xf8\xb4\xa3\xe2\xda\xa0\xc6R\xffo\xf9\xf5\xf6\x96]\xfd\x1526A3D7E97D606F2C8859914D71F86D760D8E6D2D7F9C252347DD1F5076739A93770F372585102B21BF6472D267C8801963F96399974E23829008D8F27B17E033'
+    app.secret_key='<<flask_secret>>'
     app.run(host='0.0.0.0', port=5000, use_reloader=False)
 
