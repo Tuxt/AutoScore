@@ -41,13 +41,13 @@ class Generator:
     def predict(self, input_data, get_best=True, steps=1):
         # Translate input_data notes to ints
         input_data = input_data.split()
-        if input_data != []:
+        if len(input_data) > 0:
             input_data = np.vectorize(self.note2int.get)(input_data)
 
         for _ in range(steps):
             input_data = self._predictOne(input_data, get_best)
 
         # Translate ints to notes
-        if input_data != []:
+        if len(input_data) > 0:
             input_data = np.vectorize(self.int2note.get)(input_data)
         return ' '.join(input_data)+' '
