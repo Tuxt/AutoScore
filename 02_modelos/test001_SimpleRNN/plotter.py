@@ -58,6 +58,7 @@ def plot_data(dic, dest):
         vLoss = np.array(dic[keys[i]+"_vLoss"]).T
         plt.plot(tLoss[0],tLoss[1], 'r', label="Train Loss")
         plt.plot(vLoss[0],vLoss[1], 'r--', label="Validation Loss")
+        plt.legend()
         
         plt.subplot(1,2,2)
         plt.axis([0,100,0,1])
@@ -71,6 +72,7 @@ def plot_data(dic, dest):
         vAccu = np.array(dic[keys[i]+"_vAccu"]).T
         plt.plot(tAccu[0], tAccu[1], 'g', label="Train Accuracy")
         plt.plot(vAccu[0], vAccu[1], 'g--', label="Validation Accuracy")
+        plt.legend()
         if dest != None:
             plt.savefig(os.path.join(dest,keys[i]+".png"), bbox_inches='tight')
         plt.show()
