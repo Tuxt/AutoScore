@@ -1,0 +1,191 @@
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 100, 256)          198144    
+_________________________________________________________________
+gru_2 (GRU)                  (None, 128)               147840    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 352,434
+Trainable params: 352,434
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88945 samples, validate on 29648 samples
+Epoch 1/20
+Epoch 00000: loss improved from inf to 2.43275, saving model to weights004_GRU-256_GRU-128/000_2.4327_0.2649_2.2492_0.3002.hdf5
+/home/tuxt/tfg/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+EPOCH: 0 
+loss: 2.43274560025 		— val_loss: 2.24919268947 
+acc: 0.264860306932 		— val_acc: 0.300155153805 
+precision: 0.161793805615 	— val_precision: 0.14402660248 
+recall: 0.102841353331 	— val_recall: 0.107203784708 
+f-measure: 0.100103091917 	— val_f-measure: 0.103791246843
+Epoch 2/20
+Epoch 00001: loss improved from 2.43275 to 2.17785, saving model to weights004_GRU-256_GRU-128/001_2.1779_0.3187_2.1726_0.3197.hdf5
+EPOCH: 1 
+loss: 2.17785081317 		— val_loss: 2.17264236647 
+acc: 0.318680083201 		— val_acc: 0.319684295737 
+precision: 0.196038158246 	— val_precision: 0.17804431085 
+recall: 0.149649489021 	— val_recall: 0.148664089847 
+f-measure: 0.144638148815 	— val_f-measure: 0.140996672526
+Epoch 3/20
+Epoch 00002: loss improved from 2.17785 to 2.05363, saving model to weights004_GRU-256_GRU-128/002_2.0536_0.3522_2.0547_0.3561.hdf5
+EPOCH: 2 
+loss: 2.05363332198 		— val_loss: 2.05473819965 
+acc: 0.352183933894 		— val_acc: 0.356077981651 
+precision: 0.240287372778 	— val_precision: 0.232367134937 
+recall: 0.167065101031 	— val_recall: 0.170032569115 
+f-measure: 0.173899698678 	— val_f-measure: 0.175358054899
+Epoch 4/20
+Epoch 00003: loss improved from 2.05363 to 1.95326, saving model to weights004_GRU-256_GRU-128/003_1.9533_0.3820_1.9750_0.3713.hdf5
+EPOCH: 3 
+loss: 1.95325773391 		— val_loss: 1.97503273512 
+acc: 0.381955140825 		— val_acc: 0.371323529412 
+precision: 0.291296974473 	— val_precision: 0.260726466236 
+recall: 0.194492661007 	— val_recall: 0.182782780842 
+f-measure: 0.205738952317 	— val_f-measure: 0.190932632499
+Epoch 5/20
+Epoch 00004: loss improved from 1.95326 to 1.87212, saving model to weights004_GRU-256_GRU-128/004_1.8721_0.4050_1.9419_0.3856.hdf5
+EPOCH: 4 
+loss: 1.87212253298 		— val_loss: 1.94192273772 
+acc: 0.405014334709 		— val_acc: 0.385624662709 
+precision: 0.34024025392 	— val_precision: 0.300985523535 
+recall: 0.198752071511 	— val_recall: 0.187467128888 
+f-measure: 0.20933710377 	— val_f-measure: 0.194745542343
+Epoch 6/20
+Epoch 00005: loss improved from 1.87212 to 1.80444, saving model to weights004_GRU-256_GRU-128/005_1.8044_0.4230_1.9009_0.3988.hdf5
+EPOCH: 5 
+loss: 1.80444073579 		— val_loss: 1.90090379577 
+acc: 0.423002979366 		— val_acc: 0.398846465192 
+precision: 0.306754067725 	— val_precision: 0.268612398342 
+recall: 0.221125085429 	— val_recall: 0.204317061395 
+f-measure: 0.232623035909 	— val_f-measure: 0.210846197413
+Epoch 7/20
+Epoch 00006: loss improved from 1.80444 to 1.74005, saving model to weights004_GRU-256_GRU-128/006_1.7400_0.4445_1.8728_0.4034.hdf5
+EPOCH: 6 
+loss: 1.74004738342 		— val_loss: 1.87275752375 
+acc: 0.444476923944 		— val_acc: 0.403433621155 
+precision: 0.379667115082 	— val_precision: 0.266249568652 
+recall: 0.251155843756 	— val_recall: 0.209283670561 
+f-measure: 0.267551737396 	— val_f-measure: 0.216243479963
+Epoch 8/20
+Epoch 00007: loss improved from 1.74005 to 1.67827, saving model to weights004_GRU-256_GRU-128/007_1.6783_0.4623_1.8679_0.4033.hdf5
+EPOCH: 7 
+loss: 1.67826641608 		— val_loss: 1.86793860525 
+acc: 0.462319410874 		— val_acc: 0.403332433891 
+precision: 0.391565283064 	— val_precision: 0.276309308156 
+recall: 0.255537556925 	— val_recall: 0.211535558122 
+f-measure: 0.275114863116 	— val_f-measure: 0.223356987188
+Epoch 9/20
+Epoch 00008: loss improved from 1.67827 to 1.61778, saving model to weights004_GRU-256_GRU-128/008_1.6178_0.4795_1.8707_0.4090.hdf5
+EPOCH: 8 
+loss: 1.61778035592 		— val_loss: 1.87072923147 
+acc: 0.479532295236 		— val_acc: 0.408998920669 
+precision: 0.396313047787 	— val_precision: 0.265819875633 
+recall: 0.275060336946 	— val_recall: 0.214528278052 
+f-measure: 0.292536891947 	— val_f-measure: 0.223559189942
+Epoch 10/20
+Epoch 00009: loss improved from 1.61778 to 1.56174, saving model to weights004_GRU-256_GRU-128/009_1.5617_0.4988_1.8763_0.4070.hdf5
+EPOCH: 9 
+loss: 1.56173680683 		— val_loss: 1.87627515179 
+acc: 0.498825116642 		— val_acc: 0.407008904479 
+precision: 0.44143672034 	— val_precision: 0.266509839262 
+recall: 0.291883441879 	— val_recall: 0.22106714589 
+f-measure: 0.309561161962 	— val_f-measure: 0.226152008007
+Epoch 11/20
+Epoch 00010: loss improved from 1.56174 to 1.50579, saving model to weights004_GRU-256_GRU-128/010_1.5058_0.5171_1.8657_0.4174.hdf5
+EPOCH: 10 
+loss: 1.50579139153 		— val_loss: 1.86573505839 
+acc: 0.5170948339 		— val_acc: 0.417363734485 
+precision: 0.455788263161 	— val_precision: 0.294561666662 
+recall: 0.285520133128 	— val_recall: 0.209326549636 
+f-measure: 0.313935712508 	— val_f-measure: 0.225891537444
+Epoch 12/20
+Epoch 00011: loss improved from 1.50579 to 1.45219, saving model to weights004_GRU-256_GRU-128/011_1.4522_0.5323_1.8828_0.4205.hdf5
+EPOCH: 11 
+loss: 1.4521916541 		— val_loss: 1.88275722716 
+acc: 0.532272752828 		— val_acc: 0.420466810577 
+precision: 0.474343740605 	— val_precision: 0.320063448445 
+recall: 0.31249869228 	— val_recall: 0.226940038613 
+f-measure: 0.338194799459 	— val_f-measure: 0.239127718758
+Epoch 13/20
+Epoch 00012: loss improved from 1.45219 to 1.39845, saving model to weights004_GRU-256_GRU-128/012_1.3985_0.5494_1.8765_0.4187.hdf5
+EPOCH: 12 
+loss: 1.39845042102 		— val_loss: 1.87650574026 
+acc: 0.549429422664 		— val_acc: 0.418712898003 
+precision: 0.521276642882 	— val_precision: 0.308996772681 
+recall: 0.341708714158 	— val_recall: 0.232268181825 
+f-measure: 0.376211938205 	— val_f-measure: 0.248042382245
+Epoch 14/20
+Epoch 00013: loss improved from 1.39845 to 1.34836, saving model to weights004_GRU-256_GRU-128/013_1.3484_0.5658_1.8987_0.4187.hdf5
+EPOCH: 13 
+loss: 1.34836497824 		— val_loss: 1.89873905563 
+acc: 0.565776603522 		— val_acc: 0.418712898003 
+precision: 0.537371347286 	— val_precision: 0.306113858715 
+recall: 0.334808904333 	— val_recall: 0.219458519721 
+f-measure: 0.37361029268 	— val_f-measure: 0.237924379445
+Epoch 15/20
+Epoch 00014: loss improved from 1.34836 to 1.30299, saving model to weights004_GRU-256_GRU-128/014_1.3030_0.5814_1.9236_0.4204.hdf5
+EPOCH: 14 
+loss: 1.30298677917 		— val_loss: 1.92360548959 
+acc: 0.581359266955 		— val_acc: 0.420365623314 
+precision: 0.534281164752 	— val_precision: 0.281301160428 
+recall: 0.354492538799 	— val_recall: 0.227693846749 
+f-measure: 0.387033358227 	— val_f-measure: 0.240309673944
+Epoch 16/20
+Epoch 00015: loss improved from 1.30299 to 1.25748, saving model to weights004_GRU-256_GRU-128/015_1.2575_0.5972_1.9337_0.4169.hdf5
+EPOCH: 15 
+loss: 1.25747562162 		— val_loss: 1.93366317613 
+acc: 0.597155545565 		— val_acc: 0.416857798165 
+precision: 0.538994217683 	— val_precision: 0.346567948386 
+recall: 0.366217027534 	— val_recall: 0.237135324044 
+f-measure: 0.403662271953 	— val_f-measure: 0.256385224389
+Epoch 17/20
+Epoch 00016: loss improved from 1.25748 to 1.21921, saving model to weights004_GRU-256_GRU-128/016_1.2192_0.6079_1.9515_0.4169.hdf5
+EPOCH: 16 
+loss: 1.21920753595 		— val_loss: 1.9515337486 
+acc: 0.607892517846 		— val_acc: 0.416891527253 
+precision: 0.544809627309 	— val_precision: 0.346512855213 
+recall: 0.388669102815 	— val_recall: 0.236576506705 
+f-measure: 0.423915075563 	— val_f-measure: 0.254111180343
+Epoch 18/20
+Epoch 00017: loss improved from 1.21921 to 1.17800, saving model to weights004_GRU-256_GRU-128/017_1.1780_0.6203_1.9926_0.4171.hdf5
+EPOCH: 17 
+loss: 1.17799743349 		— val_loss: 1.99256651387 
+acc: 0.620304682667 		— val_acc: 0.417127630869 
+precision: 0.547730849974 	— val_precision: 0.29840234596 
+recall: 0.401662596658 	— val_recall: 0.237838171425 
+f-measure: 0.437632794097 	— val_f-measure: 0.250213623628
+Epoch 19/20
+Epoch 00018: loss improved from 1.17800 to 1.13994, saving model to weights004_GRU-256_GRU-128/018_1.1399_0.6334_2.0122_0.4167.hdf5
+EPOCH: 18 
+loss: 1.13993889228 		— val_loss: 2.01221843681 
+acc: 0.633380178777 		— val_acc: 0.416655423637 
+precision: 0.557029693705 	— val_precision: 0.298445132913 
+recall: 0.408892940047 	— val_recall: 0.242729459004 
+f-measure: 0.443633190043 	— val_f-measure: 0.25614990646
+Epoch 20/20
+Epoch 00019: loss improved from 1.13994 to 1.10725, saving model to weights004_GRU-256_GRU-128/019_1.1073_0.6427_2.0262_0.4177.hdf5
+EPOCH: 19 
+loss: 1.10725041848 		— val_loss: 2.02624615154 
+acc: 0.642734273993 		— val_acc: 0.417667296276 
+precision: 0.55721100805 	— val_precision: 0.306333565678 
+recall: 0.424716692439 	— val_recall: 0.242136595081 
+f-measure: 0.461863413886 	— val_f-measure: 0.257284852392
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.0091135691199886, 0.68027432684056965]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.026246151535561, 0.41766729627630866]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.0618534852547397, 0.4109750750451921]
+20 epochs in 22182.97006368637 seconds
+
