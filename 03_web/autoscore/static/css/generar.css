@@ -1,0 +1,446 @@
+#embed-container {
+  height: 25rem;
+}
+
+/* DICTIONARY CLASES */
+.note {
+    background-image: url('/static/img/pentagrama.svg');
+    background-size: 1429px 105px;
+    background-repeat: no-repeat;
+    width: 1.25rem;
+    height: 7rem;
+
+    padding: 0rem 0rem;
+    margin: 0.5rem 0.062rem;
+}
+
+.note:disabled {
+    opacity: 1;
+}
+
+.note,
+.note:hover,
+.note:focus,
+.note:disabled {
+    border-color: transparent;    
+    color:transparent;
+}
+
+.score-head {
+    width: 3rem;
+    background-position: -28rem 0rem;
+}
+
+.note-do1 {
+    background-position: -30.7rem 0rem;
+}
+.note-re1 {
+    background-position: -31.8rem 0rem;
+}
+.note-mi1 {
+    background-position: -32.8rem 0rem;
+}
+.note-fa1 {
+    background-position: -33.8rem 0rem;
+}
+.note-sol1 {
+    background-position: -35.1rem 0rem;
+}
+.note-la1 {
+    background-position: -36.2rem 0rem;
+}
+.note-si1 {
+    background-position: -37.2rem 0rem;
+}
+
+.note-do2 {
+    background-position: -38.2rem 0rem;
+}
+.note-re2 {
+    background-position: -39.6rem 0rem;
+}
+.note-mi2 {
+    background-position: -40.6rem 0rem;
+}
+.note-fa2 {
+    background-position: -41.5rem 0rem;
+}
+.note-sol2 {
+    background-position: -42.6rem 0rem;
+}
+.note-la2 {
+    background-position: -44.0rem 0rem;
+}
+.note-si2 {
+    background-position: -44.9rem 0rem;
+}
+
+.note-do3 {
+    background-position: -45.9rem 0rem;
+}
+.note-re3 {
+    background-position: -46.9rem 0rem;
+}
+.note-mi3 {
+    background-position: -48.1rem 0rem;
+}
+.note-fa3 {
+    background-position: -49.25rem 0rem;
+}
+.note-sol3 {
+    background-position: -50.2rem 0rem;
+}
+.note-la3 {
+    background-position: -51.2rem 0rem;
+}
+.note-si3 {
+    background-position: -52.5rem 0rem;
+}
+
+.note-do4 {
+    background-position: -53.6rem 0rem;
+}
+.note-re4 {
+    background-position: -54.61rem 0rem;
+}
+.note-mi4 {
+    background-position: -55.6rem 0rem;
+}
+.note-fa4 {
+    background-position: -56.8rem 0rem;
+}
+.note-sol4 {
+    background-position: -57.92rem 0rem;
+}
+.note-la4 {
+    background-position: -58.92rem 0rem;
+}
+.note-si4 {
+    background-position: -59.93rem 0rem;
+}
+
+
+/* NON MOBILE DEVICES */
+@media (min-width: 59em) {
+
+    .note {
+        background-image: url('/static/img/pentagrama.svg');
+        background-size: calc(1429px * 1.5) calc(105px * 1.5);
+        background-repeat: no-repeat;
+        width: calc(1.25rem * 1.5);
+        height: calc(7rem * 1.5);
+    }
+
+    .score-head {
+        width: calc(3rem * 1.5);
+        background-position: calc(-28rem * 1.5) 0rem;
+    }
+
+    .note-do1 {
+        background-position: calc(-30.7rem * 1.5) 0rem;
+    }
+    .note-re1 {
+        background-position: calc(-31.8rem * 1.5) 0rem;
+    }
+    .note-mi1 {
+        background-position: calc(-32.8rem * 1.5) 0rem;
+    }
+    .note-fa1 {
+        background-position: calc(-33.8rem * 1.5) 0rem;
+    }
+    .note-sol1 {
+        background-position: calc(-35.1rem * 1.5) 0rem;
+    }
+    .note-la1 {
+        background-position: calc(-36.2rem * 1.5) 0rem;
+    }
+    .note-si1 {
+        background-position: calc(-37.2rem * 1.5) 0rem;
+    }
+
+    .note-do2 {
+        background-position: calc(-38.2rem * 1.5) 0rem;
+    }
+    .note-re2 {
+        background-position: calc(-39.6rem * 1.5) 0rem;
+    }
+    .note-mi2 {
+        background-position: calc(-40.6rem * 1.5) 0rem;
+    }
+    .note-fa2 {
+        background-position: calc(-41.5rem * 1.5) 0rem;
+    }
+    .note-sol2 {
+        background-position: calc(-42.6rem * 1.5) 0rem;
+    }
+    .note-la2 {
+        background-position: calc(-44.0rem * 1.5) 0rem;
+    }
+    .note-si2 {
+        background-position: calc(-44.9rem * 1.5) 0rem;
+    }
+
+    .note-do3 {
+        background-position: calc(-45.9rem * 1.5) 0rem;
+    }
+    .note-re3 {
+        background-position: calc(-46.9rem * 1.5) 0rem;
+    }
+    .note-mi3 {
+        background-position: calc(-48.1rem * 1.5) 0rem;
+    }
+    .note-fa3 {
+        background-position: calc(-49.25rem * 1.5) 0rem;
+    }
+    .note-sol3 {
+        background-position: calc(-50.2rem * 1.5) 0rem;
+    }
+    .note-la3 {
+        background-position: calc(-51.2rem * 1.5) 0rem;
+    }
+    .note-si3 {
+        background-position: calc(-52.5rem * 1.5) 0rem;
+    }
+
+    .note-do4 {
+        background-position: calc(-53.6rem * 1.5) 0rem;
+    }
+    .note-re4 {
+        background-position: calc(-54.61rem * 1.5) 0rem;
+    }
+    .note-mi4 {
+        background-position: calc(-55.6rem * 1.5) 0rem;
+    }
+    .note-fa4 {
+        background-position: calc(-56.8rem * 1.5) 0rem;
+    }
+    .note-sol4 {
+        background-position: calc(-57.92rem * 1.5) 0rem;
+    }
+    .note-la4 {
+        background-position: calc(-58.92rem * 1.5) 0rem;
+    }
+    .note-si4 {
+        background-position: calc(-59.93rem * 1.5) 0rem;
+    }
+}
+
+
+/* ACTION BUTTONS */
+.btn-action {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0.1rem;
+}
+.btn-color {
+    background-color: #4c78a8;
+    border-color: transparent;
+}
+.btn-color:disabled {
+    border-color: transparent;
+    background-color: #3a5e87;
+}
+.btn-color:hover,
+.btn-color:focus {
+    background-color: #3a5e87;
+}
+.btn-color.active,
+.btn-color:focus {
+        box-shadow: 0 0 0 0 !important;
+}
+.btn-color.btn-text {
+    font-size: 1rem;
+}
+.btn-color.btn-text.active.btn-activable {
+    background-color: #34a534;
+    border-color: #008000;
+}
+.btn-color.btn-text.active.btn-activable:hover,
+.btn-color.btn-text.active.btn-activable:focus {
+    background-color: #2d952d;
+}
+
+
+.align-buttons-right {
+    text-align: center !important;
+}
+.align-buttons-left {
+    text-align: center !important;
+}
+@media (min-width: 59em) {
+    .align-buttons-right {
+        text-align: right !important;
+    }
+    .align-buttons-left {
+        text-align: left !important;
+    }
+}
+
+.icon-silence {
+    background-image: url('/static/img/silence.png');
+    background-size: 0.8rem 1.4rem;
+    background-repeat: no-repeat;
+    background-position: 0.1rem 0.1rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+.group-btn-action {
+    width: 2.5rem;
+}
+.group-btn-action.dropdown-toggle {
+    background-color: #4c78a8 !important;
+}
+
+.icon-duration-1 {
+    background-image: url('/static/img/nota_redonda.png');
+    background-size: 2rem 2.7rem;
+    background-repeat: no-repeat;
+    background-position: -0.5rem -0.5rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+.icon-duration-2 {
+    background-image: url('/static/img/nota_blanca_puntillo_negra_corchea_semicorchea.png');
+    background-size: 7.8rem 7.1rem;
+    background-repeat: no-repeat;
+    background-position: 0.1rem 0.0rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+.icon-duration-3 {
+    background-image: url('/static/img/nota_blanca_puntillo_negra_corchea_semicorchea.png');
+    background-size: 7.8rem 7.1rem;
+    background-repeat: no-repeat;
+    background-position: 0.1rem 0.0rem;
+    width: 1rem;
+    height: 1.5rem;
+    background-position-x: -2.6rem;
+}
+.icon-duration-4 {
+    background-image: url('/static/img/nota_negra_puntillo.png');
+    background-size: 0.9rem 1.7rem;
+    background-repeat: no-repeat;
+    background-position: 0.05rem -0.05rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+.icon-duration-5 {
+    background-image: url('/static/img/nota_blanca_puntillo_negra_corchea_semicorchea.png');
+    background-size: 7.8rem 7.1rem;
+    background-repeat: no-repeat;
+    background-position: 0.1rem 0.0rem;
+    width: 1rem;
+    height: 1.5rem;
+    background-position-x: -5.1rem;
+}
+.icon-duration-6 {
+    background-image: url('/static/img/nota_corchea_puntillo.png');
+    background-size: 1.4rem 1.8rem;
+    background-repeat: no-repeat;
+    background-position: -0.2rem -0.1rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+.icon-duration-7 {
+    background-image: url('/static/img/nota_blanca_puntillo_negra_corchea_semicorchea.png');
+    background-size: 7.8rem 7.1rem;
+    background-repeat: no-repeat;
+    width: 1rem;
+    height: 1.5rem;
+    background-position-x: -6.2rem;
+    background-position-y: -2.6rem;
+}
+.icon-duration-8 {
+    background-image: url('/static/img/nota_blanca_puntillo_negra_corchea_semicorchea.png');
+    background-size: 7.8rem 7.1rem;
+    background-repeat: no-repeat;
+    width: 1rem;
+    height: 1.5rem;
+    background-position-x: -7rem;
+    background-position-y: -5.25rem;
+}
+.icon-duration-9 {
+    background-image: url('/static/img/nota_fusa.png');
+    background-size: 1rem 1.7rem;
+    background-repeat: no-repeat;
+    background-position: -0.1rem -0.05rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+.icon-tie {
+    background-image: url('/static/img/ligadura.png');
+    background-size: 1rem 0.7rem;
+    background-repeat: no-repeat;
+    background-position: 0rem 0.9rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+.icon-fermata {
+    background-image: url('/static/img/fermata.png');
+    background-size: 1rem 0.8rem;
+    background-repeat: no-repeat;
+    background-position: 0rem 0.5rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+.icon-trill {
+    background-image: url('/static/img/trill.png');
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-position: 0rem 0.4rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+.inverted {
+    filter: invert(100%);
+}
+
+.adjustable-dropdown-menu{
+    min-width: 0rem;
+}
+
+.group-element {
+    margin: 0 !important;
+}
+
+
+
+/* LOADING */
+.icon-loading {
+    font-size: 6rem;
+    filter: invert(100%);
+}
+
+ /* The Overlay (background) */
+.overlay {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.5); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+}

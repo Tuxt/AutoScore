@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set active_page = "explorar" %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/explorar.css') }}">
+
+<!-- Icons -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/icons/animation.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/icons/fontello.css') }}">
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div id="embed-container" hidden></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+                <ul class="list-group">
+                    {% for score in scores %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ score['title'] }}
+                            <button type="button" class="btn btn-primary btn-sm btn-action btn-color btn-icon run_score" onclick="openLoading()" value="{{ score['id'] }}">
+                                <span class="icon-play-circle2"></span>
+                            </button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+    </div>
+
+
+    <!-- Loading icon -->
+    <div id="loading" class="overlay">
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+                <span class="icon-spin4 animate-spin icon-loading"></span>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/flat-embed@v0.9.0/dist/embed.min.js"></script>
+    <script src="{{ url_for('static', filename='js/explorar.js') }}"></script>
+{% endblock %}

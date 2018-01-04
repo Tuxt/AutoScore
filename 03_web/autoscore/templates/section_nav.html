@@ -1,0 +1,29 @@
+{% set navigation_bar = [
+    (url_for('main'), 'index', 'Inicio'),
+    (url_for('generar'), 'generar', 'Generar'),
+    (url_for('explorar'), 'explorar', 'Explorar')
+] -%}
+
+{% set active_page = active_page|default('index') -%}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{ url_for('main') }}">AutoScore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toogle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarCollapse" class="navbar-collapse collapse" style="">
+            <ul class="navbar-nav mr-auto">
+
+                {% for href, id, caption in navigation_bar %}
+
+                <li class="nav-item {%if id == active_page %} active {% endif %}">
+                    <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+                </li>
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </nav>
+</header>

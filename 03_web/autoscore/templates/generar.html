@@ -1,0 +1,304 @@
+{% extends "layout.html" %}
+{% set active_page = "generar" %}
+
+{% set dictionary = [
+    
+] -%}
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/generar.css') }}">
+
+<!-- Icons -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/icons/animation.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/icons/fontello.css') }}">
+{% endblock %}
+
+{% block main %}
+
+<section class="text-center">
+    <h1>Generar</h1>
+
+    <!-- Flashes -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3 alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <!-- End Flashes -->
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div id="embed-container" hidden></div>
+        </div>
+    </div>
+    
+
+    <form action="{{ url_for('generar') }}" method="post" id="score-form">
+        <!-- Upper buttons row-->
+        <div class="row justify-content-start">
+            <div class="offset-md-3 col-md-6 align-self-center align-buttons-center form-group">
+                
+                <!-- New button -->
+                <button type="submit" name="new-session" role="button" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <span class="icon-doc"></span>
+                </button>
+
+                <!-- Save button -->
+                <button type="button" name="save-session" role="button" class="btn btn-primary btn-sm btn-action btn-color btn-icon"  data-toggle="modal" data-target="#modalSave">
+                    <span class="icon-floppy"></span>
+                </button>
+
+                <!-- Erase button -->
+                <button type="button" role="button" id="btn-erase" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <span class="icon-erase"></span>
+                </button>
+
+                <!-- Delete button -->
+                <button type="button" role="button" id="btn-delete" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <span class="icon-trash"></span>
+                </button>
+
+                <!-- Download button -->
+                <button type="submit" name="download" role="button" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <span class="icon-download-outline"></span>
+                </button>
+
+                <!-- Run button -->
+                <button type="button" name="run" class="btn btn-primary btn-sm btn-action btn-color btn-icon" data-toggle="modal" data-target="#modalRun">
+                    <span class="icon-play-circle2"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Textarea row -->
+        <div class="row justify-content-start">
+
+            <div class="offset-md-3 col-md-6 form-group">
+                <textarea class="form-control" name="scoreNotes" id="scoreNotes" rows="2" readonly>{{ session['score'] }}</textarea>
+            </div>
+        </div>
+
+        <!-- Lower buttons row -->
+        <div class="row justify-content-start">
+            <div class="offset-md-3 col-md-6 align-self-center align-buttons-center form-group">
+                <!-- Sharp button -->
+                <button type="button" role="button" id="btn-sharp" class="btn btn-primary btn-sm btn-action btn-color btn-text btn-activable" aria-pressed="false">♯</button>
+
+                <!-- Silence button -->
+                <button type="button" role="button" id="btn-silence" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <svg class="icon-silence inverted" >
+                </button>
+                
+                <!-- Duration selection -->
+                <div class="btn-group">
+                    <button type="button" id="duration" class="btn btn-primary btn-sm btn-action btn-color group-btn-action btn-icon dropdown-toggle" value="2"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg id="duration-icon" class="icon-duration-5 inverted">
+                    </button>
+                    <div class="dropdown-menu adjustable-dropdown-menu">
+                        <button type="button" id="select-duration-1" class="dropdown-item">
+                            <svg class="icon-duration-1">
+                        </button>
+                        <button type="button" id="select-duration-2" class="dropdown-item">
+                            <svg class="icon-duration-2">
+                        </button>
+                        <button type="button" id="select-duration-3" class="dropdown-item">
+                            <svg class="icon-duration-3">
+                        </button>
+                        <button type="button" id="select-duration-4" class="dropdown-item">
+                            <svg class="icon-duration-4">
+                        </button>
+                        <button type="button" id="select-duration-5" class="dropdown-item">
+                            <svg class="icon-duration-5">
+                        </button>
+                        <button type="button" id="select-duration-6" class="dropdown-item">
+                            <svg class="icon-duration-6">
+                        </button>
+                        <button type="button" id="select-duration-7" class="dropdown-item">
+                            <svg class="icon-duration-7">
+                        </button>
+                        <button type="button" id="select-duration-8" class="dropdown-item">
+                            <svg class="icon-duration-8">
+                        </button>
+                        <button type="button" id="select-duration-9" class="dropdown-item">
+                            <svg class="icon-duration-9">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Triplets buttons -->
+                <div class="btn-group" role="group" aria-label="Tresillos">
+                    <button type="button" id="btn-triplet" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">(3</button>
+                    <button type="button" id="btn-quadruplet" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">(4</button>
+                </div>
+
+                <!-- Tie button -->
+                <button type="button" role="button" id="btn-tie" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <svg class="icon-tie inverted">
+                </button>
+
+                <!-- Roll button -->
+                <button type="button" role="button" id="btn-roll" class="btn btn-primary btn-sm btn-action btn-color btn-text">~</button>
+
+                <!-- Fermata button -->
+                <button type="button" role="button" id="btn-fermata" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <svg class="icon-fermata inverted">
+                </button>
+
+                <!-- Trill button -->
+                <button type="button" role="button" id="btn-trill" class="btn btn-primary btn-sm btn-action btn-color btn-icon">
+                    <svg class="icon-trill inverted">
+                </button>
+
+                <!-- Chord buttons -->
+                <div class="btn-group" role="group" aria-label="Tresillos">
+                    <button type="button" id="btn-open-chord" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">[</button>
+                    <button type="button" id="btn-close-chord" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element" disabled>]</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="btn-group flex-wrap flex-md-nowrap align-content-center" role="group" aria-label="Music scale">
+            <button type="button" class="btn btn-outline-info note score-head" disabled />
+            <button type="button" class="btn btn-outline-info note note-do1" disabled>C1</button>
+            <button type="button" class="btn btn-outline-info note note-re1" disabled>D1</button>
+            <button type="button" class="btn btn-outline-info note note-mi1" disabled>E1</button>
+            <button type="button" class="btn btn-outline-info note note-fa1" disabled>F1</button>
+            <button type="button" class="btn btn-outline-info note note-sol1" disabled>G1</button>
+            <button type="button" class="btn btn-outline-info note note-la1" disabled>A1</button>
+            <button type="button" class="btn btn-outline-info note note-si1" disabled>B1</button>
+            <button type="button" class="btn btn-outline-info note note-do2" disabled>C2</button>
+            <button type="button" class="btn btn-outline-info note note-re2" disabled>D2</button>
+            <button type="button" class="btn btn-outline-info note note-mi2" disabled>E2</button>
+            <button type="button" class="btn btn-outline-info note note-fa2" disabled>F2</button>
+            <button type="button" class="btn btn-outline-info note note-sol2" disabled>G2</button>
+            <button type="button" class="btn btn-outline-info note note-la2" disabled>A2</button>
+            <button type="button" class="btn btn-outline-info note note-si2" disabled>B2</button>
+            <button type="button" class="btn btn-outline-info note note-do3" disabled>C3</button>
+            <button type="button" class="btn btn-outline-info note note-re3" disabled>D3</button>
+            <button type="button" class="btn btn-outline-info note note-mi3" disabled>E3</button>
+            <button type="button" class="btn btn-outline-info note note-fa3" disabled>F3</button>
+            <button type="button" class="btn btn-outline-info note note-sol3" disabled>G3</button>
+            <button type="button" class="btn btn-outline-info note note-la3" disabled>A3</button>
+            <button type="button" class="btn btn-outline-info note note-si3" disabled>B3</button>
+            <button type="button" class="btn btn-outline-info note note-do4" disabled>C4</button>
+            <button type="button" class="btn btn-outline-info note note-re4" disabled>D4</button>
+            <button type="button" class="btn btn-outline-info note note-mi4" disabled>E4</button>
+            <button type="button" class="btn btn-outline-info note note-fa4" disabled>F4</button>
+            <button type="button" class="btn btn-outline-info note note-sol4" disabled>G4</button>
+            <button type="button" class="btn btn-outline-info note note-la4" disabled>A4</button>
+            <button type="button" class="btn btn-outline-info note note-si4" disabled>B4</button>
+        </div>
+
+        <!-- MODALS -->
+        <!-- Modal save -->
+        <div class="modal fade text-left" id="modalSave" tabindex="-1" role="dialog" aria-labelledby="modalSaveTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalSaveLongTitle">Guardar composición</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group col-md-12">
+                            <label for="saveTitle">Título</label>
+                            <input type="text" class="form-control" name="saveTitle" id="saveTitle" placeholder="Titula tu composición">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" name="save-session" class="btn btn-primary btn-color">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal run -->
+        <div class="modal fade text-left" id="modalRun" tabindex="-1" role="dialog" aria-labelledby="modalRunTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalRunLongTitle">Generar composición</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="runTitle">Título</label>
+                                <input type="text" class="form-control" name="runTitle" id="runTitle" placeholder="Titula tu composición">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="timesteps">Pasos</label>
+                                <input type="number" class="form-control" value="0" name="timesteps" id="timesteps">
+                            </div>
+                            <div class="form-group col-md-6 align-self-end">
+                                
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="mode" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Modo probabilístico</span>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" name="run" class="btn btn-primary btn-color" onclick="openLoading()">Generar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END MODALS -->
+
+        <!-- Loading icon -->
+        <div id="loading" class="overlay">
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                    <span class="icon-spin4 animate-spin icon-loading"></span>
+            </div>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}
+
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/generar.js') }}"></script>
+    {% if session['flat_id'] %}
+    <script src="https://cdn.jsdelivr.net/npm/flat-embed@v0.9.0/dist/embed.min.js"></script>
+    <script>
+        var container = document.getElementById('embed-container');
+        container.hidden = false;
+        var embed = new Flat.Embed(container, {
+            score: '{{ session["flat_id"] }}',
+            embedParams: {
+                appId: '5a1b1fbbcad0883e6b5ebc28',
+                controlsFloating: false
+            }
+        });
+    </script>
+    {% endif %}
+
+{% endblock %}

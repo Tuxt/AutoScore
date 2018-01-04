@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title>Generador de música con RNNs</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <!-- Bootstrap core JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!-- Popper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+        <!-- Cover style -->
+        <link rel="stylesheet" href="../static/css/cover.css">
+    </head>
+
+    <body>
+
+        <div class="site-wrapper">
+
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <header class="masthead clearfix">
+                        <div class="inner">
+                            <h3 class="masthead-brand">Generador de música con RNNs</h3>
+                            <nav class="nav nav-masthead">
+                                <a class="nav-link active" href="/">Inicio</a>
+                                <a class="nav-link" href="/generar">Generar</a>
+                                <a class="nav-link" href="/explorar">Explorar</a>
+                            </nav>
+                        </div>
+                    </header>
+
+                    <main class="inner cover" role="main">
+                        <h1 class="cover-heading">Redes Neuronales Recurrentes</h1>
+                        <p class="lead">
+                            Generación y continuación de música mediante redes neuronales recurrentes
+                        </p>
+                        <p class="lead">
+                            <a class="btn btn-lg btn-secondary" href="/generar">Generar</a>
+                        </p>
+                    </main>
+
+                    <footer class="mastfoot">
+                        <div class="inner row">
+                            <div class="col-sm-6 foot-left">
+                                Trabajo de Fin de Grado
+                                <br/>
+                                Juan Carlos García Torrecilla
+                            </div>
+                            <div class="col-sm-6 foot-right">
+                                Facultad de Informática
+                                <br/>
+                                Universidad Politécnica de Madrid
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

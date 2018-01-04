@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set active_page = "index" %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+{% endblock %}
+
+{% block main %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>AutoScore</h1>
+        <p class="lead text-muted">
+            Generación y composición de música automática mediante Redes Neuronales Recurrentes
+        </p>
+
+        <p>
+            <a class="btn btn-lg btn-primary btn-color" href="{{ url_for('generar') }}">Generar</a>
+        </p>
+    </div>
+</section>
+
+{% endblock %}

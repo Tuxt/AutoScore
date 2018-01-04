@@ -1,0 +1,22 @@
+
+
+.jumbotron {
+    background-color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 48em) {
+    .jumbotron {
+        background-color: #fff;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        margin-bottom: 0;
+    }
+}
+
+.btn-color {
+    background-color: #4c78a8;
+    border-color: transparent;
+}
