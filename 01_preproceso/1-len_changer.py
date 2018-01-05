@@ -1,6 +1,6 @@
 
 '''
-    Translate ABC code to default length to 1/8
+    Translate ABC code to default length 1/8
 '''
 
 from fractions import Fraction
