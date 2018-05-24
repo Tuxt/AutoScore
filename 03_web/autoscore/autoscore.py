@@ -40,7 +40,7 @@ def parseCode(code):
     return ''.join(code.split())
 
 
-def writeABC(code, title):
+def writeABC(code, title, program):
     code = parseCode(code)
     # Temp ABC file
     tmpfileabc = tempfile.NamedTemporaryFile(dir=app.config['FILES_FOLDER'],
@@ -48,6 +48,7 @@ def writeABC(code, title):
     tmpfileabc.write(b'X:1\n')
     tmpfileabc.write(bytes('T:' + title + '\n', encoding='utf-8'))
     tmpfileabc.write(b'K:C\n')
+    tmpfileabc.write(bytes('%%MIDI program ' + str(program) + '\n', encoding='utf-8'))
     tmpfileabc.write(bytes(code+'\n', encoding='utf-8'))
     tmpfileabc.close()
     return tmpfileabc.name
@@ -57,9 +58,9 @@ def createMidi(abcfile):
     return abcfile+'.mid'
 
 
-def createFiles(data, title):
+def createFiles(data, title, program):
     # Temp abc file
-    tmpfileabc = writeABC(data, title)
+    tmpfileabc = writeABC(data, title, program)
 
     # Midi file
     midifile = createMidi(tmpfileabc)
@@ -142,6 +143,7 @@ def generar():
                 flash('Número de pasos inválido')
                 return render_template('generar.html')
         mode = len(request.form.getlist('mode')) > 0
+        program = request.form['program']
 
 
         # Process data
@@ -152,20 +154,20 @@ def generar():
         elif save_session:
             # Save session
             session['score'] = notes
-            _, midifile = createFiles(notes, save_title)
+            _, midifile = createFiles(notes, save_title, program)
             if session.get('flat_id'):
                 deleteScore(session['flat_id'])
             flat_id = uploadMidiToFlat(midifile, save_title)
             session['flat_id'] = flat_id
         elif download:
             # Download MIDI
-            _, midifile = createFiles(notes, "AutoScore composition")
+            _, midifile = createFiles(notes, "AutoScore composition", program)
             (directory, file) = os.path.split(midifile)
             return send_from_directory(directory, file, as_attachment=True)
         elif run:
             # Generate data
             session['score'] = gen.predict(notes, get_best=(not mode), steps=steps)
-            _, midifile = createFiles(session['score'], run_title)
+            _, midifile = createFiles(session['score'], run_title, program)
             if session.get('flat_id'):
                 deleteScore(session['flat_id'])
             flat_id = uploadMidiToFlat(midifile, run_title)

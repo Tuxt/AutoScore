@@ -98,7 +98,7 @@
                 
                 <!-- Duration selection -->
                 <div class="btn-group">
-                    <button type="button" id="duration" class="btn btn-primary btn-sm btn-action btn-color group-btn-action btn-icon dropdown-toggle" value="2"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" id="duration" class="btn btn-primary btn-sm btn-action btn-color group-btn-action btn-icon dropdown-toggle" value="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <svg id="duration-icon" class="icon-duration-5 inverted">
                     </button>
                     <div class="dropdown-menu adjustable-dropdown-menu">
@@ -235,10 +235,44 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-row">
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-6">
                                 <label for="runTitle">Título</label>
                                 <input type="text" class="form-control" name="runTitle" id="runTitle" placeholder="Titula tu composición">
                             </div>
+
+                            <div class="form-group col-md-6">
+
+                                <label for="instrument">Instrumento</label>
+                                <div class="btn-group max-width">
+                                    <button type="button" name="instrument" id="instrument" class="btn btn-primary btn-color dropdown-toggle" value="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Piano</button>
+
+                                    <div class="dropdown-menu adjustable-dropdown-menu">
+                                        <button id="select-instrument-piano" class="dropdown-item" type="button">Piano</button>
+                                        <button id="select-instrument-organ" class="dropdown-item" type="button">Órgano</button>
+                                        <button id="select-instrument-celesta" class="dropdown-item" type="button">Celesta</button>
+                                        <button id="select-instrument-harpsichord" class="dropdown-item" type="button">Clavicordio</button>
+                                        <div class="dropdown-divider"></div>
+                                        <button id="select-instrument-violin" class="dropdown-item" type="button">Violín</button>
+                                        <button id="select-instrument-viola" class="dropdown-item" type="button">Viola</button>
+                                        <button id="select-instrument-ensemble" class="dropdown-item" type="button">Conjunto de cuerdas</button>
+                                        <div class="dropdown-divider"></div>
+                                        <button id="select-instrument-clarinet" class="dropdown-item" type="button">Clarinete</button>
+                                        <button id="select-instrument-recorder" class="dropdown-item" type="button">Flauta dulce</button>
+                                        <div class="dropdown-divider"></div>
+                                        <button id="select-instrument-brass-section" class="dropdown-item" type="button">Conjunto viento metal</button>
+                                        <button id="select-instrument-trumpet" class="dropdown-item" type="button">Trompeta</button>
+                                        <div class="dropdown-divider"></div>
+                                        <button id="select-instrument-acoustic-guitar" class="dropdown-item" type="button">Guitarra acústica</button>
+                                        <button id="select-instrument-classic-guitar" class="dropdown-item" type="button">Guitarra clásica</button>
+                                        <button id="select-instrument-distortion-guitar" class="dropdown-item" type="button">Guitarra eléctrica (distorsión)</button>
+                                    </div>
+
+                                </div>
+
+                                <input type="number" class="form-control" value="0" name="program" id="program" hidden="true">
+
+                            </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -254,6 +288,10 @@
                                 </label>
                                 
                             </div>
+                        </div>
+
+                        <div class="form-row">
+                            
                         </div>
                         
                     </div>
