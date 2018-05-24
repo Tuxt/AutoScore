@@ -15,7 +15,7 @@ app.config['VOCABULARY'] = ['(3', '(4', '-', '/2', '/4', '2', '3', '3/2', '4', '
 app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
 app.config['SYMBOLS'] = ['~', 'T', 'H']
 
-flat_api.configuration.access_token = 'bebfed6658d6fff6fb6a99ed099f95c0b46f120bd062b3b57be882bd5a62556109df7a42c7d509ac95942eb9e342274647c77bfc62ad6a13637ce49036d73e4a'
+flat_api.configuration.access_token = '<<flat_access_token>>'
 if not os.path.exists(app.config['FILES_FOLDER']):
     os.makedirs(app.config['FILES_FOLDER'])
 app.debug = True
@@ -185,6 +185,6 @@ def explorar():
     return render_template('explorar.html', scores=scores)
 
 if __name__ == '__main__':
-    app.secret_key="%A[\xa72Z\x9bc\xd5\xd5\r\x0f65A\x90\xc5\xb3\x9e\xdb \xf92r`.*\xdaZ\xb0'\x9dM\xf6dY\xd0\x96K\xb9\x07\x17\x9f\xac\x83\xde\xecS"
+    app.secret_key="<<flask_secret>>"
     app.run(host='0.0.0.0', port=5000, use_reloader=False)
 
