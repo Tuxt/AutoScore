@@ -70,10 +70,27 @@ code {
 }
 
 .emails {
-  margin: 0em 2em 0em -2em;
+  display: none;
 }
 
 .logo {
-  height: 7em;
-  margin: 0em 0em 0em -3.5em;
+  display: none;
+}
+#logo {
+  height: 0%;
+}
+
+@media (min-width: 75em) {
+  .emails {
+    display:inline;
+    margin: 0em 2em 0em -2em;
+  }
+
+  #logo {
+    height: 7em;
+    margin: 0em 0em 0em -3.5em;
+  }
+  .logo {
+    display:inline;
+  }
 }
