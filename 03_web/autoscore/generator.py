@@ -3,6 +3,7 @@ from keras.models import load_model
 from datamanager import load
 import numpy as np
 from keras.preprocessing.sequence import pad_sequences
+import tensorflow as tf
 
 class Generator:
     
@@ -10,6 +11,7 @@ class Generator:
         model_file='model/model.h5',
         dictionaries=('model/note2int', 'model/int2note')):
         self.model = load_model(model_file)
+        self.graph = tf.get_default_graph()
         self.note2int = load(dictionaries[0])
         self.int2note = load(dictionaries[1])
 
@@ -26,7 +28,8 @@ class Generator:
         data = data[-shape[1]:].reshape(shape)
         
         # Generate value
-        result = self.model.predict(data)
+        with self.graph.as_default():
+            result = self.model.predict(data)
         if get_best:
             new_value = np.argmax(result[0])
         else:
