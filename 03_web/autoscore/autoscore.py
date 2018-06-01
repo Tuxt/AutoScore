@@ -15,10 +15,12 @@ app.config['VOCABULARY'] = ['(3', '(4', '-', '/2', '/4', '2', '3', '3/2', '4', '
 app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
 app.config['SYMBOLS'] = ['~', 'T', 'H']
 
-flat_api.configuration.access_token = '<<flat_access_token>>'
+configuration = flat_api.Configuration()
+configuration.access_token = '<<flat_access_token>>'
+flat_api_client = flat_api.ApiClient(configuration)
 if not os.path.exists(app.config['FILES_FOLDER']):
     os.makedirs(app.config['FILES_FOLDER'])
-app.debug = True
+app.debug = False
 
 
 # Decorator for post-request callback
@@ -88,11 +90,11 @@ def uploadMidiToFlat(midifile, title):
     )
     try:
         # Check limit account (max 15 scores)
-        scores = flat_api.ScoreApi().get_user_scores('me')
+        scores = flat_api.ScoreApi(flat_api_client).get_user_scores('me')
         if len(scores) == 15:
             deleteScore(scores[-1].id)
 
-        score = flat_api.ScoreApi().create_score(new_score)
+        score = flat_api.ScoreApi(flat_api_client).create_score(new_score)
         return score.id
     except flat_api.rest.ApiException as e:
         print(e)
@@ -105,7 +107,7 @@ def checkInputScore(score):
 
 def deleteScore(id):
     try:
-        flat_api.ScoreApi().delete_score(id)
+        flat_api.ScoreApi(flat_api_client).delete_score(id)
     except flat_api.rest.ApiException as e:
         print(e)
 
@@ -184,7 +186,7 @@ def generar():
 @app.route('/explorar')
 def explorar():
     try:
-        scores = flat_api.UserApi().get_user_scores('me')
+        scores = flat_api.ScoreApi(flat_api_client).get_user_scores('me')
     except flat_api.rest.ApiException:
         render_template('explorar.html', scores=[])
     return render_template('explorar.html', scores=scores)
