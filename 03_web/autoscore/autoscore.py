@@ -87,6 +87,11 @@ def uploadMidiToFlat(midifile, title):
         data_encoding='base64'
     )
     try:
+        # Check limit account (max 15 scores)
+        scores = flat_api.ScoreApi().get_user_scores('me')
+        if len(scores) == 15:
+            deleteScore(scores[-1].id)
+
         score = flat_api.ScoreApi().create_score(new_score)
         return score.id
     except flat_api.rest.ApiException as e:
