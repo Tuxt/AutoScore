@@ -5,6 +5,19 @@ import tempfile
 import os
 import flat_api
 import base64
+from configparser import RawConfigParser
+import ast
+
+# CONFIGURATION
+CONFIG_FILE = 'config.ini'
+parser = RawConfigParser(interpolation=None)
+parser.read(CONFIG_FILE)
+PORT = parser.getint('DEFAULT','port', raw=True)
+FLAT_ACCESS_TOKEN = parser.get('DEFAULT', 'flat-access-token', raw=True)
+FLASK_SECRET = ast.literal_eval(parser.get('DEFAULT','flask-secret', raw=True))
+DEBUG = parser.getboolean('DEFAULT', 'debug', raw=True)
+RELOADER = parser.getboolean('DEFAULT', 'reloader', raw=True)
+# END CONFIGURATION
 
 gen = Generator()
 app = Flask(__name__)
@@ -16,11 +29,11 @@ app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
 app.config['SYMBOLS'] = ['~', 'T', 'H']
 
 configuration = flat_api.Configuration()
-configuration.access_token = '<<flat_access_token>>'
+configuration.access_token = FLAT_ACCESS_TOKEN
 flat_api_client = flat_api.ApiClient(configuration)
 if not os.path.exists(app.config['FILES_FOLDER']):
     os.makedirs(app.config['FILES_FOLDER'])
-app.debug = False
+app.debug = DEBUG
 
 
 # Decorator for post-request callback
@@ -192,6 +205,6 @@ def explorar():
     return render_template('explorar.html', scores=scores)
 
 if __name__ == '__main__':
-    app.secret_key="<<flask_secret>>"
-    app.run(host='0.0.0.0', port=5000, use_reloader=False, threaded=True)
+    app.secret_key = FLASK_SECRET
+    app.run(host='0.0.0.0', port=PORT, use_reloader=RELOADER, threaded=True)
 
