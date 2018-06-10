@@ -227,17 +227,13 @@ $('#btn-trill').click(function(){
 
 // Chords
 $('#btn-open-chord').click(function(){
-    $(this).attr('disabled', true);
     textarea = $('#scoreNotes');
     textarea.val(textarea.val() + "[ ");
-    $('#btn-close-chord').attr('disabled', false);
 });
 
 $('#btn-close-chord').click(function(){
-    $(this).attr('disabled', true);
     textarea = $('#scoreNotes');
     textarea.val(textarea.val() + "] ");
-    $('#btn-open-chord').attr('disabled', false);
 });
 
 
