@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set active_page = "generar" %}
+{% set active_page = "generate" %}
 
 {% set dictionary = [
     
@@ -7,7 +7,7 @@
 
 {% block css %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/generar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/generate.css') }}">
 
 <!-- Icons -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/icons/animation.css') }}">
@@ -17,7 +17,7 @@
 {% block main %}
 
 <section class="text-center">
-    <h1>Generar</h1>
+    <h1>Generate</h1>
 
     <!-- Flashes -->
     {% with messages = get_flashed_messages() %}
@@ -40,7 +40,7 @@
     </div>
     
 
-    <form action="{{ url_for('generar') }}" method="post" id="score-form">
+    <form action="{{ url_for('generate') }}" method="post" id="score-form">
         <!-- Upper buttons row-->
         <div class="row justify-content-start">
             <div class="offset-md-3 col-md-6 align-self-center align-buttons-center form-group">
@@ -132,8 +132,8 @@
                     </div>
                 </div>
 
-                <!-- Triplets buttons -->
-                <div class="btn-group" role="group" aria-label="Tresillos">
+                <!-- Tuplet buttons -->
+                <div class="btn-group" role="group" aria-label="Tuplets">
                     <button type="button" id="btn-triplet" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">(3</button>
                     <button type="button" id="btn-quadruplet" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">(4</button>
                 </div>
@@ -157,7 +157,7 @@
                 </button>
 
                 <!-- Chord buttons -->
-                <div class="btn-group" role="group" aria-label="Tresillos">
+                <div class="btn-group" role="group" aria-label="Chord">
                     <button type="button" id="btn-open-chord" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element">[</button>
                     <button type="button" id="btn-close-chord" class="btn btn-primary btn-sm btn-action btn-color btn-icon group-element" disabled>]</button>
                 </div>
@@ -204,20 +204,20 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalSaveLongTitle">Guardar composición</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <h5 class="modal-title" id="modalSaveLongTitle">Save composition</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group col-md-12">
-                            <label for="saveTitle">Título</label>
-                            <input type="text" class="form-control" name="saveTitle" id="saveTitle" placeholder="Titula tu composición">
+                            <label for="saveTitle">Title</label>
+                            <input type="text" class="form-control" name="saveTitle" id="saveTitle" placeholder="Title your composition">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" name="save-session" class="btn btn-primary btn-color">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="save-session" class="btn btn-primary btn-color">Save</button>
                     </div>
                 </div>
             </div>
@@ -228,43 +228,43 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalRunLongTitle">Generar composición</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <h5 class="modal-title" id="modalRunLongTitle">Generate composition</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="runTitle">Título</label>
-                                <input type="text" class="form-control" name="runTitle" id="runTitle" placeholder="Titula tu composición">
+                                <label for="runTitle">Title</label>
+                                <input type="text" class="form-control" name="runTitle" id="runTitle" placeholder="Title your composition">
                             </div>
 
                             <div class="form-group col-md-6">
 
-                                <label for="instrument">Instrumento</label>
+                                <label for="instrument">Instrument</label>
                                 <div class="btn-group max-width">
                                     <button type="button" name="instrument" id="instrument" class="btn btn-primary btn-color dropdown-toggle" value="0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Piano</button>
 
                                     <div class="dropdown-menu adjustable-dropdown-menu">
                                         <button id="select-instrument-piano" class="dropdown-item" type="button">Piano</button>
-                                        <button id="select-instrument-organ" class="dropdown-item" type="button">Órgano</button>
+                                        <button id="select-instrument-organ" class="dropdown-item" type="button">Organ</button>
                                         <button id="select-instrument-celesta" class="dropdown-item" type="button">Celesta</button>
-                                        <button id="select-instrument-harpsichord" class="dropdown-item" type="button">Clavicordio</button>
+                                        <button id="select-instrument-harpsichord" class="dropdown-item" type="button">Clavichord</button>
                                         <div class="dropdown-divider"></div>
-                                        <button id="select-instrument-violin" class="dropdown-item" type="button">Violín</button>
+                                        <button id="select-instrument-violin" class="dropdown-item" type="button">Violin</button>
                                         <button id="select-instrument-viola" class="dropdown-item" type="button">Viola</button>
-                                        <button id="select-instrument-ensemble" class="dropdown-item" type="button">Conjunto de cuerdas</button>
+                                        <button id="select-instrument-ensemble" class="dropdown-item" type="button">String ensemble</button>
                                         <div class="dropdown-divider"></div>
-                                        <button id="select-instrument-clarinet" class="dropdown-item" type="button">Clarinete</button>
-                                        <button id="select-instrument-recorder" class="dropdown-item" type="button">Flauta dulce</button>
+                                        <button id="select-instrument-clarinet" class="dropdown-item" type="button">Clarinet</button>
+                                        <button id="select-instrument-recorder" class="dropdown-item" type="button">Recorder</button>
                                         <div class="dropdown-divider"></div>
-                                        <button id="select-instrument-brass-section" class="dropdown-item" type="button">Conjunto viento metal</button>
-                                        <button id="select-instrument-trumpet" class="dropdown-item" type="button">Trompeta</button>
+                                        <button id="select-instrument-brass-section" class="dropdown-item" type="button">Brass section</button>
+                                        <button id="select-instrument-trumpet" class="dropdown-item" type="button">Trumpet</button>
                                         <div class="dropdown-divider"></div>
-                                        <button id="select-instrument-acoustic-guitar" class="dropdown-item" type="button">Guitarra acústica</button>
-                                        <button id="select-instrument-classic-guitar" class="dropdown-item" type="button">Guitarra clásica</button>
-                                        <button id="select-instrument-distortion-guitar" class="dropdown-item" type="button">Guitarra eléctrica (distorsión)</button>
+                                        <button id="select-instrument-acoustic-guitar" class="dropdown-item" type="button">Acoustic guitar</button>
+                                        <button id="select-instrument-classic-guitar" class="dropdown-item" type="button">Classic guitar</button>
+                                        <button id="select-instrument-distortion-guitar" class="dropdown-item" type="button">Distortion guitar</button>
                                     </div>
 
                                 </div>
@@ -276,7 +276,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="timesteps">Pasos</label>
+                                <label for="timesteps">Timesteps</label>
                                 <input type="number" class="form-control" value="0" name="timesteps" id="timesteps">
                             </div>
                             <div class="form-group col-md-6 align-self-end">
@@ -284,7 +284,7 @@
                                 <label class="custom-control custom-checkbox">
                                     <input type="checkbox" name="mode" class="custom-control-input">
                                     <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Modo probabilístico</span>
+                                    <span class="custom-control-description">Probabilistic mode</span>
                                 </label>
                                 
                             </div>
@@ -296,8 +296,8 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" name="run" class="btn btn-primary btn-color" onclick="openLoading()">Generar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="run" class="btn btn-primary btn-color" onclick="openLoading()">Generate</button>
                     </div>
                 </div>
             </div>
@@ -323,7 +323,7 @@
 
 
 {% block js %}
-    <script src="{{ url_for('static', filename='js/generar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/generate.js') }}"></script>
     {% if session['flat_id'] %}
     <script src="https://cdn.jsdelivr.net/npm/flat-embed@v0.9.0/dist/embed.min.js"></script>
     <script>

@@ -1,7 +1,7 @@
 {% set navigation_bar = [
-    (url_for('main'), 'index', 'Inicio'),
-    (url_for('generar'), 'generar', 'Generar'),
-    (url_for('explorar'), 'explorar', 'Explorar')
+    (url_for('main'), 'index', 'Home'),
+    (url_for('generate'), 'generate', 'Generate'),
+    (url_for('explore'), 'explore', 'Explore')
 ] -%}
 
 {% set active_page = active_page|default('index') -%}

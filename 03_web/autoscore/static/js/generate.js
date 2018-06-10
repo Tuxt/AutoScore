@@ -249,7 +249,7 @@ $('#select-instrument-piano').click(function(){
 });
 
 $('#select-instrument-organ').click(function(){
-    $('#instrument').val("19").text("Órgano");
+    $('#instrument').val("19").text("Organ");
     $('#program').val(19);
 });
 
@@ -259,13 +259,13 @@ $('#select-instrument-celesta').click(function(){
 });
 
 $('#select-instrument-harpsichord').click(function(){
-    $('#instrument').val("6").text("Clavicordio");
+    $('#instrument').val("6").text("Clavichord");
     $('#program').val(6);
 });
 
 /* Strings */
 $('#select-instrument-violin').click(function(){
-    $('#instrument').val("40").text("Violín");
+    $('#instrument').val("40").text("Violin");
     $('#program').val(40);
 });
 
@@ -275,45 +275,45 @@ $('#select-instrument-viola').click(function(){
 });
 
 $('#select-instrument-ensemble').click(function(){
-    $('#instrument').val("48").text("Conjunto de cuerdas");
+    $('#instrument').val("48").text("String ensemble");
     $('#program').val(48);
 });
 
 /* Woodwind */
 $('#select-instrument-clarinet').click(function(){
-    $('#instrument').val("71").text("Clarinete");
+    $('#instrument').val("71").text("Clarinet");
     $('#program').val(71);
 });
 
 $('#select-instrument-recorder').click(function(){
-    $('#instrument').val("74").text("Flauta dulce");
+    $('#instrument').val("74").text("Recorder");
     $('#program').val(74);
 });
 
 /* Brass */
 $('#select-instrument-brass-section').click(function(){
-    $('#instrument').val("61").text("Conjunto viento metal");
+    $('#instrument').val("61").text("Brass section");
     $('#program').val(61);
 });
 
 $('#select-instrument-trumpet').click(function(){
-    $('#instrument').val("56").text("Trompeta");
+    $('#instrument').val("56").text("Trumpet");
     $('#program').val(56);
 });
 
 /* Plucked strings */
 $('#select-instrument-acoustic-guitar').click(function(){
-    $('#instrument').val("25").text("Guitarra acústica");
+    $('#instrument').val("25").text("Acoustic guitar");
     $('#program').val(25);
 });
 
 $('#select-instrument-classic-guitar').click(function(){
-    $('#instrument').val("24").text("Guitarra clásica");
+    $('#instrument').val("24").text("Classic guitar");
     $('#program').val(24);
 });
 
 $('#select-instrument-distortion-guitar').click(function(){
-    $('#instrument').val("30").text("Guitarra eléctrica (distorsión)");
+    $('#instrument').val("30").text("Distortion guitar");
     $('#program').val(30);
 });
 

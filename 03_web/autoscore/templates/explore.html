@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
-{% set active_page = "explorar" %}
+{% set active_page = "explore" %}
 
 
 {% block css %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/explorar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/explore.css') }}">
 
 <!-- Icons -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/icons/animation.css') }}">
@@ -51,5 +51,5 @@
 
 {% block js %}
     <script src="https://cdn.jsdelivr.net/npm/flat-embed@v0.9.0/dist/embed.min.js"></script>
-    <script src="{{ url_for('static', filename='js/explorar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/explore.js') }}"></script>
 {% endblock %}

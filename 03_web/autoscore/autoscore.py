@@ -129,8 +129,8 @@ def deleteScore(id):
 def main():
     return render_template('index.html')
 
-@app.route('/generar', methods=['POST','GET'])
-def generar():
+@app.route('/generate', methods=['POST','GET'])
+def generate():
     # From form
     if(request.method == 'POST'):
         # Get data:
@@ -143,8 +143,8 @@ def generar():
         # Values
         notes = request.form['scoreNotes']
         if not checkInputScore(notes):
-            flash("Datos de composición inválidos")
-            return render_template('generar.html')
+            flash("Invalid composition data")
+            return render_template('generate.html')
         save_title = request.form['saveTitle']
         if save_title == '':
             save_title = 'AutoScore composition'
@@ -157,11 +157,11 @@ def generar():
             try:
                 steps = int(timesteps)
                 if steps < 0:
-                    flash('Número de pasos inválido')
-                    return render_template('generar.html')
+                    flash('Invalid number of steps')
+                    return render_template('generate.html')
             except Exception:
-                flash('Número de pasos inválido')
-                return render_template('generar.html')
+                flash('Invalid number of steps')
+                return render_template('generate.html')
         mode = len(request.form.getlist('mode')) > 0
         program = request.form['program']
 
@@ -193,16 +193,16 @@ def generar():
             flat_id = uploadMidiToFlat(midifile, run_title)
             session['flat_id'] = flat_id
 
-    return render_template('generar.html')
+    return render_template('generate.html')
 
 
-@app.route('/explorar')
-def explorar():
+@app.route('/explore')
+def explore():
     try:
         scores = flat_api.ScoreApi(flat_api_client).get_user_scores('me')
     except flat_api.rest.ApiException:
-        render_template('explorar.html', scores=[])
-    return render_template('explorar.html', scores=scores)
+        render_template('explore.html', scores=[])
+    return render_template('explore.html', scores=scores)
 
 if __name__ == '__main__':
     app.secret_key = FLASK_SECRET
