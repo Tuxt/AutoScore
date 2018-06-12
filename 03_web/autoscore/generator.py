@@ -6,14 +6,60 @@ from keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
 
 class Generator:
+    STOP = 10
     
-    def __init__(self,
-        model_file='model/model.h5',
-        dictionaries=('model/note2int', 'model/int2note')):
+    def __init__(self, app,
+        model_file = 'model/model2.h5',
+        dictionaries = ('model/note2int', 'model/int2note')):
+        self.muls = app.config['MULS']
         self.model = load_model(model_file)
         self.graph = tf.get_default_graph()
         self.note2int = load(dictionaries[0])
         self.int2note = load(dictionaries[1])
+
+    # Validation for selected value
+    # Return:
+    # - False: new_value is invalid
+    # - True: new_value is valid
+    # - ']': new_value must be ']' (close chord)
+    def _validPrediction(self, input_data, new_value):
+        if len(input_data) == 0:
+            return True
+        input_data = np.vectorize(self.int2note.get)(input_data)
+        new_value = self.int2note.get(new_value)
+        # Check consecutive multipliers
+        if input_data[-1] in self.muls and new_value in self.muls:
+            return False
+        # Check chords (max 3 notes)
+        if '[' in input_data:
+            # Index of last '['
+            input_data = input_data.tolist()
+            last_open = len(input_data) - 1 - input_data[::-1].index('[')
+            # Last part: inside chord
+            last_part = input_data[last_open:]
+            # Chord not closed
+            if not ']' in last_part and new_value != ']':
+                # Count notes inside de chord
+                num_notes = [ note.startswith('=') or note.startswith('^') for note in last_part ]
+                num_notes = sum(num_notes)
+                # If new value is 4th note, close chord
+                if num_notes == 3 and (new_value.startswith('=') or new_value.startswith('^')):
+                    return ']'
+        return True
+
+    # Select a valid value
+    def _selValue(self, input_data, result, stop=Generator.STOP):
+        print("SELECCIONANDO VALOR [STOP =",stop,"]")
+        print("ENTRADA:",np.vectorize(self.int2note.get)(input_data).tolist())
+        new_value = np.random.choice( np.arange(0,result.shape[1]), p=result[0] )
+        print("SELECCION:",self.int2note.get(new_value))
+        validation = self._validPrediction(input_data, new_value)
+        print("VALIDACION:",validation)
+        if (not validation) and (stop >= 1):
+            new_value = self._selValue(input_data, result, stop-1)
+        elif validation == ']':
+                new_value = self.note2int.get(validation)
+        return new_value
 
     def _predictOne(self, input_data, get_best=True):
         # Pad data
@@ -33,7 +79,8 @@ class Generator:
         if get_best:
             new_value = np.argmax(result[0])
         else:
-            new_value = np.random.choice( np.arange(0,result.shape[1]), p=result[0] )
+            new_value = self._selValue(input_data, result)
+
 
         # Append new data
         input_data = np.append(input_data, new_value)

@@ -20,7 +20,6 @@ DEBUG = parser.getboolean('DEFAULT', 'debug', raw=True)
 RELOADER = parser.getboolean('DEFAULT', 'reloader', raw=True)
 # END CONFIGURATION
 
-gen = Generator()
 app = Flask(__name__)
 app.config['FILES_FOLDER'] = os.path.join(os.getcwd(), '.workspace')
 app.config['BINS_FOLDER'] = os.path.join(os.getcwd(), 'bin')
@@ -28,6 +27,8 @@ app.config['BIN_ABC2MIDI'] = os.path.join(app.config['BINS_FOLDER'], 'abc2midi')
 app.config['VOCABULARY'] = ['(3', '(4', '-', '/2', '/4', '2', '3', '3/2', '4', '6', '8', '=A', '=A,', '=B', '=B,', '=C', '=D', '=E', '=F', '=G', '=G,', '=a', '=b', '=c', "=c'", '=d', "=d'", '=e', "=e'", '=f', '=g', 'H', 'T', '[', ']', '^A', '^A,', '^C', '^D', '^F', '^G', '^G,', '^a', '^c', "^c'", '^d', '^f', '^g', 'z', '~']
 app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
 app.config['SYMBOLS'] = ['~', 'T', 'H']
+
+gen = Generator(app=app)
 
 configuration = flat_api.Configuration()
 configuration.access_token = FLAT_ACCESS_TOKEN
