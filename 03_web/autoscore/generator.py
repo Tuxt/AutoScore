@@ -9,7 +9,7 @@ from vocabulary import Vocabulary as Voc
 class Generator:
     
     def __init__(self,
-        model_file = 'model/model2.h5',
+        model_file = 'model/model.h5',
         dictionaries = ('model/note2int', 'model/int2note')):
         self.model = load_model(model_file)
         self.graph = tf.get_default_graph()
