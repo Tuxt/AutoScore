@@ -7,6 +7,7 @@ import flat_api
 import base64
 from configparser import RawConfigParser
 import ast
+from itertools import groupby
 
 # CONFIGURATION
 CONFIG_FILE = 'config.ini'
@@ -112,10 +113,42 @@ def uploadMidiToFlat(midifile, title):
     except flat_api.rest.ApiException as e:
         print(e)
 
+
+#### Count consecutive "True"s ####
+def len_iter(items):
+    return sum(1 for _ in items)
+
+def consecutive_true(data):
+    return max((len_iter(run) for val, run in groupby(data) if val), default=0)
+####
+
 def checkInputScore(score):
-    for pal in score.split():
+    split_score = score.split()
+    
+    # Check length
+    if len(split_score) == 0:
+        return True
+
+    # Check valid vocabulary
+    for pal in split_score:
         if not (pal in app.config['VOCABULARY']):
             return False
+    # Check consecutive multipliers
+    is_mul = [ pal in app.config['MULS'] for pal in split_score ]
+    if consecutive_true(is_mul) > 1:
+        return False
+    # Check chords
+    n_open = split_score.count('[')
+    n_close = split_score.count(']')
+    if (n_open > n_close + 1) or (n_open < n_close):
+        return False
+    
+    chord_parts = ''.join(split_score).split('[')      # Split string on '['
+    chord_parts = chord_parts[1:-1]
+    chord_parts = [ len(part.split(']')) for part in chord_parts ]
+    if 2*len(chord_parts) != sum(chord_parts):      # Must be a list of 2's [2,2,...]
+        return False
+
     return True
 
 def deleteScore(id):
