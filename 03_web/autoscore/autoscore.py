@@ -8,6 +8,7 @@ import base64
 from configparser import RawConfigParser
 import ast
 from itertools import groupby
+from vocabulary import Vocabulary as Voc
 
 # CONFIGURATION
 CONFIG_FILE = 'config.ini'
@@ -24,11 +25,8 @@ app = Flask(__name__)
 app.config['FILES_FOLDER'] = os.path.join(os.getcwd(), '.workspace')
 app.config['BINS_FOLDER'] = os.path.join(os.getcwd(), 'bin')
 app.config['BIN_ABC2MIDI'] = os.path.join(app.config['BINS_FOLDER'], 'abc2midi')
-app.config['VOCABULARY'] = ['(3', '(4', '-', '/2', '/4', '2', '3', '3/2', '4', '6', '8', '=A', '=A,', '=B', '=B,', '=C', '=D', '=E', '=F', '=G', '=G,', '=a', '=b', '=c', "=c'", '=d', "=d'", '=e', "=e'", '=f', '=g', 'H', 'T', '[', ']', '^A', '^A,', '^C', '^D', '^F', '^G', '^G,', '^a', '^c', "^c'", '^d', '^f', '^g', 'z', '~']
-app.config['MULS'] = ['/2', '/4', '2', '3', '3/2', '4', '6', '8']
-app.config['SYMBOLS'] = ['~', 'T', 'H']
 
-gen = Generator(app=app)
+gen = Generator()
 
 configuration = flat_api.Configuration()
 configuration.access_token = FLAT_ACCESS_TOKEN
@@ -132,10 +130,10 @@ def checkInputScore(score):
 
     # Check valid vocabulary
     for pal in split_score:
-        if not (pal in app.config['VOCABULARY']):
+        if not (pal in Voc.ALL):
             return False
     # Check consecutive multipliers
-    is_mul = [ pal in app.config['MULS'] for pal in split_score ]
+    is_mul = [ pal in Voc.MULS for pal in split_score ]
     if consecutive_true(is_mul) > 1:
         return False
     # Check chords

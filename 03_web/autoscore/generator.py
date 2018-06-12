@@ -4,14 +4,13 @@ from datamanager import load
 import numpy as np
 from keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
+from vocabulary import Vocabulary as Voc
 
 class Generator:
-    STOP = 10
     
-    def __init__(self, app,
+    def __init__(self,
         model_file = 'model/model2.h5',
         dictionaries = ('model/note2int', 'model/int2note')):
-        self.muls = app.config['MULS']
         self.model = load_model(model_file)
         self.graph = tf.get_default_graph()
         self.note2int = load(dictionaries[0])
@@ -28,7 +27,7 @@ class Generator:
         input_data = np.vectorize(self.int2note.get)(input_data)
         new_value = self.int2note.get(new_value)
         # Check consecutive multipliers
-        if input_data[-1] in self.muls and new_value in self.muls:
+        if input_data[-1] in Voc.MULS and new_value in Voc.MULS:
             return False
         # Check chords (max 3 notes)
         if '[' in input_data:
@@ -48,13 +47,9 @@ class Generator:
         return True
 
     # Select a valid value
-    def _selValue(self, input_data, result, stop=Generator.STOP):
-        print("SELECCIONANDO VALOR [STOP =",stop,"]")
-        print("ENTRADA:",np.vectorize(self.int2note.get)(input_data).tolist())
+    def _selValue(self, input_data, result, stop=10):
         new_value = np.random.choice( np.arange(0,result.shape[1]), p=result[0] )
-        print("SELECCION:",self.int2note.get(new_value))
         validation = self._validPrediction(input_data, new_value)
-        print("VALIDACION:",validation)
         if (not validation) and (stop >= 1):
             new_value = self._selValue(input_data, result, stop-1)
         elif validation == ']':
