@@ -27,23 +27,30 @@ class Generator:
         input_data = np.vectorize(self.int2note.get)(input_data)
         new_value = self.int2note.get(new_value)
         # Check consecutive multipliers
-        if input_data[-1] in Voc.MULS and new_value in Voc.MULS:
+        if new_value in Voc.MULS and not(input_data[-1] in Voc.NOTES_WITH_SILENCE):
             return False
-        # Check chords (max 3 notes)
-        if '[' in input_data:
+
+        # Get chords symbols
+        opened = sum( [ step == '[' for step in input_data ] )
+        closed = sum( [ step == ']' for step in input_data ] )
+
+        # Check if new_value is chord
+        if new_value == '[' and opened > closed:
+            return False
+        if new_value == ']' and opened <= closed:
+            return False
+
+        # Check if chord opened (max 3 notes)
+        if opened > closed and new_value != ']':
             # Index of last '['
             input_data = input_data.tolist()
             last_open = len(input_data) - 1 - input_data[::-1].index('[')
             # Last part: inside chord
             last_part = input_data[last_open:]
-            # Chord not closed
-            if not ']' in last_part and new_value != ']':
-                # Count notes inside de chord
-                num_notes = [ note.startswith('=') or note.startswith('^') for note in last_part ]
-                num_notes = sum(num_notes)
-                # If new value is 4th note, close chord
-                if num_notes == 3 and (new_value.startswith('=') or new_value.startswith('^')):
-                    return ']'
+            num_notes = sum( [ step in Voc.NOTES for step in last_part ] )
+            # If new value is 4th note, close chord
+            if num_notes >= 3 and new_value in Voc.NOTES_WITH_SILENCE:
+                return ']'
         return True
 
     # Select a valid value
