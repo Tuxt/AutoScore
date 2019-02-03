@@ -1,0 +1,340 @@
+Using TensorFlow backend.
+>>> Imports:
+#coding=utf-8
+
+try:
+    from keras.models import Sequential
+except:
+    pass
+
+try:
+    from keras.layers import Dense, GRU, Masking, Embedding, Reshape
+except:
+    pass
+
+try:
+    from keras.callbacks import ModelCheckpoint, EarlyStopping
+except:
+    pass
+
+try:
+    import datamanager as dm
+except:
+    pass
+
+try:
+    from hyperas import optim
+except:
+    pass
+
+try:
+    from hyperopt import Trials, STATUS_OK, tpe
+except:
+    pass
+
+try:
+    from hyperas.distributions import choice, uniform, conditional
+except:
+    pass
+
+try:
+    import time
+except:
+    pass
+
+try:
+    import os
+except:
+    pass
+
+>>> Hyperas search space:
+
+def get_space():
+    return {
+        'output_dim': hp.choice('output_dim', [20,40,60,80,100]),
+    }
+
+>>> Data
+  1: 
+  2: x_train = dm.load("dataset/X_train")
+  3: y_train = dm.load("dataset/y_train")
+  4: x_val = dm.load("dataset/X_val")
+  5: y_val = dm.load("dataset/y_val")
+  6: 
+  7: 
+  8: 
+>>> Resulting replaced keras model:
+
+   1: def keras_fmin_fnct(space):
+   2: 
+   3:     weights_dir = 'weights'
+   4:     history_dir = 'history'
+   5:     
+   6:     model = Sequential()
+   7: 
+   8:     model.add( Masking( mask_value=-1, input_shape=(x_train.shape[1:] ) ) )
+   9: 
+  10:     model.add( Embedding( y_train.shape[1], output_dim=space['output_dim'], input_shape=(x_train.shape[1:]) ) )
+  11:     model.add( Reshape( ( x_train.shape[1], space['output_dim'] ), input_shape=(x_train.shape[1], x_train.shape[2], space['output_dim'] ) ) )
+  12: 
+  13:     model.add(GRU(units=256, activation='tanh', return_sequences=True ))
+  14:     model.add(GRU(units=64, activation='tanh', return_sequences=True ))
+  15:     model.add(GRU(units=512, activation='tanh', return_sequences=False ))
+  16:     model.add(Dense(y_train.shape[1], activation='softmax'))
+  17:     model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+  18: 
+  19:     filename = weights_dir+'/' + \
+  20:             'GRU256_' + \
+  21:             'GRU64_' + \
+  22:             'GRU512_' + \
+  23:             'BATCH32_' + \
+  24:             'EMBEDDING' + str(space['output_dim']) + '_' + \
+  25:             '_{epoch:03d}_{loss:.4f}_{acc:.4f}_{val_loss:.4f}_{val_acc:.4f}.hdf5'
+  26: 
+  27:     checkpoint = ModelCheckpoint(filename, monitor='loss', verbose=1, save_best_only=True, mode='min')
+  28:     earlystopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=3, verbose=0, mode='auto')
+  29:     callbacks = [checkpoint,earlystopping]
+  30:    
+  31:     print(model.summary())
+  32: 
+  33:     result = model.fit(x_train, y_train, batch_size=32, epochs=20,verbose=6, validation_data=(x_val, y_val), callbacks=callbacks)
+  34: 
+  35:     parameters = space
+  36:     parameters['history'] = result.history
+  37:     
+  38:     dm.save(parameters, history_dir + '/' + \
+  39:         'GRU256_' + \
+  40:         'GRU64_' + \
+  41:         'GRU512_' + \
+  42:         'BATCH32_' + \
+  43:         'EMBEDDING' + str(space['output_dim']) )
+  44: 
+  45:     loss,acc = model.evaluate(x_val,y_val, verbose=0)
+  46:     print("Test loss: "+str(loss)+"\tTest acc: " +str(acc))
+  47:     return {'status': STATUS_OK, 'model':model, 'loss':loss, 'acc':acc }
+  48: 
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_1 (Embedding)      (None, 100, 1, 40)        2000      
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 100, 40)           0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 100, 256)          228096    
+_________________________________________________________________
+gru_2 (GRU)                  (None, 100, 64)           61632     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 512)               886272    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                25650     
+=================================================================
+Total params: 1,203,650
+Trainable params: 1,203,650
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88944 samples, validate on 29649 samples
+Epoch 1/20
+2018-09-03 12:18:27.985674: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:892] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-09-03 12:18:27.986030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1031] Found device 0 with properties: 
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+totalMemory: 5.93GiB freeMemory: 5.65GiB
+2018-09-03 12:18:27.986046: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 00001: loss improved from inf to 2.23619, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__001_2.2362_0.2992_2.0099_0.3615.hdf5
+Epoch 2/20
+Epoch 00002: loss improved from 2.23619 to 1.87422, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__002_1.8742_0.4019_1.8613_0.4078.hdf5
+Epoch 3/20
+Epoch 00003: loss improved from 1.87422 to 1.72792, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__003_1.7279_0.4456_1.8111_0.4263.hdf5
+Epoch 4/20
+Epoch 00004: loss improved from 1.72792 to 1.59840, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__004_1.5984_0.4818_1.7735_0.4492.hdf5
+Epoch 5/20
+Epoch 00005: loss improved from 1.59840 to 1.48517, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__005_1.4852_0.5197_1.7575_0.4529.hdf5
+Epoch 6/20
+Epoch 00006: loss improved from 1.48517 to 1.39918, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__006_1.3992_0.5472_1.7671_0.4541.hdf5
+Epoch 7/20
+Epoch 00007: loss improved from 1.39918 to 1.34549, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__007_1.3455_0.5641_1.8072_0.4526.hdf5
+Epoch 8/20
+Epoch 00008: loss improved from 1.34549 to 1.34344, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING40__008_1.3434_0.5660_1.8098_0.4510.hdf5
+Test loss: 1.80981673312	Test acc: 0.451010152127
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_2 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_2 (Embedding)      (None, 100, 1, 100)       5000      
+_________________________________________________________________
+reshape_2 (Reshape)          (None, 100, 100)          0         
+_________________________________________________________________
+gru_4 (GRU)                  (None, 100, 256)          274176    
+_________________________________________________________________
+gru_5 (GRU)                  (None, 100, 64)           61632     
+_________________________________________________________________
+gru_6 (GRU)                  (None, 512)               886272    
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                25650     
+=================================================================
+Total params: 1,252,730
+Trainable params: 1,252,730
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88944 samples, validate on 29649 samples
+Epoch 1/20
+Epoch 00001: loss improved from inf to 2.16419, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__001_2.1642_0.3232_1.9441_0.3858.hdf5
+Epoch 2/20
+Epoch 00002: loss improved from 2.16419 to 1.83200, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__002_1.8320_0.4147_1.8238_0.4111.hdf5
+Epoch 3/20
+Epoch 00003: loss improved from 1.83200 to 1.69162, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__003_1.6916_0.4552_1.7633_0.4397.hdf5
+Epoch 4/20
+Epoch 00004: loss improved from 1.69162 to 1.56614, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__004_1.5661_0.4959_1.7307_0.4548.hdf5
+Epoch 5/20
+Epoch 00005: loss improved from 1.56614 to 1.45440, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__005_1.4544_0.5302_1.7372_0.4590.hdf5
+Epoch 6/20
+Epoch 00006: loss improved from 1.45440 to 1.35593, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__006_1.3559_0.5606_1.7472_0.4574.hdf5
+Epoch 7/20
+Epoch 00007: loss improved from 1.35593 to 1.31219, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING100__007_1.3122_0.5767_1.8059_0.4500.hdf5
+Test loss: 1.80594166189	Test acc: 0.449998313603
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_3 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_3 (Embedding)      (None, 100, 1, 60)        3000      
+_________________________________________________________________
+reshape_3 (Reshape)          (None, 100, 60)           0         
+_________________________________________________________________
+gru_7 (GRU)                  (None, 100, 256)          243456    
+_________________________________________________________________
+gru_8 (GRU)                  (None, 100, 64)           61632     
+_________________________________________________________________
+gru_9 (GRU)                  (None, 512)               886272    
+_________________________________________________________________
+dense_3 (Dense)              (None, 50)                25650     
+=================================================================
+Total params: 1,220,010
+Trainable params: 1,220,010
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88944 samples, validate on 29649 samples
+Epoch 1/20
+Epoch 00001: loss improved from inf to 2.35035, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__001_2.3503_0.2803_2.4977_0.2514.hdf5
+Epoch 2/20
+Epoch 00002: loss did not improve
+Epoch 3/20
+Epoch 00003: loss did not improve
+Epoch 4/20
+Epoch 00004: loss did not improve
+Epoch 5/20
+Epoch 00005: loss did not improve
+Epoch 6/20
+Epoch 00006: loss did not improve
+Epoch 7/20
+Epoch 00007: loss improved from 2.35035 to 2.04218, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__007_2.0422_0.3560_1.9333_0.3862.hdf5
+Epoch 8/20
+Epoch 00008: loss improved from 2.04218 to 1.84902, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__008_1.8490_0.4089_1.8387_0.4081.hdf5
+Epoch 9/20
+Epoch 00009: loss improved from 1.84902 to 1.72134, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__009_1.7213_0.4441_1.7938_0.4278.hdf5
+Epoch 10/20
+Epoch 00010: loss improved from 1.72134 to 1.61004, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__010_1.6100_0.4797_1.7713_0.4416.hdf5
+Epoch 11/20
+Epoch 00011: loss improved from 1.61004 to 1.49648, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__011_1.4965_0.5155_1.7558_0.4510.hdf5
+Epoch 12/20
+Epoch 00012: loss improved from 1.49648 to 1.40024, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__012_1.4002_0.5470_1.7618_0.4566.hdf5
+Epoch 13/20
+Epoch 00013: loss improved from 1.40024 to 1.31568, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__013_1.3157_0.5741_1.7767_0.4513.hdf5
+Epoch 14/20
+Epoch 00014: loss improved from 1.31568 to 1.25540, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING60__014_1.2554_0.5947_1.8134_0.4500.hdf5
+Test loss: 1.81344923644	Test acc: 0.450032041563
+
+yer (type)                 Output Shape              Param #   
+=================================================================
+masking_1 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_1 (Embedding)      (None, 100, 1, 20)        1000      
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 100, 20)           0         
+_________________________________________________________________
+gru_1 (GRU)                  (None, 100, 256)          212736    
+_________________________________________________________________
+gru_2 (GRU)                  (None, 100, 64)           61632     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 512)               886272    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                25650     
+=================================================================
+Total params: 1,187,290
+Trainable params: 1,187,290
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88944 samples, validate on 29649 samples
+Epoch 1/20
+2018-09-03 21:20:05.703570: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:892] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-09-03 21:20:05.703927: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1031] Found device 0 with properties: 
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.759
+pciBusID: 0000:01:00.0
+totalMemory: 5.93GiB freeMemory: 5.56GiB
+2018-09-03 21:20:05.703949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Epoch 00001: loss improved from inf to 2.47446, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__001_2.4745_0.2427_2.1565_0.3024.hdf5
+Epoch 2/20
+Epoch 00002: loss improved from 2.47446 to 2.01453, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__002_2.0145_0.3515_1.9426_0.3749.hdf5
+Epoch 3/20
+Epoch 00003: loss improved from 2.01453 to 1.84673, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__003_1.8467_0.4053_1.8591_0.4047.hdf5
+Epoch 4/20
+Epoch 00004: loss improved from 1.84673 to 1.71778, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__004_1.7178_0.4445_1.7940_0.4253.hdf5
+Epoch 5/20
+Epoch 00005: loss improved from 1.71778 to 1.60516, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__005_1.6052_0.4805_1.7765_0.4360.hdf5
+Epoch 6/20
+Epoch 00006: loss improved from 1.60516 to 1.49805, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__006_1.4981_0.5148_1.7770_0.4481.hdf5
+Epoch 7/20
+Epoch 00007: loss improved from 1.49805 to 1.42604, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__007_1.4260_0.5398_1.7757_0.4442.hdf5
+Epoch 8/20
+Epoch 00008: loss improved from 1.42604 to 1.37579, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__008_1.3758_0.5558_1.8148_0.4446.hdf5
+Epoch 9/20
+Epoch 00009: loss improved from 1.37579 to 1.37305, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING20__009_1.3730_0.5559_1.8041_0.4475.hdf5
+Epoch 10/20
+Epoch 00010: loss did not improve
+Test loss: 1.87041328184	Test acc: 0.435529022911
+
+Layer (type)                 Output Shape              Param #   
+=================================================================
+masking_5 (Masking)          (None, 100, 1)            0         
+_________________________________________________________________
+embedding_5 (Embedding)      (None, 100, 1, 80)        4000      
+_________________________________________________________________
+reshape_5 (Reshape)          (None, 100, 80)           0         
+_________________________________________________________________
+gru_13 (GRU)                 (None, 100, 256)          258816    
+_________________________________________________________________
+gru_14 (GRU)                 (None, 100, 64)           61632     
+_________________________________________________________________
+gru_15 (GRU)                 (None, 512)               886272    
+_________________________________________________________________
+dense_5 (Dense)              (None, 50)                25650     
+=================================================================
+Total params: 1,236,370
+Trainable params: 1,236,370
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 88944 samples, validate on 29649 samples
+Epoch 1/20
+Epoch 00001: loss improved from inf to 2.18780, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__001_2.1878_0.3140_1.9463_0.3759.hdf5
+Epoch 2/20
+Epoch 00002: loss improved from 2.18780 to 1.84707, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__002_1.8471_0.4098_1.8256_0.4155.hdf5
+Epoch 3/20
+Epoch 00003: loss improved from 1.84707 to 1.69871, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__003_1.6987_0.4533_1.7609_0.4376.hdf5
+Epoch 4/20
+Epoch 00004: loss improved from 1.69871 to 1.56790, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__004_1.5679_0.4927_1.7271_0.4566.hdf5
+Epoch 5/20
+Epoch 00005: loss improved from 1.56790 to 1.45460, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__005_1.4546_0.5296_1.7428_0.4620.hdf5
+Epoch 6/20
+Epoch 00006: loss improved from 1.45460 to 1.36692, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__006_1.3669_0.5566_1.7420_0.4668.hdf5
+Epoch 7/20
+Epoch 00007: loss improved from 1.36692 to 1.32385, saving model to weights/GRU256_GRU64_GRU512_BATCH32_EMBEDDING80__007_1.3238_0.5727_1.7634_0.4636.hdf5
+Test loss: 1.7634028116	Test acc: 0.463624405546
+
