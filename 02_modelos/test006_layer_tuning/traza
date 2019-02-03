@@ -1,0 +1,720 @@
+$ python3 test006_layer_tuning.py --rnn-units 128 --rnn-activation tanh --optimizer rmsprop --epochs 25 --min-layers 1 --max-layers 10
+Using TensorFlow backend.
+TEST: 1-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_1 (GRU)                  (None, 128)               49920     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 56,370
+Trainable params: 56,370
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.53274, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_001_2.5327_0.2457_2.3900_0.2616.hdf5
+Epoch 00002: loss improved from 2.53274 to 2.34137, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_002_2.3414_0.2735_2.2893_0.2824.hdf5
+Epoch 00003: loss improved from 2.34137 to 2.24996, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_003_2.2500_0.2957_2.2207_0.3039.hdf5
+Epoch 00004: loss improved from 2.24996 to 2.18039, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_004_2.1804_0.3143_2.1682_0.3181.hdf5
+Epoch 00005: loss improved from 2.18039 to 2.12644, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_005_2.1264_0.3315_2.1270_0.3266.hdf5
+Epoch 00006: loss improved from 2.12644 to 2.08052, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_006_2.0805_0.3427_2.0986_0.3358.hdf5
+Epoch 00007: loss improved from 2.08052 to 2.03909, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_007_2.0391_0.3538_2.0549_0.3484.hdf5
+Epoch 00008: loss improved from 2.03909 to 2.00012, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_008_2.0001_0.3658_2.0280_0.3568.hdf5
+Epoch 00009: loss improved from 2.00012 to 1.96532, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_009_1.9653_0.3751_2.0102_0.3653.hdf5
+Epoch 00010: loss improved from 1.96532 to 1.93430, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_010_1.9343_0.3840_1.9909_0.3648.hdf5
+Epoch 00011: loss improved from 1.93430 to 1.90803, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_011_1.9080_0.3901_1.9672_0.3756.hdf5
+Epoch 00012: loss improved from 1.90803 to 1.88221, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_012_1.8822_0.3963_1.9603_0.3721.hdf5
+Epoch 00013: loss improved from 1.88221 to 1.85949, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_013_1.8595_0.4028_1.9501_0.3793.hdf5
+Epoch 00014: loss improved from 1.85949 to 1.84164, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_014_1.8416_0.4084_1.9353_0.3810.hdf5
+Epoch 00015: loss improved from 1.84164 to 1.82183, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_015_1.8218_0.4137_1.9194_0.3881.hdf5
+Epoch 00016: loss improved from 1.82183 to 1.80453, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_016_1.8045_0.4178_1.9259_0.3836.hdf5
+Epoch 00017: loss improved from 1.80453 to 1.78736, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_017_1.7874_0.4217_1.9151_0.3853.hdf5
+Epoch 00018: loss improved from 1.78736 to 1.77178, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_018_1.7718_0.4272_1.9057_0.3900.hdf5
+Epoch 00019: loss improved from 1.77178 to 1.75769, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_019_1.7577_0.4320_1.9037_0.3924.hdf5
+Epoch 00020: loss improved from 1.75769 to 1.74418, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_020_1.7442_0.4353_1.8988_0.3964.hdf5
+Epoch 00021: loss improved from 1.74418 to 1.73086, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_021_1.7309_0.4403_1.9023_0.3957.hdf5
+Epoch 00022: loss improved from 1.73086 to 1.71806, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_022_1.7181_0.4432_1.9013_0.3925.hdf5
+Epoch 00023: loss improved from 1.71806 to 1.70745, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_023_1.7074_0.4466_1.8805_0.4002.hdf5
+Epoch 00024: loss improved from 1.70745 to 1.69447, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_024_1.6945_0.4491_1.8823_0.3968.hdf5
+Epoch 00025: loss improved from 1.69447 to 1.68614, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/1-layer_025_1.6861_0.4527_1.8881_0.3963.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.6517945137528298, 0.46203228998021229]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[1.8880553405165628, 0.39630341669363961]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[1.8667665377142153, 0.40379102158745067]
+25 epochs in 2004.6309061050415 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 2-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_2 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 155,058
+Trainable params: 155,058
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.49623, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_001_2.4962_0.2542_2.3264_0.2809.hdf5
+Epoch 00002: loss improved from 2.49623 to 2.24259, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_002_2.2426_0.3023_2.1716_0.3195.hdf5
+Epoch 00003: loss improved from 2.24259 to 2.11974, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_003_2.1197_0.3330_2.0952_0.3363.hdf5
+Epoch 00004: loss improved from 2.11974 to 2.02713, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_004_2.0271_0.3567_2.0166_0.3612.hdf5
+Epoch 00005: loss improved from 2.02713 to 1.94894, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_005_1.9489_0.3796_1.9755_0.3745.hdf5
+Epoch 00006: loss improved from 1.94894 to 1.88872, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_006_1.8887_0.3959_1.9263_0.3833.hdf5
+Epoch 00007: loss improved from 1.88872 to 1.83718, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_007_1.8372_0.4107_1.8975_0.3951.hdf5
+Epoch 00008: loss improved from 1.83718 to 1.79521, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_008_1.7952_0.4216_1.8714_0.4026.hdf5
+Epoch 00009: loss improved from 1.79521 to 1.75607, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_009_1.7561_0.4344_1.8617_0.4017.hdf5
+Epoch 00010: loss improved from 1.75607 to 1.71969, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_010_1.7197_0.4470_1.8416_0.4099.hdf5
+Epoch 00011: loss improved from 1.71969 to 1.68574, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_011_1.6857_0.4549_1.8264_0.4143.hdf5
+Epoch 00012: loss improved from 1.68574 to 1.65406, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_012_1.6541_0.4653_1.8288_0.4165.hdf5
+Epoch 00013: loss improved from 1.65406 to 1.62343, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_013_1.6234_0.4750_1.8184_0.4158.hdf5
+Epoch 00014: loss improved from 1.62343 to 1.59436, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_014_1.5944_0.4838_1.8169_0.4192.hdf5
+Epoch 00015: loss improved from 1.59436 to 1.56641, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_015_1.5664_0.4931_1.8256_0.4203.hdf5
+Epoch 00016: loss improved from 1.56641 to 1.53837, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_016_1.5384_0.5012_1.8219_0.4224.hdf5
+Epoch 00017: loss improved from 1.53837 to 1.51079, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_017_1.5108_0.5102_1.8266_0.4235.hdf5
+Epoch 00018: loss improved from 1.51079 to 1.48520, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_018_1.4852_0.5181_1.8301_0.4253.hdf5
+Epoch 00019: loss improved from 1.48520 to 1.46143, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_019_1.4614_0.5266_1.8370_0.4235.hdf5
+Epoch 00020: loss improved from 1.46143 to 1.43490, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_020_1.4349_0.5346_1.8324_0.4300.hdf5
+Epoch 00021: loss improved from 1.43490 to 1.41242, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_021_1.4124_0.5436_1.8443_0.4271.hdf5
+Epoch 00022: loss improved from 1.41242 to 1.38986, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_022_1.3899_0.5502_1.8636_0.4287.hdf5
+Epoch 00023: loss improved from 1.38986 to 1.36741, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_023_1.3674_0.5568_1.8626_0.4275.hdf5
+Epoch 00024: loss improved from 1.36741 to 1.34425, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_024_1.3442_0.5647_1.8733_0.4277.hdf5
+Epoch 00025: loss improved from 1.34425 to 1.32399, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/2-layer_025_1.3240_0.5711_1.8820_0.4251.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.2727752029306063, 0.58958445760409894]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[1.8820204936600426, 0.42507335826085629]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[1.8679063123910278, 0.42756922660804669]
+25 epochs in 4133.301286458969 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 3-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_4 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_5 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_6 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_3 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 253,746
+Trainable params: 253,746
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.46986, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_001_2.4699_0.2526_2.2767_0.2888.hdf5
+Epoch 00002: loss improved from 2.46986 to 2.16840, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_002_2.1684_0.3190_2.1055_0.3365.hdf5
+Epoch 00003: loss improved from 2.16840 to 2.00801, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_003_2.0080_0.3633_1.9768_0.3719.hdf5
+Epoch 00004: loss improved from 2.00801 to 1.90189, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_004_1.9019_0.3902_1.8999_0.3953.hdf5
+Epoch 00005: loss improved from 1.90189 to 1.82507, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_005_1.8251_0.4110_1.8747_0.4004.hdf5
+Epoch 00006: loss improved from 1.82507 to 1.76645, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_006_1.7664_0.4286_1.8394_0.4116.hdf5
+Epoch 00007: loss improved from 1.76645 to 1.71482, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_007_1.7148_0.4444_1.8037_0.4187.hdf5
+Epoch 00008: loss improved from 1.71482 to 1.66837, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_008_1.6684_0.4568_1.7955_0.4257.hdf5
+Epoch 00009: loss improved from 1.66837 to 1.62548, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_009_1.6255_0.4714_1.7818_0.4306.hdf5
+Epoch 00010: loss improved from 1.62548 to 1.58411, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_010_1.5841_0.4826_1.7822_0.4340.hdf5
+Epoch 00011: loss improved from 1.58411 to 1.54492, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_011_1.5449_0.4974_1.7583_0.4344.hdf5
+Epoch 00012: loss improved from 1.54492 to 1.50734, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_012_1.5073_0.5082_1.7596_0.4413.hdf5
+Epoch 00013: loss improved from 1.50734 to 1.46875, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_013_1.4687_0.5211_1.7574_0.4454.hdf5
+Epoch 00014: loss improved from 1.46875 to 1.43150, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_014_1.4315_0.5337_1.7677_0.4407.hdf5
+Epoch 00015: loss improved from 1.43150 to 1.39430, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_015_1.3943_0.5447_1.7795_0.4376.hdf5
+Epoch 00016: loss improved from 1.39430 to 1.35900, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_016_1.3590_0.5583_1.7852_0.4424.hdf5
+Epoch 00017: loss improved from 1.35900 to 1.32383, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_017_1.3238_0.5690_1.7863_0.4455.hdf5
+Epoch 00018: loss improved from 1.32383 to 1.29032, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_018_1.2903_0.5825_1.8067_0.4458.hdf5
+Epoch 00019: loss improved from 1.29032 to 1.25795, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_019_1.2580_0.5930_1.8151_0.4468.hdf5
+Epoch 00020: loss improved from 1.25795 to 1.22709, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_020_1.2271_0.6014_1.8521_0.4383.hdf5
+Epoch 00021: loss improved from 1.22709 to 1.19553, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_021_1.1955_0.6129_1.8336_0.4461.hdf5
+Epoch 00022: loss improved from 1.19553 to 1.16579, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_022_1.1658_0.6204_1.8691_0.4433.hdf5
+Epoch 00023: loss improved from 1.16579 to 1.13815, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_023_1.1382_0.6301_1.8722_0.4456.hdf5
+Epoch 00024: loss improved from 1.13815 to 1.10913, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_024_1.1091_0.6407_1.9367_0.4305.hdf5
+Epoch 00025: loss improved from 1.10913 to 1.08110, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/3-layer_025_1.0811_0.6482_1.9128_0.4411.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.0032703341458165, 0.67876416620622326]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[1.9128410463900207, 0.44109413469737163]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[1.8969619604720125, 0.44227461293960424]
+25 epochs in 6341.52609038353 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 4-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_1 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_2 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_4 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 352,434
+Trainable params: 352,434
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+Epoch 00001: loss improved from inf to 2.47265, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_001_2.4727_0.2541_2.2293_0.3034.hdf5
+
+Epoch 00002: loss improved from 2.47265 to 2.13966, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_002_2.1397_0.3286_2.0426_0.3521.hdf5
+
+Epoch 00003: loss improved from 2.13966 to 1.97053, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_003_1.9705_0.3751_1.9520_0.3799.hdf5
+
+Epoch 00004: loss improved from 1.97053 to 1.86996, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_004_1.8700_0.4019_1.9189_0.3875.hdf5
+
+Epoch 00005: loss improved from 1.86996 to 1.79725, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_005_1.7972_0.4242_1.8578_0.4071.hdf5
+
+Epoch 00006: loss improved from 1.79725 to 1.73664, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_006_1.7366_0.4406_1.8223_0.4199.hdf5
+
+Epoch 00007: loss improved from 1.73664 to 1.68000, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_007_1.6800_0.4565_1.8357_0.4136.hdf5
+
+Epoch 00008: loss improved from 1.68000 to 1.62715, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_008_1.6271_0.4735_1.8034_0.4286.hdf5
+
+Epoch 00009: loss improved from 1.62715 to 1.57823, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_009_1.5782_0.4897_1.7788_0.4330.hdf5
+
+Epoch 00010: loss improved from 1.57823 to 1.52726, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_010_1.5273_0.5058_1.7771_0.4360.hdf5
+
+Epoch 00011: loss improved from 1.52726 to 1.47920, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_011_1.4792_0.5203_1.7762_0.4391.hdf5
+
+Epoch 00012: loss improved from 1.47920 to 1.42992, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_012_1.4299_0.5359_1.7744_0.4447.hdf5
+
+Epoch 00013: loss improved from 1.42992 to 1.38220, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_013_1.3822_0.5527_1.7958_0.4428.hdf5
+
+Epoch 00014: loss improved from 1.38220 to 1.33607, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_014_1.3361_0.5687_1.8007_0.4428.hdf5
+
+Epoch 00015: loss improved from 1.33607 to 1.28854, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_015_1.2885_0.5828_1.8170_0.4441.hdf5
+
+Epoch 00016: loss improved from 1.28854 to 1.24327, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_016_1.2433_0.5976_1.8282_0.4423.hdf5
+
+Epoch 00017: loss improved from 1.24327 to 1.20177, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_017_1.2018_0.6109_1.8418_0.4474.hdf5
+
+Epoch 00018: loss improved from 1.20177 to 1.15785, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_018_1.1578_0.6264_1.8689_0.4436.hdf5
+
+Epoch 00019: loss improved from 1.15785 to 1.11603, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_019_1.1160_0.6394_1.8932_0.4443.hdf5
+
+Epoch 00020: loss improved from 1.11603 to 1.07742, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_020_1.0774_0.6541_1.9088_0.4460.hdf5
+
+Epoch 00021: loss improved from 1.07742 to 1.03773, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_021_1.0377_0.6669_1.9512_0.4456.hdf5
+
+Epoch 00022: loss improved from 1.03773 to 1.00073, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_022_1.0007_0.6769_1.9600_0.4413.hdf5
+
+Epoch 00023: loss improved from 1.00073 to 0.96724, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_023_0.9672_0.6892_1.9921_0.4435.hdf5
+
+Epoch 00024: loss improved from 0.96724 to 0.93312, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_024_0.9331_0.7003_2.0138_0.4439.hdf5
+
+Epoch 00025: loss improved from 0.93312 to 0.90055, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/4-layer_025_0.9006_0.7104_2.0562_0.4399.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.8032570740348424, 0.7472454577947096]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.0562009114134177, 0.4399136564993666]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.026610014358135, 0.4439272825681901]
+25 epochs in 19526.18221974373 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 5-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_5 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_6 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_7 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_8 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_9 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 451,122
+Trainable params: 451,122
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+Epoch 00001: loss improved from inf to 2.47932, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_001_2.4793_0.2521_2.2321_0.2976.hdf5
+
+Epoch 00002: loss improved from 2.47932 to 2.13016, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_002_2.1302_0.3308_2.0682_0.3465.hdf5
+
+Epoch 00003: loss improved from 2.13016 to 1.96258, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_003_1.9626_0.3759_1.9238_0.3839.hdf5
+
+Epoch 00004: loss improved from 1.96258 to 1.85782, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_004_1.8578_0.4033_1.8819_0.3977.hdf5
+
+Epoch 00005: loss improved from 1.85782 to 1.77717, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_005_1.7772_0.4270_1.8332_0.4128.hdf5
+
+Epoch 00006: loss improved from 1.77717 to 1.70884, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_006_1.7088_0.4481_1.7997_0.4237.hdf5
+
+Epoch 00007: loss improved from 1.70884 to 1.64567, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_007_1.6457_0.4660_1.7779_0.4325.hdf5
+
+Epoch 00008: loss improved from 1.64567 to 1.58314, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_008_1.5831_0.4872_1.7831_0.4309.hdf5
+
+Epoch 00009: loss improved from 1.58314 to 1.52583, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_009_1.5258_0.5036_1.7545_0.4401.hdf5
+
+Epoch 00010: loss improved from 1.52583 to 1.46664, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_010_1.4666_0.5230_1.7657_0.4407.hdf5
+
+Epoch 00011: loss improved from 1.46664 to 1.40817, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_011_1.4082_0.5418_1.7570_0.4511.hdf5
+
+Epoch 00012: loss improved from 1.40817 to 1.35456, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_012_1.3546_0.5615_1.7938_0.4394.hdf5
+
+Epoch 00013: loss improved from 1.35456 to 1.29495, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_013_1.2950_0.5788_1.7976_0.4389.hdf5
+
+Epoch 00014: loss improved from 1.29495 to 1.24113, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_014_1.2411_0.5969_1.8343_0.4419.hdf5
+
+Epoch 00015: loss improved from 1.24113 to 1.18988, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_015_1.1899_0.6142_1.8001_0.4519.hdf5
+
+Epoch 00016: loss improved from 1.18988 to 1.13702, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_016_1.1370_0.6313_1.8261_0.4579.hdf5
+
+Epoch 00017: loss improved from 1.13702 to 1.08591, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_017_1.0859_0.6464_1.8923_0.4427.hdf5
+
+Epoch 00018: loss improved from 1.08591 to 1.03872, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_018_1.0387_0.6631_1.8843_0.4576.hdf5
+
+Epoch 00019: loss improved from 1.03872 to 0.99427, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_019_0.9943_0.6790_1.8878_0.4551.hdf5
+
+Epoch 00020: loss improved from 0.99427 to 0.94855, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_020_0.9485_0.6939_1.9353_0.4540.hdf5
+
+Epoch 00021: loss improved from 0.94855 to 0.90871, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_021_0.9087_0.7059_1.9660_0.4548.hdf5
+
+Epoch 00022: loss improved from 0.90871 to 0.86693, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_022_0.8669_0.7193_2.0034_0.4553.hdf5
+
+Epoch 00023: loss improved from 0.86693 to 0.82684, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_023_0.8268_0.7323_2.0315_0.4584.hdf5
+
+Epoch 00024: loss improved from 0.82684 to 0.79165, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_024_0.7917_0.7443_2.0788_0.4520.hdf5
+
+Epoch 00025: loss improved from 0.79165 to 0.76161, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/5-layer_025_0.7616_0.7540_2.1142_0.4519.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.63890464697452, 0.8009196797770806]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.114234427058189, 0.45185335084171235]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.09314579879893, 0.4593072279289105]
+25 epochs in 25027.1096637249 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 6-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_10 (GRU)                 (None, 100, 128)          49920     
+_________________________________________________________________
+gru_11 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_12 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_13 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_14 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_15 (GRU)                 (None, 128)               98688     
+_________________________________________________________________
+dense_3 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 549,810
+Trainable params: 549,810
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+Epoch 00001: loss improved from inf to 2.52551, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_001_2.5255_0.2386_2.2760_0.2859.hdf5
+
+Epoch 00002: loss improved from 2.52551 to 2.17462, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_002_2.1746_0.3147_2.0532_0.3481.hdf5
+
+Epoch 00003: loss improved from 2.17462 to 1.99254, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_003_1.9925_0.3669_1.9419_0.3817.hdf5
+
+Epoch 00004: loss improved from 1.99254 to 1.88636, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_004_1.8864_0.3982_1.8938_0.3967.hdf5
+
+Epoch 00005: loss improved from 1.88636 to 1.80365, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_005_1.8037_0.4216_1.8579_0.4082.hdf5
+
+Epoch 00006: loss improved from 1.80365 to 1.73219, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_006_1.7322_0.4428_1.8081_0.4229.hdf5
+
+Epoch 00007: loss improved from 1.73219 to 1.66659, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_007_1.6666_0.4606_1.7941_0.4325.hdf5
+
+Epoch 00008: loss improved from 1.66659 to 1.60552, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_008_1.6055_0.4797_1.7790_0.4318.hdf5
+
+Epoch 00009: loss improved from 1.60552 to 1.54623, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_009_1.5462_0.4983_1.7767_0.4356.hdf5
+
+Epoch 00010: loss improved from 1.54623 to 1.48746, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_010_1.4875_0.5160_1.7661_0.4389.hdf5
+
+Epoch 00011: loss improved from 1.48746 to 1.42805, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_011_1.4280_0.5370_1.7626_0.4419.hdf5
+
+Epoch 00012: loss improved from 1.42805 to 1.37352, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_012_1.3735_0.5533_1.7706_0.4442.hdf5
+
+Epoch 00013: loss improved from 1.37352 to 1.31523, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_013_1.3152_0.5724_1.7779_0.4478.hdf5
+
+Epoch 00014: loss improved from 1.31523 to 1.26029, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_014_1.2603_0.5909_1.7949_0.4486.hdf5
+
+Epoch 00015: loss improved from 1.26029 to 1.20426, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_015_1.2043_0.6096_1.8504_0.4424.hdf5
+
+Epoch 00016: loss improved from 1.20426 to 1.15170, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_016_1.1517_0.6267_1.8314_0.4537.hdf5
+
+Epoch 00017: loss improved from 1.15170 to 1.10248, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_017_1.1025_0.6420_1.8551_0.4514.hdf5
+
+Epoch 00018: loss improved from 1.10248 to 1.05415, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_018_1.0542_0.6589_1.8788_0.4523.hdf5
+
+Epoch 00019: loss improved from 1.05415 to 1.00520, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_019_1.0052_0.6748_1.9092_0.4528.hdf5
+
+Epoch 00020: loss improved from 1.00520 to 0.96201, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_020_0.9620_0.6908_1.9373_0.4558.hdf5
+
+Epoch 00021: loss improved from 0.96201 to 0.92017, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_021_0.9202_0.7028_1.9883_0.4439.hdf5
+
+Epoch 00022: loss improved from 0.92017 to 0.88039, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_022_0.8804_0.7152_2.0025_0.4527.hdf5
+
+Epoch 00023: loss improved from 0.88039 to 0.83986, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_023_0.8399_0.7298_2.0535_0.4443.hdf5
+
+Epoch 00024: loss improved from 0.83986 to 0.80657, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_024_0.8066_0.7384_2.0877_0.4479.hdf5
+
+Epoch 00025: loss improved from 0.80657 to 0.77173, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/6-layer_025_0.7717_0.7507_2.1240_0.4499.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.6542453050377515, 0.7978390897643461]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.124003094791976, 0.4498634018111243]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.075026305941145, 0.4546190427897121]
+25 epochs in 30325.348247528076 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 7-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_16 (GRU)                 (None, 100, 128)          49920     
+_________________________________________________________________
+gru_17 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_18 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_19 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_20 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_21 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_22 (GRU)                 (None, 128)               98688     
+_________________________________________________________________
+dense_4 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 648,498
+Trainable params: 648,498
+Non-trainable params: 0
+_________________________________________________________________
+None
+
+Epoch 00001: loss improved from inf to 2.52881, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_001_2.5288_0.2408_2.3090_0.2817.hdf5
+
+Epoch 00002: loss improved from 2.52881 to 2.17818, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_002_2.1782_0.3145_2.0991_0.3337.hdf5
+
+Epoch 00003: loss improved from 2.17818 to 1.99839, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_003_1.9984_0.3654_1.9515_0.3764.hdf5
+
+Epoch 00004: loss improved from 1.99839 to 1.88631, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_004_1.8863_0.3964_1.8945_0.3918.hdf5
+
+Epoch 00005: loss improved from 1.88631 to 1.80142, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_005_1.8014_0.4205_1.8505_0.4069.hdf5
+
+Epoch 00006: loss improved from 1.80142 to 1.73407, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_006_1.7341_0.4392_1.8119_0.4181.hdf5
+
+Epoch 00007: loss improved from 1.73407 to 1.66517, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_007_1.6652_0.4602_1.7853_0.4283.hdf5
+
+Epoch 00008: loss improved from 1.66517 to 1.60333, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_008_1.6033_0.4808_1.7801_0.4298.hdf5
+
+Epoch 00009: loss improved from 1.60333 to 1.54049, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_009_1.5405_0.5000_1.7630_0.4389.hdf5
+
+Epoch 00010: loss improved from 1.54049 to 1.48009, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_010_1.4801_0.5192_1.7696_0.4357.hdf5
+
+Epoch 00011: loss improved from 1.48009 to 1.41802, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_011_1.4180_0.5399_1.7747_0.4405.hdf5
+
+Epoch 00012: loss improved from 1.41802 to 1.35840, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_012_1.3584_0.5592_1.8583_0.4196.hdf5
+
+Epoch 00013: loss improved from 1.35840 to 1.30261, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_013_1.3026_0.5780_1.7800_0.4512.hdf5
+
+Epoch 00014: loss improved from 1.30261 to 1.24305, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_014_1.2430_0.5970_1.7921_0.4478.hdf5
+
+Epoch 00015: loss improved from 1.24305 to 1.18603, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_015_1.1860_0.6164_1.8202_0.4484.hdf5
+
+Epoch 00016: loss improved from 1.18603 to 1.12957, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_016_1.1296_0.6359_1.8591_0.4441.hdf5
+
+Epoch 00017: loss improved from 1.12957 to 1.07814, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_017_1.0781_0.6514_1.8475_0.4560.hdf5
+
+Epoch 00018: loss improved from 1.07814 to 1.02428, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_018_1.0243_0.6695_1.8733_0.4538.hdf5
+
+Epoch 00019: loss improved from 1.02428 to 0.97623, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_019_0.9762_0.6849_1.9237_0.4555.hdf5
+
+Epoch 00020: loss improved from 0.97623 to 0.92884, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_020_0.9288_0.7010_1.9510_0.4539.hdf5
+
+Epoch 00021: loss improved from 0.92884 to 0.88423, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_021_0.8842_0.7160_1.9824_0.4519.hdf5
+
+Epoch 00022: loss improved from 0.88423 to 0.84597, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_022_0.8460_0.7283_2.0184_0.4543.hdf5
+
+Epoch 00023: loss improved from 0.84597 to 0.81004, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_023_0.8100_0.7408_2.0587_0.4495.hdf5
+
+Epoch 00024: loss improved from 0.81004 to 0.76796, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_024_0.7680_0.7521_2.0882_0.4503.hdf5
+
+Epoch 00025: loss improved from 0.76796 to 0.73593, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/7-layer_025_0.7359_0.7633_2.1337_0.4493.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.6162773353372852, 0.8096330275122136]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.1336957589301973, 0.44925629870478]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.122079994997016, 0.44571486387656]
+25 epochs in 34631.883031606674 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 8-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_1 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_2 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_4 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_5 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_6 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_7 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_8 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 747,186
+Trainable params: 747,186
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.61693, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_001_2.6169_0.2257_2.3511_0.2738.hdf5
+Epoch 00002: loss improved from 2.61693 to 2.24702, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_002_2.2470_0.2968_2.1667_0.3231.hdf5
+Epoch 00003: loss improved from 2.24702 to 2.06853, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_003_2.0685_0.3472_2.0355_0.3518.hdf5
+Epoch 00004: loss improved from 2.06853 to 1.94533, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_004_1.9453_0.3804_1.9148_0.3865.hdf5
+Epoch 00005: loss improved from 1.94533 to 1.84135, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_005_1.8413_0.4081_1.9754_0.3759.hdf5
+Epoch 00006: loss improved from 1.84135 to 1.75951, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_006_1.7595_0.4340_1.8650_0.4046.hdf5
+Epoch 00007: loss improved from 1.75951 to 1.69191, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_007_1.6919_0.4522_1.7829_0.4278.hdf5
+Epoch 00008: loss improved from 1.69191 to 1.62285, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_008_1.6229_0.4744_1.7758_0.4317.hdf5
+Epoch 00009: loss improved from 1.62285 to 1.56243, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_009_1.5624_0.4922_1.7735_0.4338.hdf5
+Epoch 00010: loss improved from 1.56243 to 1.50081, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_010_1.5008_0.5122_1.7498_0.4419.hdf5
+Epoch 00011: loss improved from 1.50081 to 1.43583, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_011_1.4358_0.5334_1.7526_0.4455.hdf5
+Epoch 00012: loss improved from 1.43583 to 1.37560, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_012_1.3756_0.5524_1.7657_0.4444.hdf5
+Epoch 00013: loss improved from 1.37560 to 1.31495, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_013_1.3149_0.5739_1.7733_0.4524.hdf5
+Epoch 00014: loss improved from 1.31495 to 1.25459, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_014_1.2546_0.5934_1.7858_0.4517.hdf5
+Epoch 00015: loss improved from 1.25459 to 1.19854, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_015_1.1985_0.6126_1.8200_0.4474.hdf5
+Epoch 00016: loss improved from 1.19854 to 1.14271, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_016_1.1427_0.6308_1.8235_0.4543.hdf5
+Epoch 00017: loss improved from 1.14271 to 1.08535, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_017_1.0854_0.6513_1.8434_0.4541.hdf5
+Epoch 00018: loss improved from 1.08535 to 1.03429, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_018_1.0343_0.6687_1.8725_0.4538.hdf5
+Epoch 00019: loss improved from 1.03429 to 0.98234, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_019_0.9823_0.6838_1.9072_0.4552.hdf5
+Epoch 00020: loss improved from 0.98234 to 0.93175, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_020_0.9317_0.6993_1.9500_0.4555.hdf5
+Epoch 00021: loss improved from 0.93175 to 0.89479, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_021_0.8948_0.7133_1.9769_0.4520.hdf5
+Epoch 00022: loss improved from 0.89479 to 0.84391, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_022_0.8439_0.7291_2.2664_0.4111.hdf5
+Epoch 00023: loss improved from 0.84391 to 0.81006, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_023_0.8101_0.7399_2.0436_0.4587.hdf5
+Epoch 00024: loss improved from 0.81006 to 0.76974, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_024_0.7697_0.7524_2.0915_0.4491.hdf5
+Epoch 00025: loss improved from 0.76974 to 0.73923, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/8-layer_025_0.7392_0.7632_2.3893_0.4090.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[1.1488037145830441, 0.64690142110818405]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.3892752865948257, 0.40895139803158348]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.3525067239053903, 0.41724847379918967]
+25 epochs in 17027.1388835907 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 9-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_1 (GRU)                  (None, 100, 128)          49920     
+_________________________________________________________________
+gru_2 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_3 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_4 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_5 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_6 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_7 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_8 (GRU)                  (None, 100, 128)          98688     
+_________________________________________________________________
+gru_9 (GRU)                  (None, 128)               98688     
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 845,874
+Trainable params: 845,874
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.72802, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_001_2.7280_0.2062_2.4503_0.2544.hdf5
+Epoch 00002: loss improved from 2.72802 to 2.32655, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_002_2.3265_0.2816_2.2024_0.3035.hdf5
+Epoch 00003: loss improved from 2.32655 to 2.14976, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_003_2.1498_0.3225_2.1437_0.3298.hdf5
+Epoch 00004: loss improved from 2.14976 to 2.02934, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_004_2.0293_0.3542_2.0143_0.3586.hdf5
+Epoch 00005: loss improved from 2.02934 to 1.91347, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_005_1.9135_0.3872_1.9345_0.3808.hdf5
+Epoch 00006: loss improved from 1.91347 to 1.82317, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_006_1.8232_0.4126_1.8749_0.4000.hdf5
+Epoch 00007: loss improved from 1.82317 to 1.74947, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_007_1.7495_0.4337_1.8374_0.4153.hdf5
+Epoch 00008: loss improved from 1.74947 to 1.68041, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_008_1.6804_0.4571_1.8168_0.4171.hdf5
+Epoch 00009: loss improved from 1.68041 to 1.61376, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_009_1.6138_0.4769_1.7877_0.4279.hdf5
+Epoch 00010: loss improved from 1.61376 to 1.54597, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_010_1.5460_0.4970_1.7764_0.4355.hdf5
+Epoch 00011: loss improved from 1.54597 to 1.48078, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_011_1.4808_0.5185_1.7823_0.4334.hdf5
+Epoch 00012: loss improved from 1.48078 to 1.41792, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_012_1.4179_0.5397_1.7824_0.4419.hdf5
+Epoch 00013: loss improved from 1.41792 to 1.35160, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_013_1.3516_0.5623_1.7844_0.4467.hdf5
+Epoch 00014: loss improved from 1.35160 to 1.28931, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_014_1.2893_0.5796_1.7864_0.4476.hdf5
+Epoch 00015: loss improved from 1.28931 to 1.22287, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_015_1.2229_0.6009_1.8122_0.4468.hdf5
+Epoch 00016: loss improved from 1.22287 to 1.16159, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_016_1.1616_0.6230_1.8418_0.4467.hdf5
+Epoch 00017: loss improved from 1.16159 to 1.10252, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_017_1.1025_0.6433_1.8553_0.4503.hdf5
+Epoch 00018: loss improved from 1.10252 to 1.04643, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_018_1.0464_0.6593_1.9240_0.4435.hdf5
+Epoch 00019: loss improved from 1.04643 to 0.98688, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_019_0.9869_0.6818_1.9144_0.4491.hdf5
+Epoch 00020: loss improved from 0.98688 to 0.93684, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_020_0.9368_0.6977_1.9728_0.4486.hdf5
+Epoch 00021: loss improved from 0.93684 to 0.88715, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_021_0.8872_0.7147_1.9918_0.4511.hdf5
+Epoch 00022: loss improved from 0.88715 to 0.84181, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_022_0.8418_0.7290_2.0380_0.4503.hdf5
+Epoch 00023: loss improved from 0.84181 to 0.80069, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_023_0.8007_0.7413_2.0773_0.4435.hdf5
+Epoch 00024: loss improved from 0.80069 to 0.75865, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_024_0.7586_0.7550_2.1119_0.4522.hdf5
+Epoch 00025: loss improved from 0.75865 to 0.72526, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/9-layer_025_0.7253_0.7670_2.1708_0.4507.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.60685875444108583, 0.80997031838114597]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.1708436275060037, 0.4506728725994798]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.1540461710691172, 0.45340483651771857]
+25 epochs in 19224.042021751404 seconds
+------------------------------
+------------------------------
+
+
+
+TEST: 10-layer GRU
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+gru_10 (GRU)                 (None, 100, 128)          49920     
+_________________________________________________________________
+gru_11 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_12 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_13 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_14 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_15 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_16 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_17 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_18 (GRU)                 (None, 100, 128)          98688     
+_________________________________________________________________
+gru_19 (GRU)                 (None, 128)               98688     
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                6450      
+=================================================================
+Total params: 944,562
+Trainable params: 944,562
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 00001: loss improved from inf to 2.83927, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_001_2.8393_0.1922_2.6208_0.2302.hdf5
+Epoch 00002: loss improved from 2.83927 to 2.47459, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_002_2.4746_0.2592_2.3944_0.2712.hdf5
+Epoch 00003: loss improved from 2.47459 to 2.30722, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_003_2.3072_0.2909_2.2309_0.3009.hdf5
+Epoch 00004: loss improved from 2.30722 to 2.16729, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_004_2.1673_0.3194_2.1208_0.3283.hdf5
+Epoch 00005: loss improved from 2.16729 to 2.08333, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_005_2.0833_0.3379_2.0793_0.3359.hdf5
+Epoch 00006: loss improved from 2.08333 to 2.02583, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_006_2.0258_0.3510_2.0439_0.3402.hdf5
+Epoch 00007: loss improved from 2.02583 to 1.96558, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_007_1.9656_0.3669_2.0038_0.3584.hdf5
+Epoch 00008: loss improved from 1.96558 to 1.91086, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_008_1.9109_0.3846_2.0081_0.3574.hdf5
+Epoch 00009: loss improved from 1.91086 to 1.85333, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_009_1.8533_0.3993_2.0372_0.3503.hdf5
+Epoch 00010: loss improved from 1.85333 to 1.80374, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_010_1.8037_0.4142_1.9823_0.3616.hdf5
+Epoch 00011: loss improved from 1.80374 to 1.76683, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_011_1.7668_0.4270_1.9453_0.3760.hdf5
+Epoch 00012: loss improved from 1.76683 to 1.70233, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_012_1.7023_0.4462_1.9491_0.3779.hdf5
+Epoch 00013: loss improved from 1.70233 to 1.64225, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_013_1.6422_0.4636_1.9326_0.3886.hdf5
+Epoch 00014: loss improved from 1.64225 to 1.58438, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_014_1.5844_0.4833_1.9374_0.3855.hdf5
+Epoch 00015: loss improved from 1.58438 to 1.52206, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_015_1.5221_0.5027_1.9260_0.3926.hdf5
+Epoch 00016: loss improved from 1.52206 to 1.46767, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_016_1.4677_0.5195_1.9375_0.3966.hdf5
+Epoch 00017: loss improved from 1.46767 to 1.40902, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_017_1.4090_0.5410_1.9578_0.3956.hdf5
+Epoch 00018: loss improved from 1.40902 to 1.35792, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_018_1.3579_0.5577_1.9789_0.3992.hdf5
+Epoch 00019: loss improved from 1.35792 to 1.31815, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_019_1.3181_0.5721_1.9741_0.4032.hdf5
+Epoch 00020: loss improved from 1.31815 to 1.27572, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_020_1.2757_0.5866_1.9920_0.4048.hdf5
+Epoch 00021: loss improved from 1.27572 to 1.19511, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_021_1.1951_0.6100_2.0236_0.4067.hdf5
+Epoch 00022: loss improved from 1.19511 to 1.14964, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_022_1.1496_0.6256_2.0532_0.3992.hdf5
+Epoch 00023: loss improved from 1.14964 to 1.13057, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_023_1.1306_0.6352_2.0878_0.4024.hdf5
+Epoch 00024: loss improved from 1.13057 to 1.05787, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_024_1.0579_0.6561_2.1154_0.4021.hdf5
+Epoch 00025: loss improved from 1.05787 to 1.05210, saving model to weights006_GRU-128-tanh_rmsprop_128-batch_25-epochs/10-layer_025_1.0521_0.6624_2.1388_0.3988.hdf5
+------------------------------
+TRAIN DATA: ['loss', 'acc']
+[0.87880037638926212, 0.72394990105061974]
+------------------------------
+VALIDATION DATA: ['loss', 'acc']
+[2.1388426450192335, 0.39876555704725519]
+------------------------------
+TEST DATA: ['loss', 'acc']
+[2.1138606070265964, 0.40254308746662698]
+25 epochs in 21579.645441532135 seconds
+------------------------------
+------------------------------
+
